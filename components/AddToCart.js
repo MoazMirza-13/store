@@ -1,6 +1,10 @@
+"use client";
+
 import ReactModal from "react-modal";
+import { useSelector } from "react-redux";
 
 export default function AddToCart({ isopen, onclose }) {
+  const cart = useSelector((state) => state.cart);
   return (
     <>
       <ReactModal
@@ -20,7 +24,8 @@ export default function AddToCart({ isopen, onclose }) {
         }}
       >
         <div className="flex justify-center items-center">
-          <h1 className="text-2xl">Your Cart Is Empty</h1>
+          {/* <h1 className="text-2xl">Your Cart Is Empty</h1> */}
+          <h1 className="text-2xl">Product: {cart}</h1>
         </div>
       </ReactModal>
     </>

@@ -3,6 +3,8 @@ import { useState } from "react";
 import AddToCart from "./AddToCart";
 
 import Link from "next/link";
+import { Provider } from "react-redux";
+import { store } from "@/app/store/store";
 
 export default function Nav() {
   const [showCart, setShowCart] = useState(false);
@@ -26,7 +28,9 @@ export default function Nav() {
           Your Cart
         </button>
       </nav>
-      {showCart && <AddToCart isopen={showCart} onclose={handleCloseCart} />}
+      <Provider store={store}>
+        {showCart && <AddToCart isopen={showCart} onclose={handleCloseCart} />}
+      </Provider>
     </>
   );
 }
