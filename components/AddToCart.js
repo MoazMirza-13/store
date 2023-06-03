@@ -1,10 +1,12 @@
 "use client";
 
 import ReactModal from "react-modal";
+
 import { useSelector } from "react-redux";
 
 export default function AddToCart({ isopen, onclose }) {
-  const cart = useSelector((state) => state.cart);
+  const products = useSelector((state) => state.allProducts.selectedProduct);
+
   return (
     <>
       <ReactModal
@@ -24,8 +26,17 @@ export default function AddToCart({ isopen, onclose }) {
         }}
       >
         <div className="flex justify-center items-center">
-          {/* <h1 className="text-2xl">Your Cart Is Empty</h1> */}
-          <h1 className="text-2xl">Product: {cart}</h1>
+          {products && products.length > 0 ? (
+            products.map((product) => (
+              <div key={product.id}>
+                <h1 className="text-2xl">
+                  Product: {product.name}, Number: {product.id}
+                </h1>
+              </div>
+            ))
+          ) : (
+            <h1>Your Cart is Empty</h1>
+          )}
         </div>
       </ReactModal>
     </>
