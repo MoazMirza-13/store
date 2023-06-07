@@ -1,3 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  background: #f5f5f5;
+}
+
+.nav-bg {
+  background: linear-gradient(
+    94.35deg,
+    #c7b8a5 -3.13%,
+    #bfae9b 11.62%,
+    #bfad9a 15.48%,
+    #c0b09d 31.44%,
+    #c1b29f 45.34%,
+    #bdad9a 89.86%,
+    #c0b19e 97.8%,
+    #c0b19e 105.73%
+  );
+}

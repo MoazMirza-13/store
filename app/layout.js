@@ -1,13 +1,22 @@
 "use client";
 import "./globals.css";
-import { Inter } from "next/font/google";
+
 import Nav from "@/components/Nav";
 
 import { Provider } from "react-redux";
-
 import store from "./redux/store";
-
-const inter = Inter({ subsets: ["latin"] });
+// fonts
+import { Playfair_Display, Montserrat } from "next/font/google";
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-playfair",
+});
+const mont = Montserrat({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-montserrat",
+});
 
 export const metadata = {
   title: "Create Next App",
@@ -16,8 +25,8 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
+    <html lang="en" className={` ${playfair.className} ${mont.className}`}>
+      <body>
         <Provider store={store}>
           <Nav />
           {children}
