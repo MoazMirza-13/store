@@ -25,7 +25,7 @@ export default function Nav() {
   ];
   return (
     <>
-      <div className="py-6 fixed top-0 left-0 right-0 z-50  ">
+      <div className="py-6 fixed top-0 left-0 right-0 z-50  nav-bg">
         <nav className=" flex  max-w-[85%] m-auto justify-between items-center">
           <Link
             href="/"
