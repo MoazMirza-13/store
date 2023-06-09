@@ -16,6 +16,17 @@ export default function Nav() {
     setShowCart(false);
   };
 
+  const [navBg, setNavBg] = useState(false);
+  const changecolor = () => {
+    if (window.scrollY >= 90) {
+      setNavBg(true);
+    } else {
+      setNavBg(false);
+    }
+  };
+
+  window.addEventListener("scroll", changecolor);
+
   const navLi = [
     { id: "home", title: "Home" },
     { id: "products", title: "Products" },
@@ -25,7 +36,11 @@ export default function Nav() {
   ];
   return (
     <>
-      <div className="py-6 fixed top-0 left-0 right-0 z-50  nav-bg">
+      <div
+        className={`py-6 fixed top-0 left-0 right-0 z-50 ${
+          navBg ? "nav-bg" : ""
+        }`}
+      >
         <nav className=" flex  max-w-[85%] m-auto justify-between items-center">
           <Link
             href="/"

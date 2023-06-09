@@ -7,15 +7,8 @@ body {
 }
 
 .nav-bg {
-  background: linear-gradient(
-    94.35deg,
-    #c7b8a5 -3.13%,
-    #bfae9b 11.62%,
-    #bfad9a 15.48%,
-    #c0b09d 31.44%,
-    #c1b29f 45.34%,
-    #bdad9a 89.86%,
-    #c0b19e 97.8%,
-    #c0b19e 105.73%
-  );
+  background: rgba(212, 183, 143, 0.9);
 }
+/* .nav-bg {
+  background: rgba(198, 163, 114, 0.9);
+} */
