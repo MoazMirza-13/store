@@ -14,3 +14,10 @@
   filter: drop-shadow(0px 4px 96px rgba(228, 203, 144, 0.1));
   border-radius: 6px;
 }
+.btn-3 {
+  width: 257.71px;
+  height: 54.11px;
+  background: #c6a372;
+  box-shadow: 0px 4.04764px 97.1434px rgba(228, 203, 144, 0.1);
+  border-radius: 6px;
+}
