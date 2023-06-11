@@ -12,3 +12,10 @@ body {
 .swiper-pagination .swiper-pagination-bullet {
   background-color: #c6a372;
 }
+.swiper-scrollbar-drag {
+  background-color: #c6a372 !important;
+}
+
+.swiper-wrapper {
+  margin-bottom: 2rem;
+}

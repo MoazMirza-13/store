@@ -55,7 +55,7 @@ export default function Nav() {
         <nav className=" flex  max-w-[85%] m-auto justify-between items-center">
           <Link
             href="/"
-            className={`  font-playfair text-lg font-bold tracking-widest`}
+            className="font-playfair text-lg font-bold tracking-widest"
           >
             ELEGENCIA
           </Link>

@@ -2,9 +2,16 @@
 
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, EffectCoverflow, Autoplay } from "swiper";
+import {
+  Navigation,
+  Pagination,
+  EffectCoverflow,
+  Autoplay,
+  Scrollbar,
+} from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
+import "swiper/css/scrollbar";
 import "swiper/css/pagination";
 import "swiper/css/effect-coverflow";
 import "swiper/css/autoplay";
@@ -37,6 +44,13 @@ import categoryImg3 from "../public/explore-category/image 24.png";
 import categoryImg4 from "../public/explore-category/Rectangle 85.png";
 import categoryImg5 from "../public/explore-category/Rectangle 86.png";
 import categoryImg6 from "../public/explore-category/Rectangle 87.png";
+// testimonilas
+import testimonialImg1 from "../public/home-testimonials/image 34.png";
+import testimonialImg2 from "../public/home-testimonials/image 35.png";
+import testimonialImg3 from "../public/home-testimonials/image 36.png";
+import testimonialImg4 from "../public/home-testimonials/image 37.png";
+import testimonialImg5 from "../public/home-testimonials/image 30.png";
+import testimonialImg6 from "../public/home-testimonials/image 31.png";
 // importing css styles
 import heroBg from "../app/modules/bg_image.module.css";
 import btn from "../app/modules/btn.module.css";
@@ -561,12 +575,632 @@ export default function Home() {
         </div>
       </div>
       {/* testimonials */}
-      <div className="max-w-[84%] m-auto mt-10">
-        <div className="flex items-center gap-4">
+      <div className="max-w-[90%] m-auto mt-10">
+        <div className="flex items-center max-w-[84%] m-auto gap-4">
           <h1 className="font-playfair font-semibold text-5xl leading-[4.563rem]">
             Testimonials
           </h1>
           <hr className="w-[38.875rem] h-[0.188rem] bg-[#D4B78F] rounded-full" />
+        </div>
+        <Swiper
+          slidesPerView={1}
+          spaceBetween={30}
+          modules={[Scrollbar]}
+          navigation={{
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+          }}
+          scrollbar={{
+            hide: false,
+          }}
+          loop={true}
+          onSwiper={(swiper) => (window.swiper3 = swiper)}
+        >
+          <SwiperSlide>
+            <div className="flex items-center gap-16 pt-8">
+              <div className="flex gap-8">
+                <div className="flex items-end">
+                  <Image alt="testimonial" src={testimonialImg1} />
+                </div>
+                <div>
+                  <Image alt="testimonial" src={testimonialImg2} />
+                </div>
+              </div>
+              <div className="flex  gap-6 relative ">
+                <button
+                  onClick={() => swiper3.slidePrev()}
+                  className="absolute left-2"
+                >
+                  <svg
+                    width="50"
+                    height="50"
+                    viewBox="0 0 50 50"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M25 45.8334C36.5059 45.8334 45.8333 36.506 45.8333 25C45.8333 13.4941 36.5059 4.16669 25 4.16669C13.4941 4.16669 4.16666 13.4941 4.16666 25C4.16666 36.506 13.4941 45.8334 25 45.8334Z"
+                      stroke="#2B2B2B"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                    <path
+                      d="M25 16.6667L16.6667 25L25 33.3334"
+                      stroke="#2B2B2B"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                    <path
+                      d="M33.3333 25H16.6667"
+                      stroke="#2B2B2B"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </button>
+                <button
+                  onClick={() => swiper3.slideNext()}
+                  className="absolute left-[45.3rem]"
+                >
+                  <svg
+                    width="50"
+                    height="50"
+                    viewBox="0 0 50 50"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M25 45.8334C36.5059 45.8334 45.8333 36.506 45.8333 25C45.8333 13.4941 36.5059 4.16669 25 4.16669C13.494 4.16669 4.16663 13.4941 4.16663 25C4.16663 36.506 13.494 45.8334 25 45.8334Z"
+                      fill="#C6A372"
+                      stroke="#2B2B2B"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                    <path
+                      d="M25 33.3334L33.3333 25L25 16.6667"
+                      stroke="#2B2B2B"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                    <path
+                      d="M16.6666 25H33.3333"
+                      stroke="#2B2B2B"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <div className="bg-[#D4B78F] w-[40.882rem] h-[16.265rem] p-12 ">
+                <div className="flex flex-col gap-12">
+                  <h1 className="font-playfair font-medium text-lg">
+                    Amanda Collins
+                  </h1>
+                  <p className=" text-[#888888]">
+                    "Absolutely delighted with my purchase from Elegencia! I
+                    recently bought the Lucid Side Table and it has exceeded all
+                    my expectations. The craftsmanship and attention to detail
+                    are exceptional"
+                  </p>
+                </div>
+              </div>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div className="flex items-center gap-16 pt-8">
+              <div className="flex gap-8">
+                <div className="flex items-end">
+                  <Image alt="testimonial" src={testimonialImg4} />
+                </div>
+                <div>
+                  <Image alt="testimonial" src={testimonialImg3} />
+                </div>
+              </div>
+              <div className="flex  gap-6 relative ">
+                <button
+                  onClick={() => swiper3.slidePrev()}
+                  className="absolute left-2"
+                >
+                  <svg
+                    width="50"
+                    height="50"
+                    viewBox="0 0 50 50"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M25 45.8334C36.5059 45.8334 45.8333 36.506 45.8333 25C45.8333 13.4941 36.5059 4.16669 25 4.16669C13.4941 4.16669 4.16666 13.4941 4.16666 25C4.16666 36.506 13.4941 45.8334 25 45.8334Z"
+                      stroke="#2B2B2B"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                    <path
+                      d="M25 16.6667L16.6667 25L25 33.3334"
+                      stroke="#2B2B2B"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                    <path
+                      d="M33.3333 25H16.6667"
+                      stroke="#2B2B2B"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </button>
+                <button
+                  onClick={() => swiper3.slideNext()}
+                  className="absolute left-[45.3rem]"
+                >
+                  <svg
+                    width="50"
+                    height="50"
+                    viewBox="0 0 50 50"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M25 45.8334C36.5059 45.8334 45.8333 36.506 45.8333 25C45.8333 13.4941 36.5059 4.16669 25 4.16669C13.494 4.16669 4.16663 13.4941 4.16663 25C4.16663 36.506 13.494 45.8334 25 45.8334Z"
+                      fill="#C6A372"
+                      stroke="#2B2B2B"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                    <path
+                      d="M25 33.3334L33.3333 25L25 16.6667"
+                      stroke="#2B2B2B"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                    <path
+                      d="M16.6666 25H33.3333"
+                      stroke="#2B2B2B"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <div className="bg-[#D4B78F] w-[40.882rem] h-[16.265rem] p-12 ">
+                <div className="flex flex-col gap-12">
+                  <h1 className="font-playfair font-medium text-lg">
+                    Bruce Wayne
+                  </h1>
+                  <p className=" text-[#888888]">
+                    "Absolutely delighted with my purchase from Elegencia! I
+                    recently bought the Lucid Side Table and it has exceeded all
+                    my expectations. The craftsmanship and attention to detail
+                    are exceptional"
+                  </p>
+                </div>
+              </div>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div className="flex items-center gap-16 pt-8">
+              <div className="flex gap-8">
+                <div className="flex items-end">
+                  <Image alt="testimonial" src={testimonialImg5} />
+                </div>
+                <div>
+                  <Image alt="testimonial" src={testimonialImg6} />
+                </div>
+              </div>
+              <div className="flex  gap-6 relative ">
+                <button
+                  onClick={() => swiper3.slidePrev()}
+                  className="absolute left-2"
+                >
+                  <svg
+                    width="50"
+                    height="50"
+                    viewBox="0 0 50 50"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M25 45.8334C36.5059 45.8334 45.8333 36.506 45.8333 25C45.8333 13.4941 36.5059 4.16669 25 4.16669C13.4941 4.16669 4.16666 13.4941 4.16666 25C4.16666 36.506 13.4941 45.8334 25 45.8334Z"
+                      stroke="#2B2B2B"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                    <path
+                      d="M25 16.6667L16.6667 25L25 33.3334"
+                      stroke="#2B2B2B"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                    <path
+                      d="M33.3333 25H16.6667"
+                      stroke="#2B2B2B"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </button>
+                <button
+                  onClick={() => swiper3.slideNext()}
+                  className="absolute left-[45.3rem]"
+                >
+                  <svg
+                    width="50"
+                    height="50"
+                    viewBox="0 0 50 50"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M25 45.8334C36.5059 45.8334 45.8333 36.506 45.8333 25C45.8333 13.4941 36.5059 4.16669 25 4.16669C13.494 4.16669 4.16663 13.4941 4.16663 25C4.16663 36.506 13.494 45.8334 25 45.8334Z"
+                      fill="#C6A372"
+                      stroke="#2B2B2B"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                    <path
+                      d="M25 33.3334L33.3333 25L25 16.6667"
+                      stroke="#2B2B2B"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                    <path
+                      d="M16.6666 25H33.3333"
+                      stroke="#2B2B2B"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <div className="bg-[#D4B78F] w-[40.882rem] h-[16.265rem] p-12 ">
+                <div className="flex flex-col gap-12">
+                  <h1 className="font-playfair font-medium text-lg">
+                    Amanda Collins
+                  </h1>
+                  <p className="text-[#888888] ">
+                    "Absolutely delighted with my purchase from Elegencia! I
+                    recently bought the Lucid Side Table and it has exceeded all
+                    my expectations. The craftsmanship and attention to detail
+                    are exceptional"
+                  </p>
+                </div>
+              </div>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div className="flex items-center gap-16 pt-8">
+              <div className="flex gap-8">
+                <div className="flex items-end">
+                  <Image alt="testimonial" src={testimonialImg4} />
+                </div>
+                <div>
+                  <Image alt="testimonial" src={testimonialImg3} />
+                </div>
+              </div>
+              <div className="flex  gap-6 relative ">
+                <button
+                  onClick={() => swiper3.slidePrev()}
+                  className="absolute left-2"
+                >
+                  <svg
+                    width="50"
+                    height="50"
+                    viewBox="0 0 50 50"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M25 45.8334C36.5059 45.8334 45.8333 36.506 45.8333 25C45.8333 13.4941 36.5059 4.16669 25 4.16669C13.4941 4.16669 4.16666 13.4941 4.16666 25C4.16666 36.506 13.4941 45.8334 25 45.8334Z"
+                      stroke="#2B2B2B"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                    <path
+                      d="M25 16.6667L16.6667 25L25 33.3334"
+                      stroke="#2B2B2B"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                    <path
+                      d="M33.3333 25H16.6667"
+                      stroke="#2B2B2B"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </button>
+                <button
+                  onClick={() => swiper3.slideNext()}
+                  className="absolute left-[45.3rem]"
+                >
+                  <svg
+                    width="50"
+                    height="50"
+                    viewBox="0 0 50 50"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M25 45.8334C36.5059 45.8334 45.8333 36.506 45.8333 25C45.8333 13.4941 36.5059 4.16669 25 4.16669C13.494 4.16669 4.16663 13.4941 4.16663 25C4.16663 36.506 13.494 45.8334 25 45.8334Z"
+                      fill="#C6A372"
+                      stroke="#2B2B2B"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                    <path
+                      d="M25 33.3334L33.3333 25L25 16.6667"
+                      stroke="#2B2B2B"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                    <path
+                      d="M16.6666 25H33.3333"
+                      stroke="#2B2B2B"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <div className="bg-[#D4B78F] w-[40.882rem] h-[16.265rem] p-12 ">
+                <div className="flex flex-col gap-12">
+                  <h1 className="font-playfair font-medium text-lg">
+                    Bruce Wayne
+                  </h1>
+                  <p className="text-[#888888] ">
+                    "Absolutely delighted with my purchase from Elegencia! I
+                    recently bought the Lucid Side Table and it has exceeded all
+                    my expectations. The craftsmanship and attention to detail
+                    are exceptional"
+                  </p>
+                </div>
+              </div>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div className="flex items-center gap-16 pt-8">
+              <div className="flex gap-8">
+                <div className="flex items-end">
+                  <Image alt="testimonial" src={testimonialImg1} />
+                </div>
+                <div>
+                  <Image alt="testimonial" src={testimonialImg2} />
+                </div>
+              </div>
+              <div className="flex  gap-6 relative ">
+                <button
+                  onClick={() => swiper3.slidePrev()}
+                  className="absolute left-2"
+                >
+                  <svg
+                    width="50"
+                    height="50"
+                    viewBox="0 0 50 50"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M25 45.8334C36.5059 45.8334 45.8333 36.506 45.8333 25C45.8333 13.4941 36.5059 4.16669 25 4.16669C13.4941 4.16669 4.16666 13.4941 4.16666 25C4.16666 36.506 13.4941 45.8334 25 45.8334Z"
+                      stroke="#2B2B2B"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                    <path
+                      d="M25 16.6667L16.6667 25L25 33.3334"
+                      stroke="#2B2B2B"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                    <path
+                      d="M33.3333 25H16.6667"
+                      stroke="#2B2B2B"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </button>
+                <button
+                  onClick={() => swiper3.slideNext()}
+                  className="absolute left-[45.3rem]"
+                >
+                  <svg
+                    width="50"
+                    height="50"
+                    viewBox="0 0 50 50"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M25 45.8334C36.5059 45.8334 45.8333 36.506 45.8333 25C45.8333 13.4941 36.5059 4.16669 25 4.16669C13.494 4.16669 4.16663 13.4941 4.16663 25C4.16663 36.506 13.494 45.8334 25 45.8334Z"
+                      fill="#C6A372"
+                      stroke="#2B2B2B"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                    <path
+                      d="M25 33.3334L33.3333 25L25 16.6667"
+                      stroke="#2B2B2B"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                    <path
+                      d="M16.6666 25H33.3333"
+                      stroke="#2B2B2B"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <div className="bg-[#D4B78F] w-[40.882rem] h-[16.265rem] p-12 ">
+                <div className="flex flex-col gap-12">
+                  <h1 className="font-playfair font-medium text-lg">
+                    Amanda Collins
+                  </h1>
+                  <p className="text-[#888888] ">
+                    "Absolutely delighted with my purchase from Elegencia! I
+                    recently bought the Lucid Side Table and it has exceeded all
+                    my expectations. The craftsmanship and attention to detail
+                    are exceptional"
+                  </p>
+                </div>
+              </div>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div className="flex items-center gap-16 pt-8">
+              <div className="flex gap-8">
+                <div className="flex items-end">
+                  <Image alt="testimonial" src={testimonialImg5} />
+                </div>
+                <div>
+                  <Image alt="testimonial" src={testimonialImg6} />
+                </div>
+              </div>
+              <div className="flex  gap-6 relative ">
+                <button
+                  onClick={() => swiper3.slidePrev()}
+                  className="absolute left-2"
+                >
+                  <svg
+                    width="50"
+                    height="50"
+                    viewBox="0 0 50 50"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M25 45.8334C36.5059 45.8334 45.8333 36.506 45.8333 25C45.8333 13.4941 36.5059 4.16669 25 4.16669C13.4941 4.16669 4.16666 13.4941 4.16666 25C4.16666 36.506 13.4941 45.8334 25 45.8334Z"
+                      stroke="#2B2B2B"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                    <path
+                      d="M25 16.6667L16.6667 25L25 33.3334"
+                      stroke="#2B2B2B"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                    <path
+                      d="M33.3333 25H16.6667"
+                      stroke="#2B2B2B"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </button>
+                <button
+                  onClick={() => swiper3.slideNext()}
+                  className="absolute left-[45.3rem]"
+                >
+                  <svg
+                    width="50"
+                    height="50"
+                    viewBox="0 0 50 50"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M25 45.8334C36.5059 45.8334 45.8333 36.506 45.8333 25C45.8333 13.4941 36.5059 4.16669 25 4.16669C13.494 4.16669 4.16663 13.4941 4.16663 25C4.16663 36.506 13.494 45.8334 25 45.8334Z"
+                      fill="#C6A372"
+                      stroke="#2B2B2B"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                    <path
+                      d="M25 33.3334L33.3333 25L25 16.6667"
+                      stroke="#2B2B2B"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                    <path
+                      d="M16.6666 25H33.3333"
+                      stroke="#2B2B2B"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <div className="bg-[#D4B78F] w-[40.882rem] h-[16.265rem] p-12 ">
+                <div className="flex flex-col gap-12">
+                  <h1 className="font-playfair font-medium text-lg">
+                    Amanda Collins
+                  </h1>
+                  <p className=" text-[#888888]">
+                    "Absolutely delighted with my purchase from Elegencia! I
+                    recently bought the Lucid Side Table and it has exceeded all
+                    my expectations. The craftsmanship and attention to detail
+                    are exceptional"
+                  </p>
+                </div>
+              </div>
+            </div>
+          </SwiperSlide>
+        </Swiper>
+        <div className="flex justify-center mt-10">
+          <button
+            className={`${btn["btn-3"]} font-semibold text-xl text-white flex items-center justify-center  gap-[0.2rem]`}
+          >
+            See All Reviews
+            <svg
+              width="25"
+              height="25"
+              viewBox="0 0 25 25"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M5.85364 12.0554H19.8536"
+                stroke="white"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+              <path
+                d="M12.8536 5.05542L19.8536 12.0554L12.8536 19.0554"
+                stroke="white"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </button>
         </div>
       </div>
     </>

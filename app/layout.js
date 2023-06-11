@@ -2,6 +2,8 @@
 import "./globals.css";
 
 import Nav from "@/components/Nav";
+import BeforeFooter from "@/components/BeforeFooter";
+import Footer from "@/components/Footer";
 
 import { Provider } from "react-redux";
 import store from "./redux/store";
@@ -30,6 +32,8 @@ export default function RootLayout({ children }) {
         <Provider store={store}>
           <Nav />
           {children}
+          <BeforeFooter />
+          <Footer />
         </Provider>
       </body>
     </html>
