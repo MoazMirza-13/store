@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import AddToCart from "./AddToCart";
 import Link from "next/link";
 import { BiSearch } from "react-icons/bi";
@@ -17,15 +17,26 @@ export default function Nav() {
   };
 
   const [navBg, setNavBg] = useState(false);
-  const changecolor = () => {
-    if (window.scrollY >= 90) {
-      setNavBg(true);
-    } else {
-      setNavBg(false);
-    }
-  };
 
-  window.addEventListener("scroll", changecolor);
+  useEffect(() => {
+    const changecolor = () => {
+      if (window.scrollY >= 90) {
+        setNavBg(true);
+      } else {
+        setNavBg(false);
+      }
+    };
+
+    if (typeof window !== "undefined") {
+      window.addEventListener("scroll", changecolor);
+    }
+
+    return () => {
+      if (typeof window !== "undefined") {
+        window.removeEventListener("scroll", changecolor);
+      }
+    };
+  }, []);
 
   const navLi = [
     { id: "home", title: "Home" },
