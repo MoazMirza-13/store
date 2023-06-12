@@ -62,17 +62,23 @@ export default function Home() {
       <div
         className={`${heroBg["bg-image"]} rounded-tl-none rounded-tr-none rounded-br-3xl rounded-bl-3xl`}
       >
-        <div className="pt-[13rem] h-screen max-w-[84%] m-auto flex flex-col gap-8">
-          <h1 className="font-playfair font-semibold text-6xl leading-[4.563rem]">
+        <div className="lg:pt-[13rem] md:pt-[7rem] pt-28  h-screen max-w-[84%] m-auto flex flex-col lg::gap-8 md:gap-[1.3rem] gap-12">
+          <h1 className="font-playfair md:font-semibold text-4xl lg:text-5xl xl:text-6xl lg:leading-[4.563rem] md:leading-[3.3rem] leading-[3rem] text-center md:text-start">
             Discover Timeless <br />
             Elegance for Your Home
           </h1>
-          <p className="font-mont text-xl tracking-wider ">
+          <p className="font-mont md:text-xl md:block hidden lg:hidden tracking-wider ">
+            Uncover Exceptional Furniture Pieces <br /> Crafted with Precision
+            and Style
+          </p>
+          <p className="font-mont md:text-xl lg:block hidden tracking-wider ">
             Uncover Exceptional Furniture Pieces Crafted with Precision and
             Style
           </p>
-          <div className="flex gap-8">
-            <button className={`${btn["btn-1"]} font-semibold text-xl `}>
+          <div className="flex flex-col md:flex-row gap-8 items-center md:items-start">
+            <button
+              className={`${btn["btn-1"]} font-semibold text-xl border border-solid border-gray-700 md:border-none`}
+            >
               Shop Now
             </button>
             <button className={`${btn["btn-2"]} font-semibold text-xl `}>
@@ -82,7 +88,7 @@ export default function Home() {
         </div>
       </div>
       {/* after-hero */}
-      <div className="max-w-[90%] m-auto mt-14">
+      {/* <div className="max-w-[90%] m-auto mt-14">
         <div className="max-w-[95%] m-auto flex flex-col items-end">
           <h1 className="font-mont font-semibold text-xl">New Furniture</h1>
           <h1 className="font-playfair font-semibold text-5xl leading-[4.563rem]">
@@ -209,9 +215,9 @@ export default function Home() {
             </SwiperSlide>
           </Swiper>
         </div>
-      </div>
+      </div> */}
       {/* best selling */}
-      <div className="max-w-[84%] m-auto mt-10">
+      {/* <div className="max-w-[84%] m-auto mt-10">
         <div className="flex items-center gap-4">
           <h1 className="font-playfair font-semibold text-5xl leading-[4.563rem]">
             Best Selling Products
@@ -350,9 +356,9 @@ export default function Home() {
             </svg>
           </button>
         </div>
-      </div>
+      </div> */}
       {/* category */}
-      <div className="max-w-[84%] m-auto mt-10">
+      {/* <div className="max-w-[84%] m-auto mt-10">
         <div className="flex flex-row-reverse items-center gap-4">
           <h1 className="font-playfair font-semibold text-5xl leading-[4.563rem]">
             Explore By Category
@@ -445,9 +451,9 @@ export default function Home() {
             </svg>
           </button>
         </div>
-      </div>
+      </div> */}
       {/* expediency */}
-      <div className="bg-[#D4B78F] flex flex-col items-center mt-20 gap-12 p-12">
+      {/* <div className="bg-[#D4B78F] flex flex-col items-center mt-20 gap-12 p-12">
         <h1 className="font-playfair font-bold text-6xl leading-[4.563rem]">
           Benefits for your expediency
         </h1>
@@ -573,9 +579,9 @@ export default function Home() {
             </p>
           </div>
         </div>
-      </div>
+      </div> */}
       {/* testimonials */}
-      <div className="max-w-[90%] m-auto mt-10">
+      {/* <div className="max-w-[90%] m-auto mt-10">
         <div className="flex items-center max-w-[84%] m-auto gap-4">
           <h1 className="font-playfair font-semibold text-5xl leading-[4.563rem]">
             Testimonials
@@ -1202,7 +1208,7 @@ export default function Home() {
             </svg>
           </button>
         </div>
-      </div>
+      </div> */}
     </>
   );
 }

@@ -1,7 +1,7 @@
 "use client";
 import "./globals.css";
 
-import Nav from "@/components/Nav";
+import Nav from "@/components/Navbar";
 import BeforeFooter from "@/components/BeforeFooter";
 import Footer from "@/components/Footer";
 
@@ -32,8 +32,8 @@ export default function RootLayout({ children }) {
         <Provider store={store}>
           <Nav />
           {children}
-          <BeforeFooter />
-          <Footer />
+          {/* <BeforeFooter />
+          <Footer /> */}
         </Provider>
       </body>
     </html>
