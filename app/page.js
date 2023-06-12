@@ -88,15 +88,15 @@ export default function Home() {
         </div>
       </div>
       {/* after-hero */}
-      {/* <div className="max-w-[90%] m-auto mt-14">
+      <div className="max-w-[90%] m-auto mt-14">
         <div className="max-w-[95%] m-auto flex flex-col items-end">
-          <h1 className="font-mont font-semibold text-xl">New Furniture</h1>
-          <h1 className="font-playfair font-semibold text-5xl leading-[4.563rem]">
+          <h1 className="font-mont md:font-semibold text-xl">New Furniture</h1>
+          <h1 className="font-playfair xl:font-semibold text-[2rem] lg:text-5xl xl:text-6xl lg:leading-[4.563rem] md:leading-[3.3rem] leading-[3rem]">
             JUST ARRIVED
           </h1>
         </div>
-        <div className="">
-          <div className="flex justify-between relative top-[20rem]">
+        <div>
+          <div className="lg:flex hidden justify-between relative lg:top-[14.5rem] xl:top-[21.5rem]">
             <button onClick={() => swiper.slidePrev()}>
               <svg
                 width="50"
@@ -161,61 +161,63 @@ export default function Home() {
               </svg>
             </button>
           </div>
-          <Swiper
-            style={{ padding: "0 3rem 3rem 3rem", maxWidth: "93%" }}
-            modules={[Navigation, Pagination, EffectCoverflow, Autoplay]}
-            initialSlide={2}
-            slidesPerView={3}
-            effect="coverflow"
-            centeredSlides={true}
-            loop={true}
-            coverflowEffect={{
-              rotate: 4,
-              stretch: 0,
-              depth: 100,
-              modifier: 2.5,
-            }}
-            autoplay={{ delay: 2000, disableOnInteraction: false }}
-            pagination={{
-              dynamicBullets: true,
-              clickable: true,
-            }}
-            navigation={{
-              nextEl: ".swiper-button-next",
-              prevEl: ".swiper-button-prev",
-            }}
-            onSwiper={(swiper) => (window.swiper = swiper)}
-          >
-            <SwiperSlide>
-              <Image src={sliderImg1} alt="sliderImg" />
-            </SwiperSlide>
-            <SwiperSlide>
-              <Image src={sliderImg2} alt="sliderImg" />
-            </SwiperSlide>
-            <SwiperSlide>
-              <Image src={sliderImg3} alt="sliderImg" />
-            </SwiperSlide>
-            <SwiperSlide>
-              <Image src={sliderImg4} alt="sliderImg" />
-            </SwiperSlide>
-            <SwiperSlide>
-              <Image src={sliderImg5} alt="sliderImg" />
-            </SwiperSlide>
-            <SwiperSlide>
-              <Image src={sliderImg6} alt="sliderImg" />
-            </SwiperSlide>
-            <SwiperSlide>
-              <Image src={sliderImg7} alt="sliderImg" />
-            </SwiperSlide>
-            <SwiperSlide>
-              <Image priority={false} src={sliderImg8} alt="sliderImg" />
-            </SwiperSlide>
-            <SwiperSlide>
-              <Image src={sliderImg9} alt="sliderImg" />
-            </SwiperSlide>
-          </Swiper>
+          <div className="lg:px-[3rem] lg:pb-[3rem]">
+            <Swiper
+              className="mt-5 md:mt-0  md:max-w-[99%] max-w-[95%]"
+              modules={[Navigation, Pagination, EffectCoverflow, Autoplay]}
+              initialSlide={2}
+              slidesPerView={3}
+              effect="coverflow"
+              centeredSlides={true}
+              loop={true}
+              coverflowEffect={{
+                rotate: 4,
+                stretch: 0,
+                depth: 100,
+                modifier: 2.5,
+              }}
+              autoplay={{ delay: 2000, disableOnInteraction: false }}
+              pagination={{
+                dynamicBullets: true,
+                clickable: true,
+              }}
+              navigation={{
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+              }}
+              onSwiper={(swiper) => (window.swiper = swiper)}
+            >
+              <SwiperSlide>
+                <Image src={sliderImg1} alt="sliderImg" />
+              </SwiperSlide>
+              <SwiperSlide>
+                <Image src={sliderImg2} alt="sliderImg" />
+              </SwiperSlide>
+              <SwiperSlide>
+                <Image src={sliderImg3} alt="sliderImg" />
+              </SwiperSlide>
+              <SwiperSlide>
+                <Image src={sliderImg4} alt="sliderImg" />
+              </SwiperSlide>
+              <SwiperSlide>
+                <Image src={sliderImg5} alt="sliderImg" />
+              </SwiperSlide>
+              <SwiperSlide>
+                <Image src={sliderImg6} alt="sliderImg" />
+              </SwiperSlide>
+              <SwiperSlide>
+                <Image src={sliderImg7} alt="sliderImg" />
+              </SwiperSlide>
+              <SwiperSlide>
+                <Image priority={false} src={sliderImg8} alt="sliderImg" />
+              </SwiperSlide>
+              <SwiperSlide>
+                <Image src={sliderImg9} alt="sliderImg" />
+              </SwiperSlide>
+            </Swiper>
+          </div>
         </div>
-      </div> */}
+      </div>
       {/* best selling */}
       {/* <div className="max-w-[84%] m-auto mt-10">
         <div className="flex items-center gap-4">
