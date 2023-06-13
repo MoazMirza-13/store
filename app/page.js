@@ -219,14 +219,14 @@ export default function Home() {
         </div>
       </div>
       {/* best selling */}
-      {/* <div className="max-w-[84%] m-auto mt-10">
-        <div className="flex items-center gap-4">
-          <h1 className="font-playfair font-semibold text-5xl leading-[4.563rem]">
+      <div className="max-w-[84%] m-auto mt-10">
+        <div className="flex items-center sm:gap-4 gap-2">
+          <h1 className="font-playfair lg:font-semibold md:text-5xl text-[1.5rem] md:leading-[4.563rem] leading-[1.5rem] sm:leading-[2rem] ">
             Best Selling Products
           </h1>
           <hr className="w-[38.875rem] h-[0.188rem] bg-[#D4B78F] rounded-full" />
         </div>
-        <div className="flex justify-end gap-6 mb-6">
+        <div className="flex justify-end sm:gap-6 gap-2 mb-6">
           <button onClick={() => swiper2.slidePrev()}>
             <svg
               width="50"
@@ -291,13 +291,22 @@ export default function Home() {
             </svg>
           </button>
         </div>
+
         <Swiper
-          slidesPerView={4}
-          spaceBetween={2}
+          slidesPerView={2}
+          spaceBetween={10}
           loop={true}
           navigation={{
             nextEl: ".swiper-button-next",
             prevEl: ".swiper-button-prev",
+          }}
+          breakpoints={{
+            768: {
+              slidesPerView: 3,
+            },
+            1024: {
+              slidesPerView: 4,
+            },
           }}
           onSwiper={(swiper) => (window.swiper2 = swiper)}
         >
@@ -329,7 +338,8 @@ export default function Home() {
             <Image alt="slider image" src={slider_2Img9} />
           </SwiperSlide>
         </Swiper>
-        <div className="flex justify-center mt-10">
+
+        <div className="flex justify-center lg:mt-10">
           <button
             className={`${btn["btn-3"]} font-semibold text-xl text-white flex items-center justify-center  gap-[0.2rem]`}
           >
@@ -358,21 +368,21 @@ export default function Home() {
             </svg>
           </button>
         </div>
-      </div> */}
+      </div>
       {/* category */}
-      {/* <div className="max-w-[84%] m-auto mt-10">
+      <div className="max-w-[84%] m-auto mt-10">
         <div className="flex flex-row-reverse items-center gap-4">
-          <h1 className="font-playfair font-semibold text-5xl leading-[4.563rem]">
+          <h1 className="font-playfair  lg:font-semibold md:text-5xl text-[1.5rem] md:leading-[4.563rem] leading-[1.5rem] sm:leading-[2rem]">
             Explore By Category
           </h1>
           <hr className="w-[38.875rem] h-[0.188rem] bg-[#D4B78F] rounded-full" />
         </div>
-        <div className="flex gap-8 mt-8">
-          <div className="flex flex-col gap-8">
+        <div className="flex lg:gap-8 gap-4 mt-8">
+          <div className="flex flex-col lg:gap-8 gap-4">
             <div className="relative group">
               <Image alt="category" src={categoryImg1} className="w-full" />
               <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <h3 className="text-white text-center font-semibold text-xl">
+                <h3 className="text-white text-center lg:font-semibold lg:text-xl">
                   Decent Table
                 </h3>
               </div>
@@ -380,17 +390,17 @@ export default function Home() {
             <div className="relative group">
               <Image alt="category" src={categoryImg3} className="w-full" />
               <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <h3 className="text-white text-center font-semibold text-xl">
+                <h3 className="text-white text-center lg:font-semibold lg:text-xl">
                   Simple Solid Sofa
                 </h3>
               </div>
             </div>
           </div>
-          <div className="flex flex-col gap-8">
+          <div className="flex flex-col lg:gap-8 gap-4">
             <div className="relative group">
               <Image alt="category" src={categoryImg2} className="w-full" />
               <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <h3 className="text-white text-center font-semibold text-xl">
+                <h3 className="text-white text-center lg:font-semibold lg:text-xl">
                   Modern Sofa
                 </h3>
               </div>
@@ -398,16 +408,16 @@ export default function Home() {
             <div className="relative group">
               <Image alt="category" src={categoryImg4} className="w-full" />
               <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <h3 className="text-white text-center font-semibold text-xl">
+                <h3 className="text-white text-center lg:font-semibold lg:text-xl">
                   Family Hall
                 </h3>
               </div>
             </div>
-            <div className="flex gap-8">
+            <div className="flex lg:gap-8 gap-4">
               <div className="relative group">
                 <Image alt="category" src={categoryImg5} className="w-full" />
                 <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <h3 className="text-white text-center font-semibold text-xl">
+                  <h3 className="text-white text-center lg:font-semibold text-sm sm:text-base lg:text-xl">
                     Bedroom
                   </h3>
                 </div>
@@ -415,7 +425,7 @@ export default function Home() {
               <div className="relative group">
                 <Image alt="category" src={categoryImg6} className="w-full" />
                 <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <h3 className="text-white text-center font-semibold text-xl">
+                  <h3 className="text-white text-center lg:font-semibold lg:text-xl">
                     Kitchen
                   </h3>
                 </div>
@@ -424,7 +434,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="flex justify-center mt-10">
+        <div className="flex justify-center mt-6 lg:mt-10">
           <button
             className={`${btn["btn-4"]} font-semibold text-xl text-white flex items-center justify-center  gap-[0.2rem]`}
           >
@@ -453,13 +463,13 @@ export default function Home() {
             </svg>
           </button>
         </div>
-      </div> */}
+      </div>
       {/* expediency */}
-      {/* <div className="bg-[#D4B78F] flex flex-col items-center mt-20 gap-12 p-12">
-        <h1 className="font-playfair font-bold text-6xl leading-[4.563rem]">
+      <div className="bg-[#D4B78F] flex flex-col items-center mt-20 gap-12 p-12">
+        <h1 className="font-playfair font-bold  sm:text-6xl text-[2.5rem] sm:leading-[4.563rem] leading-[2.5rem] text-center lg:text-start">
           Benefits for your expediency
         </h1>
-        <div className="flex gap-[16rem]">
+        <div className="flex  xl:gap-[16rem] lg:gap-[11rem] gap-12 flex-col md:flex-row">
           <div className="flex flex-col gap-4 items-center text-center">
             <svg
               width="81"
@@ -581,11 +591,11 @@ export default function Home() {
             </p>
           </div>
         </div>
-      </div> */}
+      </div>
       {/* testimonials */}
-      {/* <div className="max-w-[90%] m-auto mt-10">
+      <div className="max-w-[90%]  m-auto mt-10">
         <div className="flex items-center max-w-[84%] m-auto gap-4">
-          <h1 className="font-playfair font-semibold text-5xl leading-[4.563rem]">
+          <h1 className="font-playfair lg:font-semibold md:text-5xl text-[1.5rem] md:leading-[4.563rem] leading-[1.5rem] sm:leading-[2rem]">
             Testimonials
           </h1>
           <hr className="w-[38.875rem] h-[0.188rem] bg-[#D4B78F] rounded-full" />
@@ -605,8 +615,8 @@ export default function Home() {
           onSwiper={(swiper) => (window.swiper3 = swiper)}
         >
           <SwiperSlide>
-            <div className="flex items-center gap-16 pt-8">
-              <div className="flex gap-8">
+            <div className="flex items-center lg:gap-8 xl:gap-16 sm:gap-4 md:gap-2 gap-2 pt-8">
+              <div className="sm:flex hidden lg:gap-8 sm:gap-4 ">
                 <div className="flex items-end">
                   <Image alt="testimonial" src={testimonialImg1} />
                 </div>
@@ -614,10 +624,11 @@ export default function Home() {
                   <Image alt="testimonial" src={testimonialImg2} />
                 </div>
               </div>
-              <div className="flex  gap-6 relative ">
+
+              <div className="flex">
                 <button
                   onClick={() => swiper3.slidePrev()}
-                  className="absolute left-2"
+                  className="pt-8 pr-[0.3rem] hidden md:block"
                 >
                   <svg
                     width="50"
@@ -649,9 +660,22 @@ export default function Home() {
                     />
                   </svg>
                 </button>
+                <div className="bg-[#D4B78F] sm:w-[40.882rem] md:w-[16.882rem] xl:w-[40.882rem] lg:w-[25.882rem] sm:h-[16.265rem] lg:h-[17.265rem] xl:h-[16.265rem] md:h-[16.265rem] lg:p-12  p-8 ">
+                  <div className="flex flex-col xl:gap-12 lg:gap-4 gap-2">
+                    <h1 className="font-playfair font-medium text-lg">
+                      Amanda Collins
+                    </h1>
+                    <p className=" text-[#888888] text-sm lg::text-base ">
+                      "Absolutely delighted with my purchase from Elegencia! I
+                      recently bought the Lucid Side Table and it has exceeded
+                      all my expectations. The craftsmanship and attention to
+                      detail are exceptional"
+                    </p>
+                  </div>
+                </div>
                 <button
                   onClick={() => swiper3.slideNext()}
-                  className="absolute left-[45.3rem]"
+                  className="pt-8 pl-[0.3rem] hidden md:block"
                 >
                   <svg
                     width="50"
@@ -685,24 +709,11 @@ export default function Home() {
                   </svg>
                 </button>
               </div>
-              <div className="bg-[#D4B78F] w-[40.882rem] h-[16.265rem] p-12 ">
-                <div className="flex flex-col gap-12">
-                  <h1 className="font-playfair font-medium text-lg">
-                    Amanda Collins
-                  </h1>
-                  <p className=" text-[#888888]">
-                    "Absolutely delighted with my purchase from Elegencia! I
-                    recently bought the Lucid Side Table and it has exceeded all
-                    my expectations. The craftsmanship and attention to detail
-                    are exceptional"
-                  </p>
-                </div>
-              </div>
             </div>
           </SwiperSlide>
           <SwiperSlide>
-            <div className="flex items-center gap-16 pt-8">
-              <div className="flex gap-8">
+            <div className="flex items-center lg:gap-8 xl:gap-16 sm:gap-4 md:gap-2 gap-2 pt-8">
+              <div className="sm:flex hidden lg:gap-8 sm:gap-4 ">
                 <div className="flex items-end">
                   <Image alt="testimonial" src={testimonialImg4} />
                 </div>
@@ -710,10 +721,11 @@ export default function Home() {
                   <Image alt="testimonial" src={testimonialImg3} />
                 </div>
               </div>
-              <div className="flex  gap-6 relative ">
+
+              <div className="flex">
                 <button
                   onClick={() => swiper3.slidePrev()}
-                  className="absolute left-2"
+                  className="pt-8 pr-[0.3rem] hidden md:block"
                 >
                   <svg
                     width="50"
@@ -745,9 +757,22 @@ export default function Home() {
                     />
                   </svg>
                 </button>
+                <div className="bg-[#D4B78F] sm:w-[40.882rem] md:w-[16.882rem] xl:w-[40.882rem] lg:w-[25.882rem] sm:h-[16.265rem] lg:h-[17.265rem] xl:h-[16.265rem] md:h-[16.265rem] lg:p-12  p-8 ">
+                  <div className="flex flex-col xl:gap-12 lg:gap-4 gap-2">
+                    <h1 className="font-playfair font-medium text-lg">
+                      Bruce Wayne
+                    </h1>
+                    <p className=" text-[#888888] text-sm lg::text-base ">
+                      "Absolutely delighted with my purchase from Elegencia! I
+                      recently bought the Lucid Side Table and it has exceeded
+                      all my expectations. The craftsmanship and attention to
+                      detail are exceptional"
+                    </p>
+                  </div>
+                </div>
                 <button
                   onClick={() => swiper3.slideNext()}
-                  className="absolute left-[45.3rem]"
+                  className="pt-8 pl-[0.3rem] hidden md:block"
                 >
                   <svg
                     width="50"
@@ -781,24 +806,11 @@ export default function Home() {
                   </svg>
                 </button>
               </div>
-              <div className="bg-[#D4B78F] w-[40.882rem] h-[16.265rem] p-12 ">
-                <div className="flex flex-col gap-12">
-                  <h1 className="font-playfair font-medium text-lg">
-                    Bruce Wayne
-                  </h1>
-                  <p className=" text-[#888888]">
-                    "Absolutely delighted with my purchase from Elegencia! I
-                    recently bought the Lucid Side Table and it has exceeded all
-                    my expectations. The craftsmanship and attention to detail
-                    are exceptional"
-                  </p>
-                </div>
-              </div>
             </div>
           </SwiperSlide>
           <SwiperSlide>
-            <div className="flex items-center gap-16 pt-8">
-              <div className="flex gap-8">
+            <div className="flex items-center lg:gap-8 xl:gap-16 sm:gap-4 md:gap-2 gap-2 pt-8">
+              <div className="sm:flex hidden lg:gap-8 sm:gap-4 ">
                 <div className="flex items-end">
                   <Image alt="testimonial" src={testimonialImg5} />
                 </div>
@@ -806,10 +818,11 @@ export default function Home() {
                   <Image alt="testimonial" src={testimonialImg6} />
                 </div>
               </div>
-              <div className="flex  gap-6 relative ">
+
+              <div className="flex">
                 <button
                   onClick={() => swiper3.slidePrev()}
-                  className="absolute left-2"
+                  className="pt-8 pr-[0.3rem] hidden md:block"
                 >
                   <svg
                     width="50"
@@ -841,9 +854,22 @@ export default function Home() {
                     />
                   </svg>
                 </button>
+                <div className="bg-[#D4B78F] sm:w-[40.882rem] md:w-[16.882rem] xl:w-[40.882rem] lg:w-[25.882rem] sm:h-[16.265rem] lg:h-[17.265rem] xl:h-[16.265rem] md:h-[16.265rem] lg:p-12  p-8 ">
+                  <div className="flex flex-col xl:gap-12 lg:gap-4 gap-2">
+                    <h1 className="font-playfair font-medium text-lg">
+                      Amanda Collins
+                    </h1>
+                    <p className=" text-[#888888] text-sm lg::text-base ">
+                      "Absolutely delighted with my purchase from Elegencia! I
+                      recently bought the Lucid Side Table and it has exceeded
+                      all my expectations. The craftsmanship and attention to
+                      detail are exceptional"
+                    </p>
+                  </div>
+                </div>
                 <button
                   onClick={() => swiper3.slideNext()}
-                  className="absolute left-[45.3rem]"
+                  className="pt-8 pl-[0.3rem] hidden md:block"
                 >
                   <svg
                     width="50"
@@ -877,24 +903,11 @@ export default function Home() {
                   </svg>
                 </button>
               </div>
-              <div className="bg-[#D4B78F] w-[40.882rem] h-[16.265rem] p-12 ">
-                <div className="flex flex-col gap-12">
-                  <h1 className="font-playfair font-medium text-lg">
-                    Amanda Collins
-                  </h1>
-                  <p className="text-[#888888] ">
-                    "Absolutely delighted with my purchase from Elegencia! I
-                    recently bought the Lucid Side Table and it has exceeded all
-                    my expectations. The craftsmanship and attention to detail
-                    are exceptional"
-                  </p>
-                </div>
-              </div>
             </div>
           </SwiperSlide>
           <SwiperSlide>
-            <div className="flex items-center gap-16 pt-8">
-              <div className="flex gap-8">
+            <div className="flex items-center lg:gap-8 xl:gap-16 sm:gap-4 md:gap-2 gap-2 pt-8">
+              <div className="sm:flex hidden lg:gap-8 sm:gap-4 ">
                 <div className="flex items-end">
                   <Image alt="testimonial" src={testimonialImg4} />
                 </div>
@@ -902,10 +915,11 @@ export default function Home() {
                   <Image alt="testimonial" src={testimonialImg3} />
                 </div>
               </div>
-              <div className="flex  gap-6 relative ">
+
+              <div className="flex">
                 <button
                   onClick={() => swiper3.slidePrev()}
-                  className="absolute left-2"
+                  className="pt-8 pr-[0.3rem] hidden md:block"
                 >
                   <svg
                     width="50"
@@ -937,9 +951,22 @@ export default function Home() {
                     />
                   </svg>
                 </button>
+                <div className="bg-[#D4B78F] sm:w-[40.882rem] md:w-[16.882rem] xl:w-[40.882rem] lg:w-[25.882rem] sm:h-[16.265rem] lg:h-[17.265rem] xl:h-[16.265rem] md:h-[16.265rem] lg:p-12  p-8 ">
+                  <div className="flex flex-col xl:gap-12 lg:gap-4 gap-2">
+                    <h1 className="font-playfair font-medium text-lg">
+                      Bruce Wayne
+                    </h1>
+                    <p className=" text-[#888888] text-sm lg::text-base ">
+                      "Absolutely delighted with my purchase from Elegencia! I
+                      recently bought the Lucid Side Table and it has exceeded
+                      all my expectations. The craftsmanship and attention to
+                      detail are exceptional"
+                    </p>
+                  </div>
+                </div>
                 <button
                   onClick={() => swiper3.slideNext()}
-                  className="absolute left-[45.3rem]"
+                  className="pt-8 pl-[0.3rem] hidden md:block"
                 >
                   <svg
                     width="50"
@@ -973,24 +1000,11 @@ export default function Home() {
                   </svg>
                 </button>
               </div>
-              <div className="bg-[#D4B78F] w-[40.882rem] h-[16.265rem] p-12 ">
-                <div className="flex flex-col gap-12">
-                  <h1 className="font-playfair font-medium text-lg">
-                    Bruce Wayne
-                  </h1>
-                  <p className="text-[#888888] ">
-                    "Absolutely delighted with my purchase from Elegencia! I
-                    recently bought the Lucid Side Table and it has exceeded all
-                    my expectations. The craftsmanship and attention to detail
-                    are exceptional"
-                  </p>
-                </div>
-              </div>
             </div>
           </SwiperSlide>
           <SwiperSlide>
-            <div className="flex items-center gap-16 pt-8">
-              <div className="flex gap-8">
+            <div className="flex items-center lg:gap-8 xl:gap-16 sm:gap-4 md:gap-2 gap-2 pt-8">
+              <div className="sm:flex hidden lg:gap-8 sm:gap-4 ">
                 <div className="flex items-end">
                   <Image alt="testimonial" src={testimonialImg1} />
                 </div>
@@ -998,10 +1012,11 @@ export default function Home() {
                   <Image alt="testimonial" src={testimonialImg2} />
                 </div>
               </div>
-              <div className="flex  gap-6 relative ">
+
+              <div className="flex">
                 <button
                   onClick={() => swiper3.slidePrev()}
-                  className="absolute left-2"
+                  className="pt-8 pr-[0.3rem] hidden md:block"
                 >
                   <svg
                     width="50"
@@ -1033,9 +1048,22 @@ export default function Home() {
                     />
                   </svg>
                 </button>
+                <div className="bg-[#D4B78F] sm:w-[40.882rem] md:w-[16.882rem] xl:w-[40.882rem] lg:w-[25.882rem] sm:h-[16.265rem] lg:h-[17.265rem] xl:h-[16.265rem] md:h-[16.265rem] lg:p-12  p-8 ">
+                  <div className="flex flex-col xl:gap-12 lg:gap-4 gap-2">
+                    <h1 className="font-playfair font-medium text-lg">
+                      Amanda Collins
+                    </h1>
+                    <p className=" text-[#888888] text-sm lg::text-base ">
+                      "Absolutely delighted with my purchase from Elegencia! I
+                      recently bought the Lucid Side Table and it has exceeded
+                      all my expectations. The craftsmanship and attention to
+                      detail are exceptional"
+                    </p>
+                  </div>
+                </div>
                 <button
                   onClick={() => swiper3.slideNext()}
-                  className="absolute left-[45.3rem]"
+                  className="pt-8 pl-[0.3rem] hidden md:block"
                 >
                   <svg
                     width="50"
@@ -1069,24 +1097,11 @@ export default function Home() {
                   </svg>
                 </button>
               </div>
-              <div className="bg-[#D4B78F] w-[40.882rem] h-[16.265rem] p-12 ">
-                <div className="flex flex-col gap-12">
-                  <h1 className="font-playfair font-medium text-lg">
-                    Amanda Collins
-                  </h1>
-                  <p className="text-[#888888] ">
-                    "Absolutely delighted with my purchase from Elegencia! I
-                    recently bought the Lucid Side Table and it has exceeded all
-                    my expectations. The craftsmanship and attention to detail
-                    are exceptional"
-                  </p>
-                </div>
-              </div>
             </div>
           </SwiperSlide>
           <SwiperSlide>
-            <div className="flex items-center gap-16 pt-8">
-              <div className="flex gap-8">
+            <div className="flex items-center lg:gap-8 xl:gap-16 sm:gap-4 md:gap-2 gap-2 pt-8">
+              <div className="sm:flex hidden lg:gap-8 sm:gap-4 ">
                 <div className="flex items-end">
                   <Image alt="testimonial" src={testimonialImg5} />
                 </div>
@@ -1094,10 +1109,11 @@ export default function Home() {
                   <Image alt="testimonial" src={testimonialImg6} />
                 </div>
               </div>
-              <div className="flex  gap-6 relative ">
+
+              <div className="flex">
                 <button
                   onClick={() => swiper3.slidePrev()}
-                  className="absolute left-2"
+                  className="pt-8 pr-[0.3rem] hidden md:block"
                 >
                   <svg
                     width="50"
@@ -1129,9 +1145,22 @@ export default function Home() {
                     />
                   </svg>
                 </button>
+                <div className="bg-[#D4B78F] sm:w-[40.882rem] md:w-[16.882rem] xl:w-[40.882rem] lg:w-[25.882rem] sm:h-[16.265rem] lg:h-[17.265rem] xl:h-[16.265rem] md:h-[16.265rem] lg:p-12  p-8 ">
+                  <div className="flex flex-col xl:gap-12 lg:gap-4 gap-2">
+                    <h1 className="font-playfair font-medium text-lg">
+                      Amanda Collins
+                    </h1>
+                    <p className=" text-[#888888] text-sm lg::text-base ">
+                      "Absolutely delighted with my purchase from Elegencia! I
+                      recently bought the Lucid Side Table and it has exceeded
+                      all my expectations. The craftsmanship and attention to
+                      detail are exceptional"
+                    </p>
+                  </div>
+                </div>
                 <button
                   onClick={() => swiper3.slideNext()}
-                  className="absolute left-[45.3rem]"
+                  className="pt-8 pl-[0.3rem] hidden md:block"
                 >
                   <svg
                     width="50"
@@ -1164,24 +1193,11 @@ export default function Home() {
                     />
                   </svg>
                 </button>
-              </div>
-              <div className="bg-[#D4B78F] w-[40.882rem] h-[16.265rem] p-12 ">
-                <div className="flex flex-col gap-12">
-                  <h1 className="font-playfair font-medium text-lg">
-                    Amanda Collins
-                  </h1>
-                  <p className=" text-[#888888]">
-                    "Absolutely delighted with my purchase from Elegencia! I
-                    recently bought the Lucid Side Table and it has exceeded all
-                    my expectations. The craftsmanship and attention to detail
-                    are exceptional"
-                  </p>
-                </div>
               </div>
             </div>
           </SwiperSlide>
         </Swiper>
-        <div className="flex justify-center mt-10">
+        <div className="flex justify-center mt-6 lg:mt-10">
           <button
             className={`${btn["btn-3"]} font-semibold text-xl text-white flex items-center justify-center  gap-[0.2rem]`}
           >
@@ -1210,7 +1226,7 @@ export default function Home() {
             </svg>
           </button>
         </div>
-      </div> */}
+      </div>
     </>
   );
 }

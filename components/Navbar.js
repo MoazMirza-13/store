@@ -24,7 +24,7 @@ const Navbar = () => {
   };
 
   const handleScroll = () => {
-    const position = window.pageYOffset;
+    const position = window.scrollY;
     setNavBg(position > 93);
   };
   useEffect(() => {
@@ -104,7 +104,6 @@ const Navbar = () => {
                 <IoMdCart />
               </button>
             </div>
-            {/*  */}
           </div>
         </div>
         {/* mobile */}
