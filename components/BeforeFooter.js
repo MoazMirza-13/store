@@ -4,7 +4,7 @@ import btn from "../app/modules/btn.module.css";
 export default function BeforeFooter() {
   return (
     <>
-      <div className="max-w-[84%] m-auto mt-20 flex justify-between items-center">
+      <div className="max-w-[84%] m-auto mt-20 flex flex-col md:flex-row gap-8 md:gap-8 lg:gap-4 justify-between items-center mb-8 ">
         <div className="flex flex-col gap-4 items-center text-center">
           <h1 className="font-mont font-medium text-xl text-[#D4B78F]">
             Newsletter
@@ -25,7 +25,7 @@ export default function BeforeFooter() {
             <input
               type="text"
               placeholder="Enter your Email Adress"
-              className="font-mont font-medium text-sm bg-[#e4cb901a] text-[#C8C8C8] placeholder-[#C8C8C8] outline-none   px-[265.558px] py-[21.4159px] pr-[265.558px] pb-[21.4159px] pl-[38.5487px]"
+              className="font-mont font-medium text-sm bg-[#e4cb901a] text-[#C8C8C8] placeholder-[#C8C8C8] outline-none   px-[265.558px] py-[1.338rem] lg:pr-[16.597rem] pr-[7.597rem]  lg:pl-[2.409rem] pl-[0.5rem]"
             />
             <button
               className={`${btn["btn-5"]} font-mont font-medium text-sm text-white absolute top-[5px] right-[6px] `}
@@ -34,7 +34,11 @@ export default function BeforeFooter() {
             </button>
           </div>
         </div>
-        <Image src={before_footerImg} alt="img" />
+        <Image
+          src={before_footerImg}
+          alt="img"
+          className="md:hiddeni lg:blocki"
+        />
       </div>
     </>
   );
