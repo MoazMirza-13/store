@@ -72,11 +72,7 @@ const Navbar = () => {
               <div className="flex">
                 <ul className="sm:flex text-sm lg:text-base xl:text-xl  font-mont hidden items-center gap-4 lg:gap-8">
                   {navLi.map(({ id, title }) => (
-                    <li
-                      className="tracking-wide  "
-                      key={id}
-                      onClick={toggleMenu}
-                    >
+                    <li className="tracking-wide  " key={id}>
                       {title}
                     </li>
                   ))}
@@ -109,7 +105,10 @@ const Navbar = () => {
         {/* mobile */}
         <div className={`${isOpen ? "block " : "hidden"} sm:hidden `}>
           <div className="px-2 pt-10 pb-3 space-y-1 h-screen">
-            <ul className="flex  font-mont flex-col items-center gap-8">
+            <ul
+              className="flex  font-mont flex-col items-center gap-8"
+              onClick={toggleMenu}
+            >
               {navLi.map(({ id, title }) => (
                 <li
                   className="tracking-wide text-2xl "

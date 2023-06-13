@@ -18,25 +18,9 @@ import "swiper/css/autoplay";
 import "swiper/swiper.min.css";
 import "swiper/swiper-bundle.css";
 // slider#1
-import sliderImg1 from "../public/after-hero-slider/image 8.png";
-import sliderImg2 from "../public/after-hero-slider/image 9.png";
-import sliderImg3 from "../public/after-hero-slider/image 11.png";
-import sliderImg4 from "../public/after-hero-slider/image 10.png";
-import sliderImg5 from "../public/after-hero-slider/image 15.png";
-import sliderImg6 from "../public/after-hero-slider/image 18.png";
-import sliderImg7 from "../public/after-hero-slider/image 17.png";
-import sliderImg8 from "../public/after-hero-slider/image 14.png";
-import sliderImg9 from "../public/after-hero-slider/image 19.png";
+import slider1Images from "./modules/slider1Images.module";
 // slider#2
-import slider_2Img1 from "../public/best-selling-slider/image 20.png";
-import slider_2Img2 from "../public/best-selling-slider/image 24.png";
-import slider_2Img3 from "../public/best-selling-slider/image 22.png";
-import slider_2Img4 from "../public/best-selling-slider/image 25.png";
-import slider_2Img5 from "../public/best-selling-slider/image 26.png";
-import slider_2Img6 from "../public/best-selling-slider/image 23.png";
-import slider_2Img7 from "../public/best-selling-slider/image 21.png";
-import slider_2Img8 from "../public/best-selling-slider/image 27.png";
-import slider_2Img9 from "../public/best-selling-slider/image 28.png";
+import slider2Images from "./modules/slider2Images.module";
 // explore-category
 import categoryImg1 from "../public/explore-category/Rectangle 82.png";
 import categoryImg2 from "../public/explore-category/Rectangle 83.png";
@@ -187,33 +171,11 @@ export default function Home() {
               }}
               onSwiper={(swiper) => (window.swiper = swiper)}
             >
-              <SwiperSlide>
-                <Image src={sliderImg1} alt="sliderImg" />
-              </SwiperSlide>
-              <SwiperSlide>
-                <Image src={sliderImg2} alt="sliderImg" />
-              </SwiperSlide>
-              <SwiperSlide>
-                <Image src={sliderImg3} alt="sliderImg" />
-              </SwiperSlide>
-              <SwiperSlide>
-                <Image src={sliderImg4} alt="sliderImg" />
-              </SwiperSlide>
-              <SwiperSlide>
-                <Image src={sliderImg5} alt="sliderImg" />
-              </SwiperSlide>
-              <SwiperSlide>
-                <Image src={sliderImg6} alt="sliderImg" />
-              </SwiperSlide>
-              <SwiperSlide>
-                <Image src={sliderImg7} alt="sliderImg" />
-              </SwiperSlide>
-              <SwiperSlide>
-                <Image priority={false} src={sliderImg8} alt="sliderImg" />
-              </SwiperSlide>
-              <SwiperSlide>
-                <Image src={sliderImg9} alt="sliderImg" />
-              </SwiperSlide>
+              {slider1Images.map((image, index) => (
+                <SwiperSlide key={index}>
+                  <Image src={image} alt="sliderImg" />
+                </SwiperSlide>
+              ))}
             </Swiper>
           </div>
         </div>
@@ -291,7 +253,6 @@ export default function Home() {
             </svg>
           </button>
         </div>
-
         <Swiper
           slidesPerView={2}
           spaceBetween={10}
@@ -310,35 +271,12 @@ export default function Home() {
           }}
           onSwiper={(swiper) => (window.swiper2 = swiper)}
         >
-          <SwiperSlide>
-            <Image alt="slider image" src={slider_2Img1} />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Image priority="true" alt="slider image" src={slider_2Img2} />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Image alt="slider image" src={slider_2Img3} />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Image alt="slider image" src={slider_2Img4} />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Image alt="slider image" src={slider_2Img5} />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Image alt="slider image" src={slider_2Img6} />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Image alt="slider image" src={slider_2Img7} />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Image alt="slider image" src={slider_2Img8} />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Image alt="slider image" src={slider_2Img9} />
-          </SwiperSlide>
+          {slider2Images.map((image, index) => (
+            <SwiperSlide key={index}>
+              <Image src={image} alt="sliderimg" />
+            </SwiperSlide>
+          ))}
         </Swiper>
-
         <div className="flex justify-center lg:mt-10">
           <button
             className={`${btn["btn-3"]} font-semibold text-xl text-white flex items-center justify-center  gap-[0.2rem]`}

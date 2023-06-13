@@ -4,7 +4,7 @@ import btn from "../app/modules/btn.module.css";
 export default function BeforeFooter() {
   return (
     <>
-      <div className="max-w-[84%] m-auto mt-20 flex flex-col md:flex-row gap-8 md:gap-8 lg:gap-4 justify-between items-center mb-8 ">
+      <div className="max-w-[84%] m-auto mt-20 flex flex-col xl:flex-row gap-8 md:gap-8 lg:gap-4 justify-between items-center mb-8 ">
         <div className="flex flex-col gap-4 items-center text-center">
           <h1 className="font-mont font-medium text-xl text-[#D4B78F]">
             Newsletter
@@ -34,11 +34,7 @@ export default function BeforeFooter() {
             </button>
           </div>
         </div>
-        <Image
-          src={before_footerImg}
-          alt="img"
-          className="md:hiddeni lg:blocki"
-        />
+        <Image src={before_footerImg} alt="img" />
       </div>
     </>
   );
