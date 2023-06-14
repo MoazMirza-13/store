@@ -2,7 +2,6 @@
 import { useEffect, useState } from "react";
 import AddToCart from "./AddToCart";
 import Link from "next/link";
-import { BiSearch } from "react-icons/bi";
 import { IoMdCart } from "react-icons/io";
 import { HiMenuAlt3, HiX, HiArrowCircleUp } from "react-icons/hi";
 
@@ -80,9 +79,6 @@ const Navbar = () => {
               </div>
 
               <div className="flex md:gap-8 gap-6">
-                <button className="text-2xl hidden md:block">
-                  <BiSearch />
-                </button>
                 <button
                   onClick={handleCart}
                   className="text-2xl hidden sm:block"
@@ -93,9 +89,6 @@ const Navbar = () => {
             </div>
 
             <div className="flex md:gap-8 gap-6 sm:hidden">
-              <button className="text-2xl hidden md:block">
-                <BiSearch />
-              </button>
               <button onClick={handleCart} className="text-2xl">
                 <IoMdCart />
               </button>

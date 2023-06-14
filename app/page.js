@@ -1,6 +1,8 @@
 "use client";
 
+import Link from "next/link";
 import Image from "next/image";
+import Nav from "@/components/NavHome";
 import { Swiper, SwiperSlide } from "swiper/react";
 import {
   Navigation,
@@ -42,11 +44,12 @@ import btn from "../app/modules/btn.module.css";
 export default function Home() {
   return (
     <>
+      <Nav />
       {/* hero-section */}
       <div
         className={`${heroBg["bg-image"]} rounded-tl-none rounded-tr-none rounded-br-3xl rounded-bl-3xl`}
       >
-        <div className="lg:pt-[13rem] md:pt-[7rem] pt-28  h-screen max-w-[84%] m-auto flex flex-col lg::gap-8 md:gap-[1.3rem] gap-12">
+        <div className="lg:pt-[13rem] md:pt-[9rem] pt-28  h-screen max-w-[84%] m-auto flex flex-col lg::gap-8 md:gap-[1.3rem] gap-12">
           <h1 className="font-playfair md:font-semibold text-4xl lg:text-5xl xl:text-6xl lg:leading-[4.563rem] md:leading-[3.3rem] leading-[3rem] text-center md:text-start">
             Discover Timeless <br />
             Elegance for Your Home
@@ -278,7 +281,8 @@ export default function Home() {
           ))}
         </Swiper>
         <div className="flex justify-center lg:mt-10">
-          <button
+          <Link
+            href="./products"
             className={`${btn["btn-3"]} font-semibold text-xl text-white flex items-center justify-center  gap-[0.2rem]`}
           >
             Explore All Products
@@ -304,7 +308,7 @@ export default function Home() {
                 strokeLinejoin="round"
               />
             </svg>
-          </button>
+          </Link>
         </div>
       </div>
       {/* category */}
@@ -315,7 +319,7 @@ export default function Home() {
           </h1>
           <hr className="w-[38.875rem] h-[0.188rem] bg-[#D4B78F] rounded-full" />
         </div>
-        <div className="flex lg:gap-8 gap-4 mt-8">
+        <div className="flex lg:gap-8 gap-2 mt-8">
           <div className="flex flex-col lg:gap-8 gap-4">
             <div className="relative group">
               <Image alt="category" src={categoryImg1} className="w-full" />
