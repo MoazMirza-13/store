@@ -1,12 +1,18 @@
 "use client";
-
 import Category from "@/components/Category";
 import Nav from "@/components/NavProducts";
 import Products from "@/components/Products";
-import { useState } from "react";
+import { useSearchParams } from "next/navigation";
+import { useState, useEffect } from "react";
 
 export default function page() {
-  const [activeCategory, setActiveCategory] = useState("Bedroom");
+  const searchParams = useSearchParams();
+  const category = searchParams.get("category");
+  const [activeCategory, setActiveCategory] = useState(category || "Bedroom");
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <>
@@ -17,7 +23,6 @@ export default function page() {
       <h2>Categories/{activeCategory}</h2>
       <div className="flex">
         <Category setActiveCategoryProp={setActiveCategory} />
-
         <Products activeCategory={activeCategory} />
       </div>
     </>

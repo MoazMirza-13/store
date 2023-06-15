@@ -4,6 +4,7 @@ import Kitchen from "./Kitchen";
 import FamilyHall from "./FamilyHall";
 import ModernSofa from "./ModernSofa";
 import DecentTable from "./DecentTable";
+import SimpleSolidSofa from "./SimpleSolidSofa";
 export default function Products({ activeCategory }) {
   const renderProduct = () => {
     switch (activeCategory) {
@@ -17,6 +18,8 @@ export default function Products({ activeCategory }) {
         return <FamilyHall />;
       case "Modern Sofa":
         return <ModernSofa />;
+      case "Simple Solid Sofa":
+        return <SimpleSolidSofa />;
       default:
         return <BedRoom />;
     }

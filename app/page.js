@@ -321,89 +321,103 @@ export default function Home() {
         </div>
         <div className="flex lg:gap-8 gap-2 mt-8">
           <div className="flex flex-col lg:gap-8 gap-4">
-            <div className="relative group">
-              <Image alt="category" src={categoryImg1} className="w-full" />
-              <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <h3 className="text-white text-center lg:font-semibold lg:text-xl">
-                  Decent Table
-                </h3>
-              </div>
-            </div>
-            <div className="relative group">
-              <Image alt="category" src={categoryImg3} className="w-full" />
-              <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <h3 className="text-white text-center lg:font-semibold lg:text-xl">
-                  Simple Solid Sofa
-                </h3>
-              </div>
-            </div>
-          </div>
-          <div className="flex flex-col lg:gap-8 gap-4">
-            <div className="relative group">
-              <Image alt="category" src={categoryImg2} className="w-full" />
-              <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <h3 className="text-white text-center lg:font-semibold lg:text-xl">
-                  Modern Sofa
-                </h3>
-              </div>
-            </div>
-            <div className="relative group">
-              <Image alt="category" src={categoryImg4} className="w-full" />
-              <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <h3 className="text-white text-center lg:font-semibold lg:text-xl">
-                  Family Hall
-                </h3>
-              </div>
-            </div>
-            <div className="flex lg:gap-8 gap-4">
+            <Link href={`./products?category=Decent Table`}>
               <div className="relative group">
-                <Image alt="category" src={categoryImg5} className="w-full" />
-                <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <h3 className="text-white text-center lg:font-semibold text-sm sm:text-base lg:text-xl">
-                    Bedroom
-                  </h3>
-                </div>
-              </div>
-              <div className="relative group">
-                <Image alt="category" src={categoryImg6} className="w-full" />
+                <Image alt="category" src={categoryImg1} className="w-full" />
                 <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <h3 className="text-white text-center lg:font-semibold lg:text-xl">
-                    Kitchen
+                    Decent Table
                   </h3>
                 </div>
               </div>
+            </Link>
+            <Link href={`./products?category=Simple Solid Sofa`}>
+              <div className="relative group">
+                <Image alt="category" src={categoryImg3} className="w-full" />
+                <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <h3 className="text-white text-center lg:font-semibold lg:text-xl">
+                    Simple Solid Sofa
+                  </h3>
+                </div>
+              </div>
+            </Link>
+          </div>
+          <div className="flex flex-col lg:gap-8 gap-4">
+            <Link href={`./products?category=Modern Sofa`}>
+              <div className="relative group">
+                <Image alt="category" src={categoryImg2} className="w-full" />
+                <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <h3 className="text-white text-center lg:font-semibold lg:text-xl">
+                    Modern Sofa
+                  </h3>
+                </div>
+              </div>
+            </Link>
+            <Link href={`./products?category=Family Hall`}>
+              <div className="relative group">
+                <Image alt="category" src={categoryImg4} className="w-full" />
+                <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <h3 className="text-white text-center lg:font-semibold lg:text-xl">
+                    Family Hall
+                  </h3>
+                </div>
+              </div>
+            </Link>
+            <div className="flex lg:gap-8 gap-4">
+              <Link href={`./products?category=Bedroom`}>
+                <div className="relative group">
+                  <Image alt="category" src={categoryImg5} className="w-full" />
+                  <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <h3 className="text-white text-center lg:font-semibold text-sm sm:text-base lg:text-xl">
+                      Bedroom
+                    </h3>
+                  </div>
+                </div>
+              </Link>
+              <Link href={`./products?category=Kitchen`}>
+                <div className="relative group">
+                  <Image alt="category" src={categoryImg6} className="w-full" />
+                  <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <h3 className="text-white text-center lg:font-semibold lg:text-xl">
+                      Kitchen
+                    </h3>
+                  </div>
+                </div>
+              </Link>
             </div>
           </div>
         </div>
 
         <div className="flex justify-center mt-6 lg:mt-10">
-          <button
-            className={`${btn["btn-4"]} font-semibold text-xl text-white flex items-center justify-center  gap-[0.2rem]`}
-          >
-            Explore All Categories
-            <svg
-              width="25"
-              height="25"
-              viewBox="0 0 25 25"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
+          <Link href="./products">
+            <button
+              className={`${btn["btn-4"]} font-semibold text-xl text-white flex items-center justify-center  gap-[0.2rem]`}
             >
-              <path
-                d="M5.85364 12.0554H19.8536"
-                stroke="white"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              <path
-                d="M12.8536 5.05542L19.8536 12.0554L12.8536 19.0554"
-                stroke="white"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </button>
+              Explore All Categories
+              <svg
+                width="25"
+                height="25"
+                viewBox="0 0 25 25"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M5.85364 12.0554H19.8536"
+                  stroke="white"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+                <path
+                  d="M12.8536 5.05542L19.8536 12.0554L12.8536 19.0554"
+                  stroke="white"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </button>
+          </Link>
         </div>
       </div>
       {/* expediency */}
