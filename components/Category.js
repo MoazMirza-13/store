@@ -9,10 +9,49 @@ export default function Category({ setActiveCategoryProp }) {
     setActiveCategory(category);
     setActiveCategoryProp(category);
   };
+  const ScrollToY120 = () => {
+    window.scrollTo(0, 120);
+  };
+  const handleWideTable = () => {
+    ScrollToY120();
+    handleClickCategory("Wide Table");
+  };
+  const handleComfy = () => {
+    ScrollToY120();
+    handleClickCategory("Comfy Sofa");
+  };
+  const handleModernBedroom = () => {
+    ScrollToY120();
+    handleClickCategory("Modern Bedroom");
+  };
+  const handleSimpleSoftSofa = () => {
+    ScrollToY120();
+    handleClickCategory("Simple Soft Sofa");
+  };
+  const handleSmallKitchen = () => {
+    ScrollToY120();
+    handleClickCategory("Small Kitchen");
+  };
+  const handleTVHall = () => {
+    ScrollToY120();
+    handleClickCategory("T.V Hall");
+  };
+  const handleFamilyKitchen = () => {
+    ScrollToY120();
+    handleClickCategory("Family Kitchen");
+  };
+  const handleMainHall = () => {
+    ScrollToY120();
+    handleClickCategory("Main Hall");
+  };
+  const handleLunaTable = () => {
+    ScrollToY120();
+    handleClickCategory("Luna Table");
+  };
 
   return (
     <>
-      <div className="bg-[#FFFFF0] flex flex-col gap-6 p-6">
+      <div className="bg-[#FFFFF0] flex flex-col gap-6 p-6 w-[28.563rem]">
         <h1 className="font-mont font-bold text-sm pl-2">Categories</h1>
         <ul className="font-semibold font-mont flex flex-col gap-6">
           <li
@@ -23,7 +62,7 @@ export default function Category({ setActiveCategoryProp }) {
                 ? "bg-[#d4b78fb3] text-white"
                 : ""
             }
-            flex items-center gap-2 p-2 rounded-md
+            flex items-center gap-2 p-2 rounded-md cursor-pointer
           `}
           >
             <svg
@@ -71,7 +110,7 @@ export default function Category({ setActiveCategoryProp }) {
                 ? "bg-[#d4b78fb3] text-white"
                 : ""
             }
-             flex items-center gap-2 p-2 rounded-md
+             flex items-center gap-2 p-2 rounded-md cursor-pointer
             `}
           >
             <svg
@@ -116,7 +155,7 @@ export default function Category({ setActiveCategoryProp }) {
             onClick={() => handleClickCategory("Bedroom")}
             className={`${
               activeCategory === "Bedroom" ? "bg-[#d4b78fb3] text-white" : ""
-            } flex items-center gap-2 p-2 rounded-md`}
+            } flex items-center gap-2 p-2 rounded-md cursor-pointer`}
           >
             <svg
               width="14"
@@ -162,7 +201,7 @@ export default function Category({ setActiveCategoryProp }) {
               activeCategory === "Simple Solid Sofa"
                 ? "bg-[#d4b78fb3] text-white"
                 : ""
-            } flex items-center gap-2 p-2 rounded-md`}
+            } flex items-center gap-2 p-2 rounded-md cursor-pointer`}
           >
             <svg
               width="14"
@@ -206,7 +245,7 @@ export default function Category({ setActiveCategoryProp }) {
             onClick={() => handleClickCategory("Kitchen")}
             className={`${
               activeCategory === "Kitchen" ? "bg-[#d4b78fb3] text-white" : ""
-            } flex items-center gap-2 p-2 rounded-md`}
+            } flex items-center gap-2 p-2 rounded-md cursor-pointer`}
           >
             <svg
               width="14"
@@ -252,7 +291,7 @@ export default function Category({ setActiveCategoryProp }) {
               activeCategory === "Family Hall"
                 ? "bg-[#d4b78fb3] text-white"
                 : ""
-            } flex items-center gap-2 p-2 rounded-md`}
+            } flex items-center gap-2 p-2 rounded-md cursor-pointer`}
           >
             <svg
               width="14"
@@ -293,12 +332,12 @@ export default function Category({ setActiveCategoryProp }) {
             Family Hall
           </li>
           <li
-            onClick={() => handleClickCategory("Comfy Sofa")}
+            onClick={() => handleComfy()}
             className={`
             ${
               activeCategory === "Comfy Sofa" ? "bg-[#d4b78fb3] text-white" : ""
             }
-            flex items-center gap-2 p-2 rounded-md
+            flex items-center gap-2 p-2 rounded-md cursor-pointer
           `}
           >
             <svg
@@ -340,11 +379,11 @@ export default function Category({ setActiveCategoryProp }) {
             Comfy Sofa
           </li>
           <li
-            onClick={() => handleClickCategory("Wide Table")}
+            onClick={() => handleWideTable()}
             className={`${
               activeCategory === "Wide Table" ? "bg-[#d4b78fb3] text-white" : ""
             }
-             flex items-center gap-2 p-2 rounded-md
+             flex items-center gap-2 p-2 rounded-md cursor-pointer
             `}
           >
             <svg
@@ -386,12 +425,12 @@ export default function Category({ setActiveCategoryProp }) {
             Wide Table
           </li>
           <li
-            onClick={() => handleClickCategory("Modern Bedroom")}
+            onClick={() => handleModernBedroom("")}
             className={`${
               activeCategory === "Modern Bedroom"
                 ? "bg-[#d4b78fb3] text-white"
                 : ""
-            } flex items-center gap-2 p-2 rounded-md`}
+            } flex items-center gap-2 p-2 rounded-md cursor-pointer`}
           >
             <svg
               width="14"
@@ -432,12 +471,12 @@ export default function Category({ setActiveCategoryProp }) {
             Modern Bedroom
           </li>
           <li
-            onClick={() => handleClickCategory("Simple Soft Sofa")}
+            onClick={() => handleSimpleSoftSofa("")}
             className={`${
               activeCategory === "Simple Soft Sofa"
                 ? "bg-[#d4b78fb3] text-white"
                 : ""
-            } flex items-center gap-2 p-2 rounded-md`}
+            } flex items-center gap-2 p-2 rounded-md cursor-pointer`}
           >
             <svg
               width="14"
@@ -478,12 +517,12 @@ export default function Category({ setActiveCategoryProp }) {
             Simple Soft Sofa
           </li>
           <li
-            onClick={() => handleClickCategory("Small Kitchen")}
+            onClick={() => handleSmallKitchen("")}
             className={`${
               activeCategory === "Small Kitchen"
                 ? "bg-[#d4b78fb3] text-white"
                 : ""
-            } flex items-center gap-2 p-2 rounded-md`}
+            } flex items-center gap-2 p-2 rounded-md cursor-pointer`}
           >
             <svg
               width="14"
@@ -524,10 +563,10 @@ export default function Category({ setActiveCategoryProp }) {
             Small Kitchen
           </li>
           <li
-            onClick={() => handleClickCategory("T.V Hall")}
+            onClick={() => handleTVHall("")}
             className={`${
               activeCategory === "T.V Hall" ? "bg-[#d4b78fb3] text-white" : ""
-            } flex items-center gap-2 p-2 rounded-md`}
+            } flex items-center gap-2 p-2 rounded-md cursor-pointer`}
           >
             <svg
               width="14"
@@ -568,10 +607,10 @@ export default function Category({ setActiveCategoryProp }) {
             T.V Hall
           </li>
           <li
-            onClick={() => handleClickCategory("Luna Table")}
+            onClick={() => handleLunaTable("")}
             className={`${
               activeCategory === "Luna Table" ? "bg-[#d4b78fb3] text-white" : ""
-            } flex items-center gap-2 p-2 rounded-md`}
+            } flex items-center gap-2 p-2 rounded-md cursor-pointer`}
           >
             <svg
               width="14"
@@ -612,12 +651,12 @@ export default function Category({ setActiveCategoryProp }) {
             Luna Table
           </li>
           <li
-            onClick={() => handleClickCategory("Family Kitchen")}
+            onClick={() => handleFamilyKitchen("")}
             className={`${
               activeCategory === "Family Kitchen"
                 ? "bg-[#d4b78fb3] text-white"
                 : ""
-            } flex items-center gap-2 p-2 rounded-md`}
+            } flex items-center gap-2 p-2 rounded-md cursor-pointer`}
           >
             <svg
               width="14"
@@ -658,10 +697,10 @@ export default function Category({ setActiveCategoryProp }) {
             Family Kitchen
           </li>
           <li
-            onClick={() => handleClickCategory("Main Hall")}
+            onClick={() => handleMainHall("")}
             className={`${
               activeCategory === "Main Hall" ? "bg-[#d4b78fb3] text-white" : ""
-            } flex items-center gap-2 p-2 rounded-md`}
+            } flex items-center gap-2 p-2 rounded-md cursor-pointer `}
           >
             <svg
               width="14"
