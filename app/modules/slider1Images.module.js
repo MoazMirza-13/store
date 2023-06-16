@@ -1,4 +1,4 @@
-import sliderImg1 from "../../after-hero-slider/image 8.png";
+import sliderImg1 from "../../public/after-hero-slider/image 8.png";
 import sliderImg2 from "../../public/after-hero-slider/image 9.png";
 import sliderImg3 from "../../public/after-hero-slider/image 11.png";
 import sliderImg4 from "../../public/after-hero-slider/image 10.png";
