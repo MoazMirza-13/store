@@ -4,29 +4,33 @@ import Image from "next/image";
 export default function ModernSofa() {
   return (
     <>
-      <div className="flex gap-4 flex-wrap  justify-center">
+      <div className="flex gap-4 lg:gap-2 xl:gap-4 flex-wrap  justify-center">
         <Link href="./ModernSofa">
-          <div className="max-w-[19rem] bg-white border border-gray-200 rounded-lg shadow nav-bg   dark:border-gray-700  hover:shadow-lg">
+          <div className="xl:max-w-[19rem] lg:max-w-[15rem] sm:max-w-[10rem] max-w-[11rem] bg-white border border-gray-200 rounded-lg shadow nav-bg   dark:border-gray-700  hover:shadow-lg text-center sm:text-start">
             <Image className="rounded-t-lg" src={modernSofaImg} alt="img" />
 
-            <div className="p-5">
-              <h5 className="mb-2 text-2xl font-bold tracking-tight text-white">
+            <div className="xl:p-5 p-3 text-center lg:text-start">
+              <h5 className="mb-2 xl:text-2xl lg:text-xl text-lg font-bold tracking-tight text-white ">
                 Modern Sofa
               </h5>
 
-              <p className="mb-3 font-normal text-gray-700i dark:text-gray-400i text-white">
+              <p className="mb-3 font-normal text-xs lg:text-sm text-white hidden sm:block">
                 Experience the perfect beauty and functionality with our best
-                Product. Crafted with exquisite detail.
+                Product.
+                <span className="hidden lg:block">
+                  {" "}
+                  Crafted with exquisite detail.
+                </span>
               </p>
-              <div className="flex gap-4">
-                <button className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-[#C6A372] rounded-lg  focus:ring-4 focus:outline-none hover:bg-[#e4cb7296]">
+              <div className="flex flex-col lg:flex-row lg:gap-4 gap-2">
+                <button className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-[#C6A372] rounded-lg  focus:ring-4 focus:outline-none hover:bg-[#e4cb7296] justify-center lg:justify-start">
                   1200$
                 </button>
                 <button className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-[#C6A372] rounded-lg  focus:ring-4 focus:outline-none hover:bg-[#e4cb7296]">
                   Get More Info
                   <svg
                     aria-hidden="true"
-                    className="w-4 h-4 ml-2 -mr-1"
+                    className="w-4 h-4 ml-2 -mr-1 hidden xl:block"
                     fill="currentColor"
                     viewBox="0 0 20 20"
                     xmlns="http://www.w3.org/2000/svg"
@@ -34,7 +38,7 @@ export default function ModernSofa() {
                     <path
                       fill-rule="evenodd"
                       d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                      clip-rule="evenodd"
+                      clipRule="evenodd"
                     ></path>
                   </svg>
                 </button>
@@ -43,27 +47,31 @@ export default function ModernSofa() {
           </div>
         </Link>
         <Link href="./ModernSofa">
-          <div className="max-w-[19rem] bg-white border border-gray-200 rounded-lg shadow nav-bg   dark:border-gray-700  hover:shadow-lg">
+          <div className="xl:max-w-[19rem] lg:max-w-[15rem] sm:max-w-[10rem] max-w-[11rem] bg-white border border-gray-200 rounded-lg shadow nav-bg   dark:border-gray-700  hover:shadow-lg text-center sm:text-start">
             <Image className="rounded-t-lg" src={modernSofaImg} alt="img" />
 
-            <div className="p-5">
-              <h5 className="mb-2 text-2xl font-bold tracking-tight text-white">
+            <div className="xl:p-5 p-3 text-center lg:text-start">
+              <h5 className="mb-2 xl:text-2xl lg:text-xl text-lg font-bold tracking-tight text-white ">
                 Modern Sofa
               </h5>
 
-              <p className="mb-3 font-normal text-gray-700i dark:text-gray-400i text-white">
+              <p className="mb-3 font-normal text-xs lg:text-sm text-white hidden sm:block">
                 Experience the perfect beauty and functionality with our best
-                Product. Crafted with exquisite detail.
+                Product.
+                <span className="hidden lg:block">
+                  {" "}
+                  Crafted with exquisite detail.
+                </span>
               </p>
-              <div className="flex gap-4">
-                <button className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-[#C6A372] rounded-lg  focus:ring-4 focus:outline-none hover:bg-[#e4cb7296]">
+              <div className="flex flex-col lg:flex-row lg:gap-4 gap-2">
+                <button className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-[#C6A372] rounded-lg  focus:ring-4 focus:outline-none hover:bg-[#e4cb7296] justify-center lg:justify-start">
                   1200$
                 </button>
                 <button className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-[#C6A372] rounded-lg  focus:ring-4 focus:outline-none hover:bg-[#e4cb7296]">
                   Get More Info
                   <svg
                     aria-hidden="true"
-                    className="w-4 h-4 ml-2 -mr-1"
+                    className="w-4 h-4 ml-2 -mr-1 hidden xl:block"
                     fill="currentColor"
                     viewBox="0 0 20 20"
                     xmlns="http://www.w3.org/2000/svg"
@@ -71,7 +79,7 @@ export default function ModernSofa() {
                     <path
                       fill-rule="evenodd"
                       d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                      clip-rule="evenodd"
+                      clipRule="evenodd"
                     ></path>
                   </svg>
                 </button>
@@ -80,27 +88,31 @@ export default function ModernSofa() {
           </div>
         </Link>
         <Link href="./ModernSofa">
-          <div className="max-w-[19rem] bg-white border border-gray-200 rounded-lg shadow nav-bg   dark:border-gray-700  hover:shadow-lg">
+          <div className="xl:max-w-[19rem] lg:max-w-[15rem] sm:max-w-[10rem] max-w-[11rem] bg-white border border-gray-200 rounded-lg shadow nav-bg   dark:border-gray-700  hover:shadow-lg text-center sm:text-start">
             <Image className="rounded-t-lg" src={modernSofaImg} alt="img" />
 
-            <div className="p-5">
-              <h5 className="mb-2 text-2xl font-bold tracking-tight text-white">
+            <div className="xl:p-5 p-3 text-center lg:text-start">
+              <h5 className="mb-2 xl:text-2xl lg:text-xl text-lg font-bold tracking-tight text-white ">
                 Modern Sofa
               </h5>
 
-              <p className="mb-3 font-normal text-gray-700i dark:text-gray-400i text-white">
+              <p className="mb-3 font-normal text-xs lg:text-sm text-white hidden sm:block">
                 Experience the perfect beauty and functionality with our best
-                Product. Crafted with exquisite detail.
+                Product.
+                <span className="hidden lg:block">
+                  {" "}
+                  Crafted with exquisite detail.
+                </span>
               </p>
-              <div className="flex gap-4">
-                <button className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-[#C6A372] rounded-lg  focus:ring-4 focus:outline-none hover:bg-[#e4cb7296]">
+              <div className="flex flex-col lg:flex-row lg:gap-4 gap-2">
+                <button className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-[#C6A372] rounded-lg  focus:ring-4 focus:outline-none hover:bg-[#e4cb7296] justify-center lg:justify-start">
                   1200$
                 </button>
                 <button className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-[#C6A372] rounded-lg  focus:ring-4 focus:outline-none hover:bg-[#e4cb7296]">
                   Get More Info
                   <svg
                     aria-hidden="true"
-                    className="w-4 h-4 ml-2 -mr-1"
+                    className="w-4 h-4 ml-2 -mr-1 hidden xl:block"
                     fill="currentColor"
                     viewBox="0 0 20 20"
                     xmlns="http://www.w3.org/2000/svg"
@@ -108,7 +120,7 @@ export default function ModernSofa() {
                     <path
                       fill-rule="evenodd"
                       d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                      clip-rule="evenodd"
+                      clipRule="evenodd"
                     ></path>
                   </svg>
                 </button>
@@ -117,27 +129,31 @@ export default function ModernSofa() {
           </div>
         </Link>
         <Link href="./ModernSofa">
-          <div className="max-w-[19rem] bg-white border border-gray-200 rounded-lg shadow nav-bg   dark:border-gray-700  hover:shadow-lg">
+          <div className="xl:max-w-[19rem] lg:max-w-[15rem] sm:max-w-[10rem] max-w-[11rem] bg-white border border-gray-200 rounded-lg shadow nav-bg   dark:border-gray-700  hover:shadow-lg text-center sm:text-start">
             <Image className="rounded-t-lg" src={modernSofaImg} alt="img" />
 
-            <div className="p-5">
-              <h5 className="mb-2 text-2xl font-bold tracking-tight text-white">
+            <div className="xl:p-5 p-3 text-center lg:text-start">
+              <h5 className="mb-2 xl:text-2xl lg:text-xl text-lg font-bold tracking-tight text-white ">
                 Modern Sofa
               </h5>
 
-              <p className="mb-3 font-normal text-gray-700i dark:text-gray-400i text-white">
+              <p className="mb-3 font-normal text-xs lg:text-sm text-white hidden sm:block">
                 Experience the perfect beauty and functionality with our best
-                Product. Crafted with exquisite detail.
+                Product.
+                <span className="hidden lg:block">
+                  {" "}
+                  Crafted with exquisite detail.
+                </span>
               </p>
-              <div className="flex gap-4">
-                <button className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-[#C6A372] rounded-lg  focus:ring-4 focus:outline-none hover:bg-[#e4cb7296]">
+              <div className="flex flex-col lg:flex-row lg:gap-4 gap-2">
+                <button className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-[#C6A372] rounded-lg  focus:ring-4 focus:outline-none hover:bg-[#e4cb7296] justify-center lg:justify-start">
                   1200$
                 </button>
                 <button className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-[#C6A372] rounded-lg  focus:ring-4 focus:outline-none hover:bg-[#e4cb7296]">
                   Get More Info
                   <svg
                     aria-hidden="true"
-                    className="w-4 h-4 ml-2 -mr-1"
+                    className="w-4 h-4 ml-2 -mr-1 hidden xl:block"
                     fill="currentColor"
                     viewBox="0 0 20 20"
                     xmlns="http://www.w3.org/2000/svg"
@@ -145,7 +161,7 @@ export default function ModernSofa() {
                     <path
                       fill-rule="evenodd"
                       d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                      clip-rule="evenodd"
+                      clipRule="evenodd"
                     ></path>
                   </svg>
                 </button>
@@ -153,28 +169,32 @@ export default function ModernSofa() {
             </div>
           </div>
         </Link>
-        <Link href="./ModernSofa">
-          <div className="max-w-[19rem] bg-white border border-gray-200 rounded-lg shadow nav-bg   dark:border-gray-700  hover:shadow-lg">
+        <Link href="./ModernSofa" className="hidden sm:block">
+          <div className="xl:max-w-[19rem] lg:max-w-[15rem] sm:max-w-[10rem] max-w-[11rem] bg-white border border-gray-200 rounded-lg shadow nav-bg   dark:border-gray-700  hover:shadow-lg text-center sm:text-start">
             <Image className="rounded-t-lg" src={modernSofaImg} alt="img" />
 
-            <div className="p-5">
-              <h5 className="mb-2 text-2xl font-bold tracking-tight text-white">
+            <div className="xl:p-5 p-3 text-center lg:text-start">
+              <h5 className="mb-2 xl:text-2xl lg:text-xl text-lg font-bold tracking-tight text-white ">
                 Modern Sofa
               </h5>
 
-              <p className="mb-3 font-normal text-gray-700i dark:text-gray-400i text-white">
+              <p className="mb-3 font-normal text-xs lg:text-sm text-white hidden sm:block">
                 Experience the perfect beauty and functionality with our best
-                Product. Crafted with exquisite detail.
+                Product.
+                <span className="hidden lg:block">
+                  {" "}
+                  Crafted with exquisite detail.
+                </span>
               </p>
-              <div className="flex gap-4">
-                <button className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-[#C6A372] rounded-lg  focus:ring-4 focus:outline-none hover:bg-[#e4cb7296]">
+              <div className="flex flex-col lg:flex-row lg:gap-4 gap-2">
+                <button className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-[#C6A372] rounded-lg  focus:ring-4 focus:outline-none hover:bg-[#e4cb7296] justify-center lg:justify-start">
                   1200$
                 </button>
                 <button className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-[#C6A372] rounded-lg  focus:ring-4 focus:outline-none hover:bg-[#e4cb7296]">
                   Get More Info
                   <svg
                     aria-hidden="true"
-                    className="w-4 h-4 ml-2 -mr-1"
+                    className="w-4 h-4 ml-2 -mr-1 hidden xl:block"
                     fill="currentColor"
                     viewBox="0 0 20 20"
                     xmlns="http://www.w3.org/2000/svg"
@@ -182,7 +202,7 @@ export default function ModernSofa() {
                     <path
                       fill-rule="evenodd"
                       d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                      clip-rule="evenodd"
+                      clipRule="evenodd"
                     ></path>
                   </svg>
                 </button>
@@ -190,28 +210,32 @@ export default function ModernSofa() {
             </div>
           </div>
         </Link>
-        <Link href="./ModernSofa">
-          <div className="max-w-[19rem] bg-white border border-gray-200 rounded-lg shadow nav-bg   dark:border-gray-700  hover:shadow-lg">
+        <Link href="./ModernSofa" className="hidden sm:block">
+          <div className="xl:max-w-[19rem] lg:max-w-[15rem] sm:max-w-[10rem] max-w-[11rem] bg-white border border-gray-200 rounded-lg shadow nav-bg   dark:border-gray-700  hover:shadow-lg text-center sm:text-start">
             <Image className="rounded-t-lg" src={modernSofaImg} alt="img" />
 
-            <div className="p-5">
-              <h5 className="mb-2 text-2xl font-bold tracking-tight text-white">
+            <div className="xl:p-5 p-3 text-center lg:text-start">
+              <h5 className="mb-2 xl:text-2xl lg:text-xl text-lg font-bold tracking-tight text-white ">
                 Modern Sofa
               </h5>
 
-              <p className="mb-3 font-normal text-gray-700i dark:text-gray-400i text-white">
+              <p className="mb-3 font-normal text-xs lg:text-sm text-white hidden sm:block">
                 Experience the perfect beauty and functionality with our best
-                Product. Crafted with exquisite detail.
+                Product.
+                <span className="hidden lg:block">
+                  {" "}
+                  Crafted with exquisite detail.
+                </span>
               </p>
-              <div className="flex gap-4">
-                <button className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-[#C6A372] rounded-lg  focus:ring-4 focus:outline-none hover:bg-[#e4cb7296]">
+              <div className="flex flex-col lg:flex-row lg:gap-4 gap-2">
+                <button className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-[#C6A372] rounded-lg  focus:ring-4 focus:outline-none hover:bg-[#e4cb7296] justify-center lg:justify-start">
                   1200$
                 </button>
                 <button className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-[#C6A372] rounded-lg  focus:ring-4 focus:outline-none hover:bg-[#e4cb7296]">
                   Get More Info
                   <svg
                     aria-hidden="true"
-                    className="w-4 h-4 ml-2 -mr-1"
+                    className="w-4 h-4 ml-2 -mr-1 hidden xl:block"
                     fill="currentColor"
                     viewBox="0 0 20 20"
                     xmlns="http://www.w3.org/2000/svg"
@@ -219,7 +243,7 @@ export default function ModernSofa() {
                     <path
                       fill-rule="evenodd"
                       d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                      clip-rule="evenodd"
+                      clipRule="evenodd"
                     ></path>
                   </svg>
                 </button>

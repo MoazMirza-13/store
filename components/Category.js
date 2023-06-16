@@ -51,7 +51,7 @@ export default function Category({ setActiveCategoryProp }) {
 
   return (
     <>
-      <div className="bg-[#FFFFF0] flex flex-col gap-6 p-6 w-[28.563rem]">
+      <div className="bg-[#FFFFF0] flex flex-col gap-6 md:p-2 lg:p-[0.9rem] p-2 pt-6   sm:text-start xl:w-[28.563rem] lg:w-[23.563rem] md:w-[19.563rem] w-[32rem] sm:w-[31rem]">
         <h1 className="font-mont font-bold text-sm pl-2">Categories</h1>
         <ul className="font-semibold font-mont flex flex-col gap-6">
           <li
