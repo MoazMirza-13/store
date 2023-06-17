@@ -2,14 +2,28 @@ import { ActionTypes } from "../constans/action-types";
 
 const initialState = {
   products: [],
-  selectedProduct: [],
   cartItems: [],
 };
 //
 export const productReducer = (state = initialState, { type, payload }) => {
   switch (type) {
     case ActionTypes.ADD_TO_CART:
-      return { ...state, cartItems: [...state.cartItems, payload] };
+      const id = payload.id; // Access the id directly from payload
+      const existingItem = state.cartItems.find((item) => item.id === id);
+
+      if (existingItem) {
+        return {
+          ...state,
+          cartItems: state.cartItems.map((item) =>
+            item.id === id ? { ...item, quantity: item.quantity + 1 } : item
+          ),
+        };
+      } else {
+        return {
+          ...state,
+          cartItems: [...state.cartItems, { ...payload, quantity: 1 }],
+        };
+      }
     case ActionTypes.INCREASE_QUANTITY:
       return {
         ...state,
