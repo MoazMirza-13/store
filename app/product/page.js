@@ -1,21 +1,21 @@
 "use client";
 import { useDispatch, useSelector } from "react-redux";
-import { setProducts, selectedProduct } from "../redux/actions/productActions";
+import { addToCart } from "../redux/actions/productActions";
 
 export default function Product() {
   const dispatch = useDispatch();
   const products = useSelector((state) => state.allProducts.product);
 
   const handleAddToCart = () => {
-    const updatedProducts = [...products];
-    updatedProducts.push({
-      id: updatedProducts.length + 1,
+    const productToAdd = {
+      id: products ? products.length + 1 : 1,
       name: "New Product",
       price: 100,
-    });
-    dispatch(setProducts(updatedProducts));
-    dispatch(selectedProduct(updatedProducts));
+      quantity: 1,
+    };
+    dispatch(addToCart(productToAdd));
   };
+  //
 
   return (
     <>

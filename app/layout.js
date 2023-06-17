@@ -1,6 +1,7 @@
 "use client";
 import "./globals.css";
 
+import Navbar from "@/components/NavHome";
 import BeforeFooter from "@/components/BeforeFooter";
 import Footer from "@/components/Footer";
 
@@ -29,6 +30,7 @@ export default function RootLayout({ children }) {
     <html lang="en" className={` ${playfair.className} ${mont.className}`}>
       <body>
         <Provider store={store}>
+          <Navbar />
           {children}
           <BeforeFooter />
           <Footer />

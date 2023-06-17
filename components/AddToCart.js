@@ -2,10 +2,33 @@
 
 import ReactModal from "react-modal";
 
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import {
+  increaseQuantity,
+  decreaseQuantity,
+  removeItem,
+} from "../app/redux/actions/productActions";
 
 export default function AddToCart({ isopen, onclose }) {
-  const products = useSelector((state) => state.allProducts.selectedProduct);
+  const cartItems = useSelector((state) => state.allProducts.cartItems);
+  const dispatch = useDispatch();
+
+  const handleIncreaseQuantity = (item) => {
+    dispatch(increaseQuantity(item));
+  };
+
+  const handleDecreaseQuantity = (item) => {
+    if (item.quantity === 1) {
+      dispatch(removeItem(item));
+    } else {
+      dispatch(decreaseQuantity(item));
+    }
+  };
+
+  const handleRemoveItem = (item) => {
+    dispatch(removeItem(item));
+  };
+  //
 
   return (
     <>
@@ -25,17 +48,28 @@ export default function AddToCart({ isopen, onclose }) {
           },
         }}
       >
-        <div className="flex justify-center items-center">
-          {products && products.length > 0 ? (
-            products.map((product) => (
-              <div key={product.id}>
-                <h1 className="text-2xl">
-                  Product: {product.name}, Number: {product.id}
-                </h1>
-              </div>
-            ))
+        <div>
+          <h2>Cart</h2>
+          {cartItems.length === 0 ? (
+            <p>Your cart is empty.</p>
           ) : (
-            <h1>Your Cart is Empty</h1>
+            <ul>
+              {cartItems.map((item) => (
+                <li key={item.id}>
+                  <span>{item.name}</span>
+                  <span>{item.price}</span>
+                  <button onClick={() => handleIncreaseQuantity(item)}>
+                    +
+                  </button>
+                  <span>{item.quantity}</span>
+                  <button onClick={() => handleDecreaseQuantity(item)}>
+                    -
+                  </button>
+                  <span>Total: {item.price * item.quantity}</span>
+                  <button onClick={() => handleRemoveItem(item)}>Remove</button>
+                </li>
+              ))}
+            </ul>
           )}
         </div>
       </ReactModal>

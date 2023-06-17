@@ -16,10 +16,6 @@ export default function Category({ setActiveCategoryProp }) {
     ScrollToY120();
     handleClickCategory("Wide Table");
   };
-  const handleComfy = () => {
-    ScrollToY120();
-    handleClickCategory("Comfy Sofa");
-  };
   const handleModernBedroom = () => {
     ScrollToY120();
     handleClickCategory("Modern Bedroom");
@@ -332,7 +328,7 @@ export default function Category({ setActiveCategoryProp }) {
             Family Hall
           </li>
           <li
-            onClick={() => handleComfy()}
+            onClick={() => handleClickCategory("Comfy Sofa")}
             className={`
             ${
               activeCategory === "Comfy Sofa" ? "bg-[#d4b78fb3] text-white" : ""
