@@ -1,14 +1,13 @@
 import { ActionTypes } from "../constans/action-types";
 
 const initialState = {
-  products: [],
   cartItems: [],
 };
-//
+
 export const productReducer = (state = initialState, { type, payload }) => {
   switch (type) {
     case ActionTypes.ADD_TO_CART:
-      const id = payload.id; // Access the id directly from payload
+      const id = payload.id;
       const existingItem = state.cartItems.find((item) => item.id === id);
 
       if (existingItem) {
@@ -46,6 +45,11 @@ export const productReducer = (state = initialState, { type, payload }) => {
       return {
         ...state,
         cartItems: state.cartItems.filter((item) => item.id !== payload.id),
+      };
+    case ActionTypes.TO_EMPTY_CART:
+      return {
+        ...state,
+        cartItems: [],
       };
     default:
       return state;

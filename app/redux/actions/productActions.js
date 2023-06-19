@@ -25,3 +25,9 @@ export const removeItem = (product) => {
     payload: product,
   };
 };
+export const emptyCart = (product) => {
+  return {
+    type: ActionTypes.TO_EMPTY_CART,
+    payload: product,
+  };
+};

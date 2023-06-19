@@ -24,7 +24,7 @@ export default function DecentTable() {
               </p>
               <div className="flex flex-col lg:flex-row lg:gap-4 gap-2">
                 <button className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-[#C6A372] rounded-lg  focus:ring-4 focus:outline-none hover:bg-[#e4cb7296] justify-center lg:justify-start">
-                  1200$
+                  500$
                 </button>
                 <button className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-[#C6A372] rounded-lg  focus:ring-4 focus:outline-none hover:bg-[#e4cb7296]">
                   Get More Info
@@ -65,7 +65,7 @@ export default function DecentTable() {
               </p>
               <div className="flex flex-col lg:flex-row lg:gap-4 gap-2">
                 <button className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-[#C6A372] rounded-lg  focus:ring-4 focus:outline-none hover:bg-[#e4cb7296] justify-center lg:justify-start">
-                  1200$
+                  500$
                 </button>
                 <button className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-[#C6A372] rounded-lg  focus:ring-4 focus:outline-none hover:bg-[#e4cb7296]">
                   Get More Info
@@ -106,7 +106,7 @@ export default function DecentTable() {
               </p>
               <div className="flex flex-col lg:flex-row lg:gap-4 gap-2">
                 <button className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-[#C6A372] rounded-lg  focus:ring-4 focus:outline-none hover:bg-[#e4cb7296] justify-center lg:justify-start">
-                  1200$
+                  500$
                 </button>
                 <button className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-[#C6A372] rounded-lg  focus:ring-4 focus:outline-none hover:bg-[#e4cb7296]">
                   Get More Info
@@ -147,7 +147,7 @@ export default function DecentTable() {
               </p>
               <div className="flex flex-col lg:flex-row lg:gap-4 gap-2">
                 <button className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-[#C6A372] rounded-lg  focus:ring-4 focus:outline-none hover:bg-[#e4cb7296] justify-center lg:justify-start">
-                  1200$
+                  500$
                 </button>
                 <button className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-[#C6A372] rounded-lg  focus:ring-4 focus:outline-none hover:bg-[#e4cb7296]">
                   Get More Info
@@ -188,7 +188,7 @@ export default function DecentTable() {
               </p>
               <div className="flex flex-col lg:flex-row lg:gap-4 gap-2">
                 <button className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-[#C6A372] rounded-lg  focus:ring-4 focus:outline-none hover:bg-[#e4cb7296] justify-center lg:justify-start">
-                  1200$
+                  500$
                 </button>
                 <button className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-[#C6A372] rounded-lg  focus:ring-4 focus:outline-none hover:bg-[#e4cb7296]">
                   Get More Info
@@ -229,7 +229,7 @@ export default function DecentTable() {
               </p>
               <div className="flex flex-col lg:flex-row lg:gap-4 gap-2">
                 <button className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-[#C6A372] rounded-lg  focus:ring-4 focus:outline-none hover:bg-[#e4cb7296] justify-center lg:justify-start">
-                  1200$
+                  500$
                 </button>
                 <button className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-[#C6A372] rounded-lg  focus:ring-4 focus:outline-none hover:bg-[#e4cb7296]">
                   Get More Info
