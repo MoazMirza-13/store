@@ -3,7 +3,8 @@ import { useEffect, useState } from "react";
 import AddToCart from "./AddToCart";
 import Link from "next/link";
 import { IoMdCart } from "react-icons/io";
-import { HiMenuAlt3, HiX, HiArrowCircleUp } from "react-icons/hi";
+import { HiMenuAlt3, HiX } from "react-icons/hi";
+import { Link as ScrollLink } from "react-scroll";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -34,10 +35,17 @@ const Navbar = () => {
   }, [isOpen]);
 
   const navLi = [
-    { id: "home", title: "Home" },
-    { id: "products", title: "Products" },
-    { id: "categories", title: "Categories" },
-    { id: "testimonials", title: "Testimonials" },
+    { id: "home", title: "Home", offset: -90 },
+    { id: "products", title: "Products", offset: -110 },
+    { id: "categories", title: "Categories", offset: -60 },
+    { id: "testimonials", title: "Testimonials", offset: -60 },
+    { id: "contact us", title: "Contact Us" },
+  ];
+  const navLiMobile = [
+    { id: "home", title: "Home", offset: -90 },
+    { id: "products", title: "Products", offset: -110 },
+    { id: "categories", title: "Categories", offset: -80 },
+    { id: "testimonials", title: "Testimonials", offset: -80 },
     { id: "contact us", title: "Contact Us" },
   ];
 
@@ -70,9 +78,17 @@ const Navbar = () => {
               </div>
               <div className="flex">
                 <ul className="sm:flex text-sm lg:text-base xl:text-xl  font-mont hidden items-center gap-4 lg:gap-8">
-                  {navLi.map(({ id, title }) => (
-                    <li className="tracking-wide  " key={id}>
-                      {title}
+                  {navLi.map(({ id, title, offset }) => (
+                    <li className="tracking-wide cursor-pointer " key={id}>
+                      <ScrollLink
+                        to={id}
+                        smooth={true}
+                        delay={200}
+                        duration={1900}
+                        offset={offset}
+                      >
+                        {title}
+                      </ScrollLink>
                     </li>
                   ))}
                 </ul>
@@ -102,13 +118,18 @@ const Navbar = () => {
               className="flex  font-mont flex-col items-center gap-8"
               onClick={toggleMenu}
             >
-              {navLi.map(({ id, title }) => (
-                <li
-                  className="tracking-wide text-2xl "
-                  key={id}
-                  onClick={toggleMenu}
-                >
-                  {title}
+              {navLiMobile.map(({ id, title, offset }) => (
+                <li className="tracking-wide text-2xl cursor-pointer" key={id}>
+                  <ScrollLink
+                    onClick={toggleMenu}
+                    to={id}
+                    smooth={true}
+                    delay={200}
+                    duration={2300}
+                    offset={offset}
+                  >
+                    {title}
+                  </ScrollLink>
                 </li>
               ))}
             </ul>

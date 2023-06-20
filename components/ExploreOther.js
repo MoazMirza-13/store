@@ -16,7 +16,7 @@ export default function ExploreOther() {
   return (
     <>
       {/* best selling */}
-      <div className="max-w-[84%] m-auto mt-10">
+      <div className="md:max-w-[84%] max-w-[79%] m-auto mt-10">
         <div className="flex items-center sm:gap-4 gap-2">
           <h1 className="font-playfair lg:font-semibold md:text-5xl text-[1.5rem] md:leading-[4.563rem] leading-[1.5rem] sm:leading-[2rem] ">
             Explore Other Products

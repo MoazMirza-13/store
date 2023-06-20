@@ -25,10 +25,10 @@ export default function BeforeFooter() {
             <input
               type="text"
               placeholder="Enter your Email Adress"
-              className="font-mont font-medium text-sm bg-[#e4cb901a] text-[#C8C8C8] placeholder-[#C8C8C8] outline-none   px-[265.558px] py-[1.338rem] lg:pr-[16.597rem] pr-[7.597rem]  lg:pl-[2.409rem] pl-[0.5rem]"
+              className="font-mont font-medium text-sm bg-[#e4cb901a] text-[#C8C8C8] placeholder-[#C8C8C8] outline-none   px-[265.558px] py-[1.338rem] lg:pr-[16.597rem] md:pr-[7.597rem] pr-[4.597rem]  lg:pl-[2.409rem] pl-[0.5rem]"
             />
             <button
-              className={`${btn["btn-5"]} font-mont font-medium text-sm text-white absolute top-[5px] right-[6px] `}
+              className={`${btn["btn-5"]} md:w-[132.29px] w-[85.29px] font-mont font-medium text-sm text-white absolute top-[5px] right-[6px] `}
             >
               Subscribe
             </button>

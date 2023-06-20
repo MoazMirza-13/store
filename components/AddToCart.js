@@ -199,7 +199,7 @@ export default function AddToCart({ isopen, onclose }) {
                             name="first-name"
                             id="first-name"
                             autocomplete="given-name"
-                            className="block  w-[80%] rounded-md border-0 p-[0.47rem] text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                            className="block  w-[80%] rounded-md border-0 p-[0.47rem] text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 outline-[#D4B78F] focus:ring-inset focus:ring-[#D4B78F]  sm:text-sm sm:leading-6"
                           />
                         </div>
                       </div>
@@ -220,7 +220,7 @@ export default function AddToCart({ isopen, onclose }) {
                             name="last-name"
                             id="last-name"
                             autocomplete="family-name"
-                            className="block  w-[80%] rounded-md border-0 p-[0.47rem] text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                            className="block  w-[80%] rounded-md border-0 p-[0.47rem] text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 outline-[#D4B78F] focus:ring-inset focus:ring-[#D4B78F] sm:text-sm sm:leading-6"
                           />
                         </div>
                       </div>
@@ -241,7 +241,7 @@ export default function AddToCart({ isopen, onclose }) {
                             name="email"
                             type="email"
                             autocomplete="email"
-                            className="block  w-[80%] rounded-md border-0 p-[0.47rem] text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                            className="block  w-[80%] rounded-md border-0 p-[0.47rem] text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 outline-[#D4B78F] focus:ring-inset focus:ring-[#D4B78F] sm:text-sm sm:leading-6"
                           />
                         </div>
                       </div>
@@ -262,7 +262,7 @@ export default function AddToCart({ isopen, onclose }) {
                             name="street-address"
                             id="street-address"
                             autocomplete="street-address"
-                            className="block  w-[80%] rounded-md border-0 p-[0.47rem] text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                            className="block  w-[80%] rounded-md border-0 p-[0.47rem] text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 outline-[#D4B78F] focus:ring-inset focus:ring-[#D4B78F] sm:text-sm sm:leading-6"
                           />
                         </div>
                       </div>
@@ -283,7 +283,7 @@ export default function AddToCart({ isopen, onclose }) {
                             name="city"
                             id="city"
                             autocomplete="address-level2"
-                            className="block  w-[80%] rounded-md border-0 p-[0.47rem] text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                            className="block  w-[80%] rounded-md border-0 p-[0.47rem] text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 outline-[#D4B78F] focus:ring-inset focus:ring-[#D4B78F] sm:text-sm sm:leading-6"
                           />
                         </div>
                       </div>
@@ -304,7 +304,7 @@ export default function AddToCart({ isopen, onclose }) {
                             name="region"
                             id="region"
                             autocomplete="address-level1"
-                            className="block  w-[80%] rounded-md border-0 p-[0.47rem] text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                            className="block  w-[80%] rounded-md border-0 p-[0.47rem] text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 outline-[#D4B78F] focus:ring-inset focus:ring-[#D4B78F] sm:text-sm sm:leading-6"
                           />
                         </div>
                       </div>
@@ -325,7 +325,7 @@ export default function AddToCart({ isopen, onclose }) {
                             name="postal-code"
                             id="postal-code"
                             autocomplete="postal-code"
-                            className="block  w-[80%] rounded-md border-0 p-[0.47rem] text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                            className="block  w-[80%] rounded-md border-0 p-[0.47rem] text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 outline-[#D4B78F] focus:ring-inset focus:ring-[#D4B78F] sm:text-sm sm:leading-6"
                           />
                         </div>
                       </div>
