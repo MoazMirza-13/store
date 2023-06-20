@@ -3,6 +3,7 @@ import before_footerImg from "../public/before-footer/Group 31.png";
 import btn from "../app/modules/btn.module.css";
 import { Formik, Field, Form } from "formik";
 import { useState, useEffect } from "react";
+import { motion as m } from "framer-motion";
 export default function BeforeFooter() {
   const [showAlert, setShowAlert] = useState(false);
   const [showMessage, setShowMessage] = useState(false);
@@ -29,7 +30,7 @@ export default function BeforeFooter() {
     if (showMessage) {
       timer = setTimeout(() => {
         setShowMessage(false);
-      }, 2500);
+      }, 2000);
     }
 
     return () => clearTimeout(timer);
@@ -37,7 +38,12 @@ export default function BeforeFooter() {
   return (
     <>
       <div className="max-w-[84%] m-auto mt-20 flex flex-col xl:flex-row gap-8 md:gap-8 lg:gap-4 justify-between items-center mb-8 ">
-        <div className="flex flex-col gap-4 items-center text-center">
+        <m.div
+          initial={{ opacity: 0, y: -30, x: -25 }}
+          whileInView={{ opacity: 1, y: 0, x: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="flex flex-col gap-4 items-center text-center"
+        >
           {showAlert && showMessage && (
             <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded text-center fixed md:top-[2.25rem]i top-[1.25rem]i sm:left-[8rem]i left-0 right-0 top-[67px] md:left-[12.938rem]i xl:left-[20.938rem]i">
               <span className="block sm:inline">
@@ -77,8 +83,14 @@ export default function BeforeFooter() {
               </Form>
             </div>
           </Formik>
-        </div>
-        <Image src={before_footerImg} alt="img" />
+        </m.div>
+        <m.div
+          initial={{ opacity: 0, y: -30, x: 25 }}
+          whileInView={{ opacity: 1, y: 0, x: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
+          <Image src={before_footerImg} alt="img" />
+        </m.div>
       </div>
     </>
   );

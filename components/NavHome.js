@@ -5,6 +5,7 @@ import Link from "next/link";
 import { IoMdCart } from "react-icons/io";
 import { HiMenuAlt3, HiX } from "react-icons/hi";
 import { Link as ScrollLink } from "react-scroll";
+import { motion as m } from "framer-motion";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -36,7 +37,7 @@ const Navbar = () => {
 
   const navLi = [
     { id: "home", title: "Home", offset: -90 },
-    { id: "products", title: "Products", offset: -110 },
+    { id: "products", title: "Products", offset: -125 },
     { id: "categories", title: "Categories", offset: -60 },
     { id: "testimonials", title: "Testimonials", offset: -60 },
     { id: "contact us", title: "Contact Us" },
@@ -53,33 +54,56 @@ const Navbar = () => {
     <>
       <nav
         className={` fixed top-0 left-0 right-0 z-50 ${
-          navBg > 0 || isOpen ? "nav-bg" : "bg-transparent"
+          navBg > 0 || isOpen ? "nav-bg " : "bg-transparent "
         }`}
       >
         <div className=" sm:max-w-[90%] max-w-[85%] lg:max-w-[85%] m-auto py-5 ">
           <div className=" flex items-center justify-between ">
             <div className=" flex items-center md:hidden">
-              <div onClick={toggleMenu} className="cursor-pointer sm:hidden">
+              <m.div
+                initial={{ opacity: 0, x: -30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.7, delay: 0 }}
+                whileHover={{ scale: 1.4 }}
+                whileTap={{ scale: 1 }}
+                onClick={toggleMenu}
+                className="cursor-pointer sm:hidden"
+              >
                 {isOpen ? (
                   <HiX className="text-3xl" />
                 ) : (
                   <HiMenuAlt3 className="text-3xl" />
                 )}
-              </div>
+              </m.div>
             </div>
             <div className="flex-1 flex sm:justify-between sm:items-stretch justify-center ">
-              <div className="flex-shrink-0 flex items-center">
+              <m.div
+                initial={{ opacity: 0, x: -30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.7, delay: 0 }}
+                className="flex-shrink-0 flex items-center"
+              >
                 <Link
                   href="/"
                   className="font-playfair text-lg font-bold tracking-widest"
                 >
                   ELEGENCIA
                 </Link>
-              </div>
-              <div className="flex">
+              </m.div>
+              <m.div
+                initial={{ opacity: 0, y: -25 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7, delay: 0 }}
+                className="flex"
+              >
                 <ul className="sm:flex text-sm lg:text-base xl:text-xl  font-mont hidden items-center gap-4 lg:gap-8">
                   {navLi.map(({ id, title, offset }) => (
-                    <li className="tracking-wide cursor-pointer " key={id}>
+                    <li
+                      className={`tracking-wide cursor-pointer ${
+                        navBg > 0 || isOpen ? "hover:text-white " : ""
+                      }`}
+                      key={id}
+                    >
                       <ScrollLink
                         to={id}
                         smooth={true}
@@ -92,23 +116,37 @@ const Navbar = () => {
                     </li>
                   ))}
                 </ul>
-              </div>
+              </m.div>
 
-              <div className="flex md:gap-8 gap-6">
+              <m.div
+                initial={{ opacity: 0, x: 30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: 0 }}
+                whileHover={{ scale: 1.4 }}
+                whileTap={{ scale: 1 }}
+                className="flex md:gap-8 gap-6"
+              >
                 <button
                   onClick={handleCart}
-                  className="text-2xl hidden sm:block"
+                  className="text-3xl hidden sm:block"
                 >
                   <IoMdCart />
                 </button>
-              </div>
+              </m.div>
             </div>
 
-            <div className="flex md:gap-8 gap-6 sm:hidden">
+            <m.div
+              initial={{ opacity: 0, x: 30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 0 }}
+              whileHover={{ scale: 1.4 }}
+              whileTap={{ scale: 1 }}
+              className="flex md:gap-8 gap-6 sm:hidden"
+            >
               <button onClick={handleCart} className="text-2xl">
                 <IoMdCart />
               </button>
-            </div>
+            </m.div>
           </div>
         </div>
         {/* mobile */}
