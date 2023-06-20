@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import AddToCart from "./AddToCart";
 import Link from "next/link";
 import { IoMdCart } from "react-icons/io";
+import { motion as m } from "framer-motion";
 
 const Navbar = () => {
   const [showCart, setShowCart] = useState(false);
@@ -39,19 +40,33 @@ const Navbar = () => {
             <div className=" flex items-center md:hidden"></div>
             <div className="flex-1 flex sm:justify-between sm:items-stretch  ">
               <div className="flex-shrink-0 flex items-center">
-                <Link
-                  href="/"
-                  className="font-playfair text-lg font-bold tracking-widest"
+                <m.div
+                  initial={{ opacity: 0, x: -30 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.7, delay: 0 }}
+                  className="flex-shrink-0 flex items-center"
                 >
-                  ELEGENCIA
-                </Link>
+                  <Link
+                    href="/"
+                    className="font-playfair text-lg font-bold tracking-widest"
+                  >
+                    ELEGENCIA
+                  </Link>
+                </m.div>
               </div>
             </div>
-            <div className="flex md:gap-8 gap-6 ">
+            <m.div
+              initial={{ opacity: 0, x: 30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 0 }}
+              whileHover={{ scale: 1.4 }}
+              whileTap={{ scale: 1 }}
+              className="flex md:gap-8 gap-6 "
+            >
               <button onClick={handleCart} className="text-2xl">
                 <IoMdCart />
               </button>
-            </div>
+            </m.div>
           </div>
         </div>
       </nav>

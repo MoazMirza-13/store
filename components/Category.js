@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { motion as m } from "framer-motion";
 import { useSearchParams } from "next/navigation";
 export default function Category({ setActiveCategoryProp }) {
   const searchParams = useSearchParams();
@@ -47,7 +48,12 @@ export default function Category({ setActiveCategoryProp }) {
 
   return (
     <>
-      <div className="bg-[#FFFFF0] flex flex-col gap-6 md:p-2 lg:p-[0.9rem] p-2 pt-6   sm:text-start xl:w-[28.563rem] lg:w-[23.563rem] md:w-[19.563rem] w-[32rem] sm:w-[31rem]">
+      <m.div
+        initial={{ opacity: 0, x: -50 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.5 }}
+        className="bg-[#FFFFF0] flex flex-col gap-6 md:p-2 lg:p-[0.9rem] p-2 pt-6   sm:text-start xl:w-[28.563rem] lg:w-[23.563rem] md:w-[19.563rem] w-[32rem] sm:w-[31rem]"
+      >
         <h1 className="font-mont font-bold text-sm pl-2">Categories</h1>
         <ul className="font-semibold font-mont flex flex-col gap-6">
           <li
@@ -737,7 +743,7 @@ export default function Category({ setActiveCategoryProp }) {
             Main Hall
           </li>
         </ul>
-      </div>
+      </m.div>
     </>
   );
 }

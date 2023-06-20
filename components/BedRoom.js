@@ -1,12 +1,18 @@
 import Link from "next/link";
 import bedroomImg from "../public/products/bedroom.png";
 import Image from "next/image";
+import { motion as m } from "framer-motion";
 export default function BedRoom() {
   return (
     <>
       <div className="flex gap-4 lg:gap-2 xl:gap-4 flex-wrap  justify-center">
         <Link href="./Bedroom">
-          <div className="xl:max-w-[19rem] lg:max-w-[15rem] sm:max-w-[10rem] max-w-[11rem] bg-white border border-gray-200 rounded-lg shadow nav-bg   dark:border-gray-700  hover:shadow-lg text-center sm:text-start">
+          <m.div
+            initial={{ opacity: 0, x: -23, y: -50 }}
+            animate={{ opacity: 1, x: 0, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="xl:max-w-[19rem] lg:max-w-[15rem] sm:max-w-[10rem] max-w-[11rem] bg-white border border-gray-200 rounded-lg shadow nav-bg   dark:border-gray-700  hover:shadow-lg text-center sm:text-start"
+          >
             <Image className="rounded-t-lg" src={bedroomImg} alt="img" />
 
             <div className="xl:p-5 p-3 text-center lg:text-start">
@@ -44,10 +50,15 @@ export default function BedRoom() {
                 </button>
               </div>
             </div>
-          </div>
+          </m.div>
         </Link>
         <Link href="./Bedroom">
-          <div className="xl:max-w-[19rem] lg:max-w-[15rem] sm:max-w-[10rem] max-w-[11rem] bg-white border border-gray-200 rounded-lg shadow nav-bg   dark:border-gray-700  hover:shadow-lg text-center sm:text-start">
+          <m.div
+            initial={{ opacity: 0, y: -30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="xl:max-w-[19rem] lg:max-w-[15rem] sm:max-w-[10rem] max-w-[11rem] bg-white border border-gray-200 rounded-lg shadow nav-bg   dark:border-gray-700  hover:shadow-lg text-center sm:text-start"
+          >
             <Image className="rounded-t-lg" src={bedroomImg} alt="img" />
 
             <div className="xl:p-5 p-3 text-center lg:text-start">
@@ -85,10 +96,15 @@ export default function BedRoom() {
                 </button>
               </div>
             </div>
-          </div>
+          </m.div>
         </Link>
         <Link href="./Bedroom">
-          <div className="xl:max-w-[19rem] lg:max-w-[15rem] sm:max-w-[10rem] max-w-[11rem] bg-white border border-gray-200 rounded-lg shadow nav-bg   dark:border-gray-700  hover:shadow-lg text-center sm:text-start">
+          <m.div
+            initial={{ opacity: 0, x: 23, y: -50 }}
+            animate={{ opacity: 1, x: 0, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="xl:max-w-[19rem] lg:max-w-[15rem] sm:max-w-[10rem] max-w-[11rem] bg-white border border-gray-200 rounded-lg shadow nav-bg   dark:border-gray-700  hover:shadow-lg text-center sm:text-start"
+          >
             <Image className="rounded-t-lg" src={bedroomImg} alt="img" />
 
             <div className="xl:p-5 p-3 text-center lg:text-start">
@@ -126,10 +142,15 @@ export default function BedRoom() {
                 </button>
               </div>
             </div>
-          </div>
+          </m.div>
         </Link>
         <Link href="./Bedroom">
-          <div className="xl:max-w-[19rem] lg:max-w-[15rem] sm:max-w-[10rem] max-w-[11rem] bg-white border border-gray-200 rounded-lg shadow nav-bg   dark:border-gray-700  hover:shadow-lg text-center sm:text-start">
+          <m.div
+            initial={{ opacity: 0, x: -23, y: 50 }}
+            animate={{ opacity: 1, x: 0, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="xl:max-w-[19rem] lg:max-w-[15rem] sm:max-w-[10rem] max-w-[11rem] bg-white border border-gray-200 rounded-lg shadow nav-bg   dark:border-gray-700  hover:shadow-lg text-center sm:text-start"
+          >
             <Image className="rounded-t-lg" src={bedroomImg} alt="img" />
 
             <div className="xl:p-5 p-3 text-center lg:text-start">
@@ -167,10 +188,15 @@ export default function BedRoom() {
                 </button>
               </div>
             </div>
-          </div>
+          </m.div>
         </Link>
         <Link href="./Bedroom" className="hidden sm:block">
-          <div className="xl:max-w-[19rem] lg:max-w-[15rem] sm:max-w-[10rem] max-w-[11rem] bg-white border border-gray-200 rounded-lg shadow nav-bg   dark:border-gray-700  hover:shadow-lg text-center sm:text-start">
+          <m.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="xl:max-w-[19rem] lg:max-w-[15rem] sm:max-w-[10rem] max-w-[11rem] bg-white border border-gray-200 rounded-lg shadow nav-bg   dark:border-gray-700  hover:shadow-lg text-center sm:text-start"
+          >
             <Image className="rounded-t-lg" src={bedroomImg} alt="img" />
 
             <div className="xl:p-5 p-3 text-center lg:text-start">
@@ -208,10 +234,15 @@ export default function BedRoom() {
                 </button>
               </div>
             </div>
-          </div>
+          </m.div>
         </Link>
         <Link href="./Bedroom" className="hidden sm:block">
-          <div className="xl:max-w-[19rem] lg:max-w-[15rem] sm:max-w-[10rem] max-w-[11rem] bg-white border border-gray-200 rounded-lg shadow nav-bg   dark:border-gray-700  hover:shadow-lg text-center sm:text-start">
+          <m.div
+            initial={{ opacity: 0, x: 23, y: 50 }}
+            animate={{ opacity: 1, x: 0, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="xl:max-w-[19rem] lg:max-w-[15rem] sm:max-w-[10rem] max-w-[11rem] bg-white border border-gray-200 rounded-lg shadow nav-bg   dark:border-gray-700  hover:shadow-lg text-center sm:text-start"
+          >
             <Image className="rounded-t-lg" src={bedroomImg} alt="img" />
 
             <div className="xl:p-5 p-3 text-center lg:text-start">
@@ -249,7 +280,7 @@ export default function BedRoom() {
                 </button>
               </div>
             </div>
-          </div>
+          </m.div>
         </Link>
       </div>
     </>
