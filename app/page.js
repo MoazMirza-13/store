@@ -241,7 +241,7 @@ export default function Home() {
               >
                 {slider1Images.map((image, index) => (
                   <SwiperSlide key={index}>
-                    <Image src={image} alt="sliderImg" priority />
+                    <Image priority src={image} alt="sliderImg" />
                   </SwiperSlide>
                 ))}
               </Swiper>
@@ -364,7 +364,7 @@ export default function Home() {
           >
             {slider2Images.map((image, index) => (
               <SwiperSlide key={index}>
-                <Image src={image} alt="sliderimg" />
+                <Image priority src={image} alt="sliderimg" />
               </SwiperSlide>
             ))}
           </Swiper>
@@ -434,7 +434,12 @@ export default function Home() {
             <div className="flex flex-col lg:gap-8 gap-4">
               <Link href={`./products?category=Decent Table`}>
                 <div className="relative group">
-                  <Image alt="category" src={categoryImg1} className="w-full" />
+                  <Image
+                    priority
+                    alt="category"
+                    src={categoryImg1}
+                    className="w-full"
+                  />
                   <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <h3 className="text-white text-center lg:font-semibold lg:text-xl">
                       Decent Table
@@ -444,7 +449,12 @@ export default function Home() {
               </Link>
               <Link href={`./products?category=Simple Solid Sofa`}>
                 <div className="relative group">
-                  <Image alt="category" src={categoryImg3} className="w-full" />
+                  <Image
+                    priority
+                    alt="category"
+                    src={categoryImg3}
+                    className="w-full"
+                  />
                   <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <h3 className="text-white text-center lg:font-semibold lg:text-xl">
                       Simple Solid Sofa
@@ -456,7 +466,12 @@ export default function Home() {
             <div className="flex flex-col lg:gap-8 gap-4">
               <Link href={`./products?category=Modern Sofa`}>
                 <div className="relative group">
-                  <Image alt="category" src={categoryImg2} className="w-full" />
+                  <Image
+                    priority
+                    alt="category"
+                    src={categoryImg2}
+                    className="w-full"
+                  />
                   <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <h3 className="text-white text-center lg:font-semibold lg:text-xl">
                       Modern Sofa
@@ -466,7 +481,12 @@ export default function Home() {
               </Link>
               <Link href={`./products?category=Family Hall`}>
                 <div className="relative group">
-                  <Image alt="category" src={categoryImg4} className="w-full" />
+                  <Image
+                    priority
+                    alt="category"
+                    src={categoryImg4}
+                    className="w-full"
+                  />
                   <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <h3 className="text-white text-center lg:font-semibold lg:text-xl">
                       Family Hall
@@ -478,6 +498,7 @@ export default function Home() {
                 <Link href={`./products?category=Bedroom`}>
                   <div className="relative group">
                     <Image
+                      priority
                       alt="category"
                       src={categoryImg5}
                       className="w-full"
@@ -492,6 +513,7 @@ export default function Home() {
                 <Link href={`./products?category=Kitchen`}>
                   <div className="relative group">
                     <Image
+                      priority
                       alt="category"
                       src={categoryImg6}
                       className="w-full"
@@ -770,10 +792,10 @@ export default function Home() {
               <div className="flex items-center lg:gap-8 xl:gap-16 sm:gap-4 md:gap-2 gap-2 pt-8">
                 <div className="sm:flex hidden lg:gap-8 sm:gap-4 ">
                   <div className="flex items-end">
-                    <Image alt="testimonial" src={testimonialImg1} />
+                    <Image priority alt="testimonial" src={testimonialImg1} />
                   </div>
                   <div>
-                    <Image alt="testimonial" src={testimonialImg2} />
+                    <Image priority alt="testimonial" src={testimonialImg2} />
                   </div>
                 </div>
 
@@ -873,10 +895,10 @@ export default function Home() {
               <div className="flex items-center lg:gap-8 xl:gap-16 sm:gap-4 md:gap-2 gap-2 pt-8">
                 <div className="sm:flex hidden lg:gap-8 sm:gap-4 ">
                   <div className="flex items-end">
-                    <Image alt="testimonial" src={testimonialImg4} />
+                    <Image priority alt="testimonial" src={testimonialImg4} />
                   </div>
                   <div>
-                    <Image alt="testimonial" src={testimonialImg3} />
+                    <Image priority alt="testimonial" src={testimonialImg3} />
                   </div>
                 </div>
 
@@ -976,10 +998,10 @@ export default function Home() {
               <div className="flex items-center lg:gap-8 xl:gap-16 sm:gap-4 md:gap-2 gap-2 pt-8">
                 <div className="sm:flex hidden lg:gap-8 sm:gap-4 ">
                   <div className="flex items-end">
-                    <Image alt="testimonial" src={testimonialImg5} />
+                    <Image priority alt="testimonial" src={testimonialImg5} />
                   </div>
                   <div>
-                    <Image alt="testimonial" src={testimonialImg6} />
+                    <Image priority alt="testimonial" src={testimonialImg6} />
                   </div>
                 </div>
 
@@ -1079,10 +1101,10 @@ export default function Home() {
               <div className="flex items-center lg:gap-8 xl:gap-16 sm:gap-4 md:gap-2 gap-2 pt-8">
                 <div className="sm:flex hidden lg:gap-8 sm:gap-4 ">
                   <div className="flex items-end">
-                    <Image alt="testimonial" src={testimonialImg4} />
+                    <Image priority alt="testimonial" src={testimonialImg4} />
                   </div>
                   <div>
-                    <Image alt="testimonial" src={testimonialImg3} />
+                    <Image priority alt="testimonial" src={testimonialImg3} />
                   </div>
                 </div>
 
@@ -1182,10 +1204,10 @@ export default function Home() {
               <div className="flex items-center lg:gap-8 xl:gap-16 sm:gap-4 md:gap-2 gap-2 pt-8">
                 <div className="sm:flex hidden lg:gap-8 sm:gap-4 ">
                   <div className="flex items-end">
-                    <Image alt="testimonial" src={testimonialImg1} />
+                    <Image priority alt="testimonial" src={testimonialImg1} />
                   </div>
                   <div>
-                    <Image alt="testimonial" src={testimonialImg2} />
+                    <Image priority alt="testimonial" src={testimonialImg2} />
                   </div>
                 </div>
 
@@ -1285,10 +1307,10 @@ export default function Home() {
               <div className="flex items-center lg:gap-8 xl:gap-16 sm:gap-4 md:gap-2 gap-2 pt-8">
                 <div className="sm:flex hidden lg:gap-8 sm:gap-4 ">
                   <div className="flex items-end">
-                    <Image alt="testimonial" src={testimonialImg5} />
+                    <Image priority alt="testimonial" src={testimonialImg5} />
                   </div>
                   <div>
-                    <Image alt="testimonial" src={testimonialImg6} />
+                    <Image priority alt="testimonial" src={testimonialImg6} />
                   </div>
                 </div>
 

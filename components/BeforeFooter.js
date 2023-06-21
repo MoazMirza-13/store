@@ -90,7 +90,7 @@ export default function BeforeFooter() {
           whileInView={{ opacity: 1, y: 0, x: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          <Image src={before_footerImg} alt="img" />
+          <Image priority src={before_footerImg} alt="img" />
         </m.div>
       </div>
     </>

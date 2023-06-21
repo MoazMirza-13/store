@@ -25,7 +25,7 @@ export default function page() {
     <>
       <Navbar />
       <div className="flex flex-col lg:flex-row  items-center gap-12  md:gap-24 lg:gap-20 xl:gap-[12rem] max-w-[80%] m-auto mt-[10rem] md:mt-[12rem]">
-        <Image src={productImg} alt="img" />
+        <Image priority src={productImg} alt="img" />
         <m.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}

@@ -130,7 +130,7 @@ export default function ExploreOther() {
         >
           {slider2Images.map((image, index) => (
             <SwiperSlide key={index}>
-              <Image src={image} alt="sliderimg" />
+              <Image priority src={image} alt="sliderimg" />
             </SwiperSlide>
           ))}
         </Swiper>

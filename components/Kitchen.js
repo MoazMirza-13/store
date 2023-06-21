@@ -13,7 +13,12 @@ export default function Kitchen() {
             transition={{ duration: 0.5 }}
             className="xl:max-w-[19rem] lg:max-w-[15rem] sm:max-w-[10rem] max-w-[11rem] bg-white border border-gray-200 rounded-lg shadow nav-bg   dark:border-gray-700  hover:shadow-lg text-center sm:text-start"
           >
-            <Image className="rounded-t-lg" src={kitchenImg} alt="img" />
+            <Image
+              priority
+              className="rounded-t-lg"
+              src={kitchenImg}
+              alt="img"
+            />
 
             <div className="xl:p-5 p-3 text-center lg:text-start">
               <h5 className="mb-2 xl:text-2xl lg:text-xl text-lg font-bold tracking-tight text-white ">
@@ -59,7 +64,12 @@ export default function Kitchen() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="xl:max-w-[19rem] lg:max-w-[15rem] sm:max-w-[10rem] max-w-[11rem] bg-white border border-gray-200 rounded-lg shadow nav-bg   dark:border-gray-700  hover:shadow-lg text-center sm:text-start"
           >
-            <Image className="rounded-t-lg" src={kitchenImg} alt="img" />
+            <Image
+              priority
+              className="rounded-t-lg"
+              src={kitchenImg}
+              alt="img"
+            />
 
             <div className="xl:p-5 p-3 text-center lg:text-start">
               <h5 className="mb-2 xl:text-2xl lg:text-xl text-lg font-bold tracking-tight text-white ">
@@ -105,7 +115,12 @@ export default function Kitchen() {
             transition={{ duration: 0.5 }}
             className="xl:max-w-[19rem] lg:max-w-[15rem] sm:max-w-[10rem] max-w-[11rem] bg-white border border-gray-200 rounded-lg shadow nav-bg   dark:border-gray-700  hover:shadow-lg text-center sm:text-start"
           >
-            <Image className="rounded-t-lg" src={kitchenImg} alt="img" />
+            <Image
+              priority
+              className="rounded-t-lg"
+              src={kitchenImg}
+              alt="img"
+            />
 
             <div className="xl:p-5 p-3 text-center lg:text-start">
               <h5 className="mb-2 xl:text-2xl lg:text-xl text-lg font-bold tracking-tight text-white ">
@@ -151,7 +166,12 @@ export default function Kitchen() {
             transition={{ duration: 0.5 }}
             className="xl:max-w-[19rem] lg:max-w-[15rem] sm:max-w-[10rem] max-w-[11rem] bg-white border border-gray-200 rounded-lg shadow nav-bg   dark:border-gray-700  hover:shadow-lg text-center sm:text-start"
           >
-            <Image className="rounded-t-lg" src={kitchenImg} alt="img" />
+            <Image
+              priority
+              className="rounded-t-lg"
+              src={kitchenImg}
+              alt="img"
+            />
 
             <div className="xl:p-5 p-3 text-center lg:text-start">
               <h5 className="mb-2 xl:text-2xl lg:text-xl text-lg font-bold tracking-tight text-white ">
@@ -197,7 +217,12 @@ export default function Kitchen() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="xl:max-w-[19rem] lg:max-w-[15rem] sm:max-w-[10rem] max-w-[11rem] bg-white border border-gray-200 rounded-lg shadow nav-bg   dark:border-gray-700  hover:shadow-lg text-center sm:text-start"
           >
-            <Image className="rounded-t-lg" src={kitchenImg} alt="img" />
+            <Image
+              priority
+              className="rounded-t-lg"
+              src={kitchenImg}
+              alt="img"
+            />
 
             <div className="xl:p-5 p-3 text-center lg:text-start">
               <h5 className="mb-2 xl:text-2xl lg:text-xl text-lg font-bold tracking-tight text-white ">
@@ -243,7 +268,12 @@ export default function Kitchen() {
             transition={{ duration: 0.5 }}
             className="xl:max-w-[19rem] lg:max-w-[15rem] sm:max-w-[10rem] max-w-[11rem] bg-white border border-gray-200 rounded-lg shadow nav-bg   dark:border-gray-700  hover:shadow-lg text-center sm:text-start"
           >
-            <Image className="rounded-t-lg" src={kitchenImg} alt="img" />
+            <Image
+              priority
+              className="rounded-t-lg"
+              src={kitchenImg}
+              alt="img"
+            />
 
             <div className="xl:p-5 p-3 text-center lg:text-start">
               <h5 className="mb-2 xl:text-2xl lg:text-xl text-lg font-bold tracking-tight text-white ">

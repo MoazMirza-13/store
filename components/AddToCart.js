@@ -443,6 +443,7 @@ export default function AddToCart({ isopen, onclose }) {
                         className="flex xl:gap-[6rem] md:gap-10 items-center flex-col lg:flex-row gap-4"
                       >
                         <Image
+                          priority
                           width={128}
                           height={100}
                           src={item.img}
