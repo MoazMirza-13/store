@@ -19,10 +19,10 @@ const mont = Montserrat({
   variable: "--font-montserrat",
 });
 
-// export const metadata = {
-//   title: "Elegencia : a Furniture Store",
-//   description: "Elegencia : an Online Furniture Store",
-// };
+export const metadata = {
+  title: "Elegencia : a Furniture Store",
+  description: "Elegencia : an Online Furniture Store",
+};
 
 export default function RootLayout({ children }) {
   return (
