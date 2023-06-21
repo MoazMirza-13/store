@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import ReactModal from "react-modal";
+import { motion as m } from "framer-motion";
 import btn from "../app/modules/btn.module.css";
 
 export default function Reviews() {
@@ -43,9 +44,14 @@ export default function Reviews() {
         id="reviews-container"
         className="md:max-w-[50%] max-w-[80%] m-auto items-center justify-center flex flex-col gap-8 mt-[10rem]"
       >
-        <h1 className="font-playfair lg:font-semibold md:text-5xl text-[1.5rem] md:leading-[4.563rem] leading-[1.5rem] sm:leading-[2rem]">
+        <m.h1
+          initial={{ opacity: 0, y: -50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4, type: "spring", stiffness: 300 }}
+          className="font-playfair lg:font-semibold md:text-5xl text-[1.5rem] md:leading-[4.563rem] leading-[1.5rem] sm:leading-[2rem]"
+        >
           Reviews
-        </h1>
+        </m.h1>
         <div className="flex flex-col gap-6">
           <div className="flex flex-col gap-6">
             <h1 className="font-playfair font-medium text-lg">
@@ -99,12 +105,15 @@ export default function Reviews() {
           ))}
         </div>
         <div className="ml-auto hidden lg:block">
-          <button
+          <m.button
+            whileHover={{ scale: 1.2 }}
+            whileTap={{ scale: 1 }}
+            transition={{ duration: 0.4, delay: 0 }}
             onClick={openModal}
             className={`${btn["btn-6"]} text-white  font-semibold`}
           >
             Write a Review
-          </button>
+          </m.button>
         </div>
       </div>
       <ReactModal

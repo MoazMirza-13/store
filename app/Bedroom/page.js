@@ -6,6 +6,7 @@ import Image from "next/image";
 import productImg from "../../public/product-pages/image 41.png";
 import Reviews from "@/components/Reviews";
 import ExploreOther from "@/components/ExploreOther";
+import { motion as m } from "framer-motion";
 
 export default function page() {
   const dispatch = useDispatch();
@@ -25,7 +26,13 @@ export default function page() {
       <Navbar />
       <div className="flex flex-col lg:flex-row  items-center gap-12  md:gap-24 lg:gap-20 xl:gap-[12rem] max-w-[80%] m-auto mt-[10rem] md:mt-[12rem]">
         <Image src={productImg} alt="img" />
-        <div className="flex flex-col gap-8 md:gap-4 xl:gap-8">
+
+        <m.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, type: "spring", stiffness: 300 }}
+          className="flex flex-col gap-8 md:gap-4 xl:gap-8"
+        >
           <h1 className="font-playfair font-semibold text-4xl">Simple Bed</h1>
           <p className="font-mont font-semibold text-base">$700</p>
           <p className="text-[#888888] font-mont md:text-sm xl:text-base">
@@ -62,7 +69,7 @@ export default function page() {
               <span className="relative invisible"> Add To Cart</span>
             </button>
           </div>
-        </div>
+        </m.div>
       </div>
       <Reviews />
       <div className="mt-28">

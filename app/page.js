@@ -1383,9 +1383,6 @@ export default function Home() {
           <div className="flex justify-center mt-6 lg:mt-10">
             <Link href="./Reviews">
               <m.button
-                whileHover={{ scale: 1.2 }}
-                whileTap={{ scale: 1 }}
-                transition={{ duration: 0.4, delay: 0 }}
                 className={`${btn["btn-3"]} font-semibold text-xl text-white flex items-center justify-center  gap-[0.2rem]`}
               >
                 See All Reviews

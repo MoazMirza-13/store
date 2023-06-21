@@ -11,6 +11,7 @@ import "swiper/swiper.min.css";
 import "swiper/swiper-bundle.css";
 import slider2Images from "../app/modules/slider2Images.module";
 import btn from "../app/modules/btn.module.css";
+import { motion as m } from "framer-motion";
 
 export default function ExploreOther() {
   return (
@@ -18,13 +19,29 @@ export default function ExploreOther() {
       {/* best selling */}
       <div className="md:max-w-[84%] max-w-[79%] m-auto mt-10">
         <div className="flex items-center sm:gap-4 gap-2">
-          <h1 className="font-playfair lg:font-semibold md:text-5xl text-[1.5rem] md:leading-[4.563rem] leading-[1.5rem] sm:leading-[2rem] ">
+          <m.h1
+            initial={{ opacity: 1, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0 }}
+            className="font-playfair lg:font-semibold md:text-5xl text-[1.5rem] md:leading-[4.563rem] leading-[1.5rem] sm:leading-[2rem] "
+          >
             Explore Other Products
-          </h1>
-          <hr className="w-[38.875rem] h-[0.188rem] bg-[#D4B78F] rounded-full" />
+          </m.h1>
+          <m.div
+            initial={{ opacity: 1, width: "0.875rem" }}
+            whileInView={{ opacity: 1, width: "38.875rem" }}
+            transition={{ duration: 3, delay: 0 }}
+          >
+            <hr className="w-[38.875rem]i h-[0.388rem] bg-[#D4B78F] rounded-full" />
+          </m.div>
         </div>
         <div className="flex justify-end sm:gap-6 gap-2 mb-6">
-          <button onClick={() => swiper2.slidePrev()}>
+          <m.button
+            whileHover={{ scale: 1.2 }}
+            whileTap={{ scale: 1 }}
+            transition={{ duration: 0.4, delay: 0 }}
+            onClick={() => swiper2.slidePrev()}
+          >
             <svg
               width="50"
               height="50"
@@ -54,8 +71,13 @@ export default function ExploreOther() {
                 strokeLinejoin="round"
               />
             </svg>
-          </button>
-          <button onClick={() => swiper2.slideNext()}>
+          </m.button>
+          <m.button
+            whileHover={{ scale: 1.2 }}
+            whileTap={{ scale: 1 }}
+            transition={{ duration: 0.4, delay: 0 }}
+            onClick={() => swiper2.slideNext()}
+          >
             <svg
               width="50"
               height="50"
@@ -86,7 +108,7 @@ export default function ExploreOther() {
                 strokeLinejoin="round"
               />
             </svg>
-          </button>
+          </m.button>
         </div>
         <Swiper
           slidesPerView={2}
@@ -112,13 +134,23 @@ export default function ExploreOther() {
             </SwiperSlide>
           ))}
         </Swiper>
-        <div className="flex justify-center lg:mt-10">
+        <m.div
+          initial={{ opacity: 0, x: -140 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{
+            duration: 0.6,
+            type: "spring",
+            stiffness: 140,
+          }}
+          className="flex justify-center lg:mt-10"
+        >
           <Link
             href="./products"
             className={`${btn["btn-3"]} font-semibold text-xl text-white flex items-center justify-center  gap-[0.2rem]`}
           >
             Explore All Products
-            <svg
+            <m.svg
+              whileHover={{ x: 7 }}
               width="25"
               height="25"
               viewBox="0 0 25 25"
@@ -139,9 +171,9 @@ export default function ExploreOther() {
                 strokeLinecap="round"
                 strokeLinejoin="round"
               />
-            </svg>
+            </m.svg>
           </Link>
-        </div>
+        </m.div>
       </div>
     </>
   );
