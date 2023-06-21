@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import before_footerImg from "../public/before-footer/Group 31.png";
 import btn from "../app/modules/btn.module.css";
