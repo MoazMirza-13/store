@@ -10,7 +10,12 @@ export default function Footer() {
             <m.h1
               initial={{ opacity: 0, x: 80 }}
               whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.4, type: "spring", stiffness: 120 }}
+              transition={{
+                duration: 0.4,
+                type: "spring",
+                stiffness: 120,
+                delay: 0.5,
+              }}
               className="font-playfair text-lg font-bold tracking-widest"
             >
               ELEGENCIA
@@ -19,7 +24,12 @@ export default function Footer() {
               <m.div
                 initial={{ opacity: 0, x: -50, y: -35 }}
                 whileInView={{ opacity: 1, x: 0, y: 0 }}
-                transition={{ duration: 0.4, type: "spring", stiffness: 120 }}
+                transition={{
+                  duration: 0.4,
+                  type: "spring",
+                  stiffness: 120,
+                  delay: 1.5,
+                }}
                 className="flex flex-col gap-2 md:gap-4"
               >
                 <h1 className="font-mont font-bold text-sm">Address</h1>
@@ -32,7 +42,12 @@ export default function Footer() {
               <m.div
                 initial={{ opacity: 0, x: 50 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.4, type: "spring", stiffness: 120 }}
+                transition={{
+                  duration: 0.4,
+                  type: "spring",
+                  stiffness: 120,
+                  delay: 1,
+                }}
                 className="flex flex-col gap-2 md:gap-4"
               >
                 <h1 className="font-mont font-bold text-sm">Help</h1>
@@ -46,7 +61,12 @@ export default function Footer() {
               <m.div
                 initial={{ opacity: 0, x: -50 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.4, type: "spring", stiffness: 120 }}
+                transition={{
+                  duration: 0.4,
+                  type: "spring",
+                  stiffness: 120,
+                  delay: 1,
+                }}
                 className="flex-col gap-4 hidden sm:flex"
               >
                 <h1 className="font-mont font-bold text-sm">Shop</h1>
@@ -59,7 +79,12 @@ export default function Footer() {
               <m.div
                 initial={{ opacity: 0, x: 50, y: -35 }}
                 whileInView={{ opacity: 1, x: 0, y: 0 }}
-                transition={{ duration: 0.4, type: "spring", stiffness: 120 }}
+                transition={{
+                  duration: 0.4,
+                  type: "spring",
+                  stiffness: 120,
+                  delay: 1.5,
+                }}
                 className="flex-col gap-4 hidden sm:flex"
               >
                 <h1 className="font-mont font-bold text-sm">Legal Stuff</h1>
@@ -105,7 +130,12 @@ export default function Footer() {
             <m.p
               initial={{ opacity: 0, x: -80 }}
               whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.4, type: "spring", stiffness: 120 }}
+              transition={{
+                duration: 0.4,
+                type: "spring",
+                stiffness: 120,
+                delay: 1.7,
+              }}
               className="font-mont font-medium text-center text-xs text-[#646464]"
             >
               Copyright 2023, ELEGENCIA, All rights reserved

@@ -12,7 +12,9 @@ import {
   emptyCart,
 } from "../app/redux/actions/productActions";
 import Image from "next/image";
+import { delay, motion as m } from "framer-motion";
 import { useMemo, useState, useEffect } from "react";
+import Link from "next/link";
 
 export default function AddToCart({ isopen, onclose }) {
   const cartItems = useSelector((state) => state.allProducts.cartItems);
@@ -148,13 +150,28 @@ export default function AddToCart({ isopen, onclose }) {
             <div className="flex flex-col gap-6">
               {checkoutMode && cartItems.length !== 0 && (
                 <div className=" min-w-[70%] m-auto">
-                  <h1 className=" font-mont font-semibold text-xl text-center lg:text-start">
+                  <m.h1
+                    initial={{ opacity: 0, x: 60 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{
+                      duration: 0.4,
+                      type: "spring",
+                      stiffness: 200,
+                      delay: 0.3,
+                    }}
+                    className=" font-mont font-semibold text-xl text-center lg:text-start"
+                  >
                     SUMMARY
-                  </h1>
+                  </m.h1>
                 </div>
               )}
               {!checkoutMode && cartItems.length !== 0 && (
-                <div className="flex xl:gap-[17rem] lg:gap-[14rem] max-w-[70%] m-auto">
+                <m.div
+                  initial={{ opacity: 0, x: -60 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.4, type: "spring", stiffness: 200 }}
+                  className="flex xl:gap-[17rem] lg:gap-[14rem] max-w-[70%] m-auto"
+                >
                   <h1 className="font-mont font-semibold text-center lg:text-start">
                     Products
                   </h1>
@@ -162,7 +179,7 @@ export default function AddToCart({ isopen, onclose }) {
                     <h1 className="font-mont font-semibold">QUANTITY</h1>
                     <h1 className="font-mont font-semibold">TOTAL</h1>
                   </div>
-                </div>
+                </m.div>
               )}
               {/*  */}
               <div className="flex justify-center">
@@ -171,9 +188,18 @@ export default function AddToCart({ isopen, onclose }) {
             </div>
 
             {cartItems.length === 0 ? (
-              <h1 className=" font-mont font-medium pt-10 text-lg text-center">
+              <m.h1
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{
+                  duration: 0.4,
+                  type: "spring",
+                  stiffness: 500,
+                }}
+                className=" font-mont font-medium pt-10 text-xl text-center"
+              >
                 Your Cart Is Empty
-              </h1>
+              </m.h1>
             ) : (
               <>
                 {checkoutMode ? (
@@ -183,7 +209,17 @@ export default function AddToCart({ isopen, onclose }) {
                     </h2>
 
                     <div className=" mt-[1.5rem] grid grid-cols-1 gap-x-6 gap-y-4 sm:grid-cols-6">
-                      <div className="sm:col-span-3">
+                      <m.div
+                        initial={{ opacity: 0, x: 40 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{
+                          duration: 0.8,
+                          type: "spring",
+                          stiffness: 200,
+                          delay: 0.7,
+                        }}
+                        className="sm:col-span-3"
+                      >
                         <label
                           for="first-name"
                           id="first-name"
@@ -202,9 +238,19 @@ export default function AddToCart({ isopen, onclose }) {
                             className="block  w-[80%] rounded-md border-0 p-[0.47rem] text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 outline-[#D4B78F] focus:ring-inset focus:ring-[#D4B78F]  sm:text-sm sm:leading-6"
                           />
                         </div>
-                      </div>
+                      </m.div>
 
-                      <div className="sm:col-span-3">
+                      <m.div
+                        initial={{ opacity: 0, x: -40 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{
+                          duration: 0.8,
+                          type: "spring",
+                          stiffness: 200,
+                          delay: 0.9,
+                        }}
+                        className="sm:col-span-3"
+                      >
                         <label
                           id="last-name"
                           for="last-name"
@@ -223,9 +269,19 @@ export default function AddToCart({ isopen, onclose }) {
                             className="block  w-[80%] rounded-md border-0 p-[0.47rem] text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 outline-[#D4B78F] focus:ring-inset focus:ring-[#D4B78F] sm:text-sm sm:leading-6"
                           />
                         </div>
-                      </div>
+                      </m.div>
 
-                      <div className="sm:col-span-4">
+                      <m.div
+                        initial={{ opacity: 0, y: -30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{
+                          duration: 0.8,
+                          type: "spring",
+                          stiffness: 200,
+                          delay: 1.1,
+                        }}
+                        className="sm:col-span-4"
+                      >
                         <label
                           for="email"
                           id="email"
@@ -244,9 +300,19 @@ export default function AddToCart({ isopen, onclose }) {
                             className="block  w-[80%] rounded-md border-0 p-[0.47rem] text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 outline-[#D4B78F] focus:ring-inset focus:ring-[#D4B78F] sm:text-sm sm:leading-6"
                           />
                         </div>
-                      </div>
+                      </m.div>
 
-                      <div className="col-span-full">
+                      <m.div
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{
+                          duration: 0.8,
+                          type: "spring",
+                          stiffness: 200,
+                          delay: 1.3,
+                        }}
+                        className="col-span-full"
+                      >
                         <label
                           id="street-address"
                           for="street-address"
@@ -265,9 +331,19 @@ export default function AddToCart({ isopen, onclose }) {
                             className="block  w-[80%] rounded-md border-0 p-[0.47rem] text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 outline-[#D4B78F] focus:ring-inset focus:ring-[#D4B78F] sm:text-sm sm:leading-6"
                           />
                         </div>
-                      </div>
+                      </m.div>
 
-                      <div className="sm:col-span-2 sm:col-start-1">
+                      <m.div
+                        initial={{ opacity: 0, x: -40 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{
+                          duration: 0.5,
+                          type: "spring",
+                          stiffness: 200,
+                          delay: 1.5,
+                        }}
+                        className="sm:col-span-2 sm:col-start-1"
+                      >
                         <label
                           id="city"
                           for="city"
@@ -286,9 +362,19 @@ export default function AddToCart({ isopen, onclose }) {
                             className="block  w-[80%] rounded-md border-0 p-[0.47rem] text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 outline-[#D4B78F] focus:ring-inset focus:ring-[#D4B78F] sm:text-sm sm:leading-6"
                           />
                         </div>
-                      </div>
+                      </m.div>
 
-                      <div className="sm:col-span-2">
+                      <m.div
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{
+                          duration: 0.8,
+                          type: "spring",
+                          stiffness: 200,
+                          delay: 1.7,
+                        }}
+                        className="sm:col-span-2"
+                      >
                         <label
                           id="region"
                           for="region"
@@ -307,9 +393,19 @@ export default function AddToCart({ isopen, onclose }) {
                             className="block  w-[80%] rounded-md border-0 p-[0.47rem] text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 outline-[#D4B78F] focus:ring-inset focus:ring-[#D4B78F] sm:text-sm sm:leading-6"
                           />
                         </div>
-                      </div>
+                      </m.div>
 
-                      <div className="sm:col-span-2">
+                      <m.div
+                        initial={{ opacity: 0, x: 40 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{
+                          duration: 0.5,
+                          type: "spring",
+                          stiffness: 200,
+                          delay: 1.9,
+                        }}
+                        className="sm:col-span-2"
+                      >
                         <label
                           id="postal-code"
                           for="postal-code"
@@ -328,12 +424,12 @@ export default function AddToCart({ isopen, onclose }) {
                             className="block  w-[80%] rounded-md border-0 p-[0.47rem] text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 outline-[#D4B78F] focus:ring-inset focus:ring-[#D4B78F] sm:text-sm sm:leading-6"
                           />
                         </div>
-                      </div>
+                      </m.div>
                     </div>
                     <div className="flex justify-center">
                       <button
                         onClick={handleProceed}
-                        className="w-[37rem] h-[3rem] mt-4 bg-[#D4B78F] shadow-md rounded-lg text-white text-center "
+                        className="w-[37rem] h-[3rem] mt-4 bg-[#D4B78F] hover:bg-[#A37B44] shadow-md rounded-lg text-white text-center "
                       >
                         Payment to Proceed
                       </button>
@@ -384,7 +480,7 @@ export default function AddToCart({ isopen, onclose }) {
               </>
             )}
           </div>
-          <div className="bg-[#D4B78F] p-8 lg:pt-20 pt-8 lg:pb-[10.6rem] text-white flex flex-col gap-6 lg:gap-10">
+          <div className="bg-[#D4B78F] p-8 lg:pt-20 pt-8 lg:pb-[10.4rem] text-white flex flex-col gap-6 lg:gap-10">
             <h1 className=" font-mont font-semibold text-xl">SUMMARY</h1>
             <hr className=" lg:w-[12i2.875rem] h-[0.188rem] rounded-full bg-[#A37B44]" />
             <div className="flex flex-col gap-8">
@@ -407,13 +503,15 @@ export default function AddToCart({ isopen, onclose }) {
             <div className="flex flex-col gap-4 items-center">
               <button
                 onClick={handleCheckout}
-                className="bg-[#A37B44] rounded-md lg:w-[13.875rem] xl:w-[18.875rem] w-[12.875rem] h-[2.375rem] text-[#FFFFFF] font-medium font-mont text-sm"
+                className="bg-[#A37B44] hover:bg-[#ab8144] rounded-md lg:w-[13.875rem] xl:w-[18.875rem] w-[12.875rem] h-[2.375rem] text-[#FFFFFF] font-medium font-mont text-sm"
               >
                 Checkout
               </button>
-              <button className=" font-medium font-mont text-xs">
-                Continue Shopping
-              </button>
+              <Link href="./products">
+                <button className=" font-medium font-mont text-sm">
+                  Continue Shopping
+                </button>
+              </Link>
             </div>
             <hr className=" lg:w-[12i2.875rem] h-[0.188rem] rounded-full bg-[#A37B44]" />
           </div>

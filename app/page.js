@@ -66,7 +66,7 @@ export default function Home() {
             <m.p
               initial={{ y: 18, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
-              transition={{ duration: 1 }}
+              transition={{ duration: 0.6 }}
               className="font-mont md:text-xl md:block hidden lg:hidden tracking-wider "
             >
               Uncover Exceptional Furniture Pieces <br /> Crafted with Precision
@@ -75,7 +75,7 @@ export default function Home() {
             <m.p
               initial={{ y: 18, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
-              transition={{ duration: 1 }}
+              transition={{ duration: 0.6 }}
               className="font-mont md:text-xl lg:block hidden tracking-wider "
             >
               Uncover Exceptional Furniture Pieces Crafted with Precision and
@@ -84,11 +84,11 @@ export default function Home() {
             <div className="flex flex-col md:flex-row gap-8 items-center md:items-start">
               <Link href="./products">
                 <m.button
-                  initial={{ opacity: 0, x: 30 }}
+                  initial={{ opacity: 0, x: 40 }}
                   whileHover={{ scale: 1.2 }}
                   whileTap={{ scale: 1 }}
                   whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.4, delay: 0 }}
+                  transition={{ duration: 0.6 }}
                   className={`${btn["btn-1"]} font-semibold text-xl border border-solid border-gray-700 md:border-none`}
                 >
                   Shop Now
@@ -106,7 +106,7 @@ export default function Home() {
                   whileHover={{ scale: 1.2 }}
                   whileTap={{ scale: 1 }}
                   whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.4, delay: 0 }}
+                  transition={{ duration: 0.6 }}
                   className={`${btn["btn-2"]} font-semibold text-xl `}
                 >
                   Explore
@@ -122,7 +122,12 @@ export default function Home() {
           <m.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{
+              duration: 0.8,
+              delay: 0.3,
+              type: "spring",
+              stiffness: 200,
+            }}
             className="max-w-[95%] m-auto flex flex-col items-end"
           >
             <h1 className="font-mont md:font-semibold text-xl">
@@ -249,9 +254,9 @@ export default function Home() {
         <div className="md:max-w-[84%] max-w-[79%] m-auto mt-10">
           <div className="flex items-center sm:gap-4 gap-2">
             <m.h1
-              initial={{ opacity: 1, x: -40 }}
+              initial={{ opacity: 0, x: -40 }}
               whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0 }}
+              transition={{ duration: 0.6 }}
               className="font-playfair lg:font-semibold md:text-5xl text-[1.5rem] md:leading-[4.563rem] leading-[1.5rem] sm:leading-[2rem] "
             >
               Best Selling Products
@@ -259,7 +264,7 @@ export default function Home() {
             <m.div
               initial={{ opacity: 1, width: "0.875rem" }}
               whileInView={{ opacity: 1, width: "38.875rem" }}
-              transition={{ duration: 3, delay: 0 }}
+              transition={{ duration: 3 }}
             >
               <hr className="w-[38.875rem]i h-[0.388rem] bg-[#D4B78F] rounded-full" />
             </m.div>
@@ -1383,6 +1388,13 @@ export default function Home() {
           <div className="flex justify-center mt-6 lg:mt-10">
             <Link href="./Reviews">
               <m.button
+                initial={{ opacity: 0, x: -140 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{
+                  duration: 0.6,
+                  type: "spring",
+                  stiffness: 140,
+                }}
                 className={`${btn["btn-3"]} font-semibold text-xl text-white flex items-center justify-center  gap-[0.2rem]`}
               >
                 See All Reviews

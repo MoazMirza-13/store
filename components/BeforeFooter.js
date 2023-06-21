@@ -45,7 +45,7 @@ export default function BeforeFooter() {
           className="flex flex-col gap-4 items-center text-center"
         >
           {showAlert && showMessage && (
-            <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded text-center fixed md:top-[2.25rem]i top-[1.25rem]i sm:left-[8rem]i left-0 right-0 top-[67px] md:left-[12.938rem]i xl:left-[20.938rem]i">
+            <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded text-center static">
               <span className="block sm:inline">
                 You Are Now Subscribed To Elegencia
               </span>
