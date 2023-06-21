@@ -241,7 +241,7 @@ export default function Home() {
               >
                 {slider1Images.map((image, index) => (
                   <SwiperSlide key={index}>
-                    <Image src={image} alt="sliderImg" />
+                    <Image src={image} alt="sliderImg" priority />
                   </SwiperSlide>
                 ))}
               </Swiper>
