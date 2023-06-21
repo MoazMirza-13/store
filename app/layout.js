@@ -1,7 +1,7 @@
 "use client";
 import "./globals.css";
 import Head from "next/head";
-
+//
 import BeforeFooter from "@/components/BeforeFooter";
 import Footer from "@/components/Footer";
 
