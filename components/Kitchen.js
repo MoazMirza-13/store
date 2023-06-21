@@ -1,5 +1,5 @@
 import Link from "next/link";
-import kitchenImg from "../public/products/Kitchen.png";
+import kitchenImg from "../public/products/kitchen.png";
 import Image from "next/image";
 import { motion as m } from "framer-motion";
 export default function Kitchen() {
