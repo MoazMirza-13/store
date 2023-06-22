@@ -1,4 +1,5 @@
 "use client";
+import { Helmet } from "react-helmet";
 import Category from "@/components/Category";
 import Nav from "@/components/NavProducts";
 import Products from "@/components/Products";
@@ -17,6 +18,9 @@ export default function page() {
 
   return (
     <>
+      <Helmet>
+        <title>Elegencia : Products</title>
+      </Helmet>
       <Nav />
       <m.h1
         initial={{ opacity: 0, y: -50 }}

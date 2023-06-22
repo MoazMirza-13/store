@@ -1,4 +1,5 @@
 "use client";
+import { Helmet } from "react-helmet";
 import { useEffect } from "react";
 import Navbar from "@/components/NavProducts";
 import Reviews from "@/components/Reviews";
@@ -14,6 +15,9 @@ export default function Page() {
 
   return (
     <>
+      <Helmet>
+        <title>Elegencia : Reviews</title>
+      </Helmet>
       <Navbar />
       <Reviews />
     </>

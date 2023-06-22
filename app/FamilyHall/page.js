@@ -1,14 +1,22 @@
 "use client";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../redux/actions/productActions";
+import { Helmet } from "react-helmet";
 import Navbar from "@/components/NavProducts";
 import Image from "next/image";
 import productImg from "../../public/product-pages/Rectangle 117.png";
 import Reviews from "@/components/Reviews";
 import ExploreOther from "@/components/ExploreOther";
 import { motion as m } from "framer-motion";
-
+import { useEffect } from "react";
 export default function page() {
+  useEffect(() => {
+    const scrollToTop = () => {
+      window.scrollTo(0, 100);
+    };
+
+    scrollToTop();
+  }, []);
   const dispatch = useDispatch();
 
   const handleAddToCart = () => {
@@ -23,6 +31,9 @@ export default function page() {
   };
   return (
     <>
+      <Helmet>
+        <title>Elegencia : Family Sofa</title>
+      </Helmet>
       <Navbar />
       <div className="flex flex-col lg:flex-row  items-center gap-12  md:gap-24 lg:gap-20 xl:gap-[12rem] max-w-[80%] m-auto mt-[10rem] md:mt-[12rem]">
         <Image priority src={productImg} alt="img" />
