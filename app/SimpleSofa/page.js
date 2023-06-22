@@ -1,5 +1,6 @@
 "use client";
 import { useDispatch } from "react-redux";
+import { Helmet } from "react-helmet";
 import { addToCart } from "../redux/actions/productActions";
 import Navbar from "@/components/NavProducts";
 import Image from "next/image";
@@ -23,6 +24,9 @@ export default function page() {
   };
   return (
     <>
+      <Helmet>
+        <title>Elegencia : Simple Sofa</title>
+      </Helmet>
       <Navbar />
       <div className="flex flex-col lg:flex-row  items-center gap-12  md:gap-24 lg:gap-20 xl:gap-[12rem] max-w-[80%] m-auto mt-[10rem] md:mt-[12rem]">
         <Image priority src={productImg} alt="img" />

@@ -14,7 +14,7 @@ export default function Home() {
   return (
     <>
       <Helmet>
-        <title>My Title</title>
+        <title>Elegencia : a Furniture Store</title>
       </Helmet>
 
       <Nav />
