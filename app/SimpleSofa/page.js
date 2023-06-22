@@ -8,8 +8,15 @@ import productImg from "../../public/product-pages/Rectangle 101.png";
 import Reviews from "@/components/Reviews";
 import ExploreOther from "@/components/ExploreOther";
 import { motion as m } from "framer-motion";
-
+import { useEffect } from "react";
 export default function page() {
+  useEffect(() => {
+    const scrollToTop = () => {
+      window.scrollTo(0, 100);
+    };
+
+    scrollToTop();
+  }, []);
   const dispatch = useDispatch();
 
   const handleAddToCart = () => {
