@@ -118,7 +118,7 @@ export default function AddToCart({ isopen, onclose }) {
           <div className="min-w-[70%] ">
             <div>
               {isFormFilled && showMessage && (
-                <div className="bg-green-100 border border-green-400 text-green-700  px-4  py-3 rounded text-center absolute md:top-[2.25rem] top-[1.25rem] sm:left-[8rem] left-0  md:left-[12.938rem] xl:left-[22.938rem]">
+                <div className="bg-green-100 border border-green-400 text-green-700  px-4  py-3 rounded text-center absolute md:top-[2.25rem] top-[1.25rem] sm:left-[8rem] left-0  md:left-[12.938rem] xl:left-[23.938rem]">
                   <span className="block sm:inline">
                     Your Order Has Been Placed!
                   </span>
