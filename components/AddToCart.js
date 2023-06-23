@@ -12,7 +12,9 @@ import {
   emptyCart,
 } from "../app/redux/actions/productActions";
 import Image from "next/image";
-import { delay, motion as m } from "framer-motion";
+import { motion as m } from "framer-motion";
+import { Formik, Form, Field, ErrorMessage } from "formik";
+import * as Yup from "yup";
 import { useMemo, useState, useEffect } from "react";
 import Link from "next/link";
 
@@ -62,39 +64,27 @@ export default function AddToCart({ isopen, onclose }) {
     setCheckoutMode(true);
   };
 
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [email, setEmail] = useState("");
-  const [streetAddress, setStreetAddress] = useState("");
-  const [city, setCity] = useState("");
-  const [region, setRegion] = useState("");
-  const [postalCode, setPostalCode] = useState("");
   const [showMessage, setShowMessage] = useState(false);
   const [isFormFilled, setIsFormFilled] = useState(false);
 
-  const handleProceed = () => {
-    if (
-      firstName &&
-      lastName &&
-      email &&
-      streetAddress &&
-      city &&
-      region &&
-      postalCode
-    ) {
-      setIsFormFilled(true);
-      setLastName("");
-      setCity("");
-      setEmail("");
-      setFirstName("");
-      setPostalCode("");
-      setRegion("");
-      setStreetAddress("");
+  const validationSchema = Yup.object({
+    firstName: Yup.string().required("First name is required"),
+    lastName: Yup.string().required("Last name is required"),
+    email: Yup.string()
+      .email("Invalid email address")
+      .required("Email is required"),
+    streetAddress: Yup.string().required("Street address is required"),
+    city: Yup.string().required("City is required"),
+    region: Yup.string().required("State / Province is required"),
+    postalCode: Yup.string().required("ZIP / Postal code is required"),
+  });
+  const handleProceed = (values) => {
+    if (validationSchema.isValidSync(values)) {
       handleEmptyCart();
-    } else {
-      setIsFormFilled(false);
+      setIsFormFilled(true);
+      setShowMessage(true);
+      // console.log(values);
     }
-    setShowMessage(true);
   };
 
   useEffect(() => {
@@ -102,11 +92,12 @@ export default function AddToCart({ isopen, onclose }) {
     if (showMessage) {
       timer = setTimeout(() => {
         setShowMessage(false);
-      }, 2500);
+      }, 2000);
     }
 
     return () => clearTimeout(timer);
   }, [showMessage]);
+
   return (
     <>
       <ReactModal
@@ -126,13 +117,6 @@ export default function AddToCart({ isopen, onclose }) {
         <div className="flex bg-[#F5F5F5] flex-col justify-between lg:flex-row gap-12 lg:gap-0">
           <div className="min-w-[70%] ">
             <div>
-              {!isFormFilled && showMessage && (
-                <div className="bg-red-100 border border-red-400 text-red-700  px-4  py-3 rounded text-center absolute md:top-[2.25rem] top-[1.25rem] sm:left-[8rem] left-0  md:left-[12.938rem] xl:left-[20.938rem]">
-                  <span className="block sm:inline">
-                    Please, Fulfill All The Information.
-                  </span>
-                </div>
-              )}
               {isFormFilled && showMessage && (
                 <div className="bg-green-100 border border-green-400 text-green-700  px-4  py-3 rounded text-center absolute md:top-[2.25rem] top-[1.25rem] sm:left-[8rem] left-0  md:left-[12.938rem] xl:left-[20.938rem]">
                   <span className="block sm:inline">
@@ -141,7 +125,6 @@ export default function AddToCart({ isopen, onclose }) {
                 </div>
               )}
             </div>
-
             <div className="max-w-[85%] m-auto py-8">
               <button onClick={onclose}>
                 <MdCancel className="text-[#C6A372] text-4xl" />
@@ -207,233 +190,275 @@ export default function AddToCart({ isopen, onclose }) {
                     <h2 className="text-base font-semibold leading-7 text-gray-900 text-center">
                       Your Information
                     </h2>
-
-                    <div className=" mt-[1.5rem] grid grid-cols-1 gap-x-6 gap-y-4 sm:grid-cols-6">
-                      <m.div
-                        initial={{ opacity: 0, x: 40 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{
-                          duration: 0.8,
-                          type: "spring",
-                          stiffness: 200,
-                          delay: 0.7,
-                        }}
-                        className="sm:col-span-3"
-                      >
-                        <label
-                          for="first-name"
-                          id="first-name"
-                          className="block text-sm font-medium leading-6 text-gray-900"
+                    <Formik
+                      initialValues={{
+                        firstName: "",
+                        lastName: "",
+                        email: "",
+                        streetAddress: "",
+                        city: "",
+                        region: "",
+                        postalCode: "",
+                      }}
+                      validationSchema={validationSchema}
+                      onSubmit={handleProceed}
+                    >
+                      <Form className=" mt-[1.5rem] grid grid-cols-1 gap-x-6 gap-y-4 sm:grid-cols-6">
+                        <m.div
+                          initial={{ opacity: 0, x: 40 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          transition={{
+                            duration: 0.8,
+                            type: "spring",
+                            stiffness: 200,
+                            delay: 0.7,
+                          }}
+                          className="sm:col-span-3"
                         >
-                          First name
-                        </label>
-                        <div className="">
-                          <input
-                            onChange={(e) => setFirstName(e.target.value)}
-                            value={firstName}
-                            type="text"
-                            name="first-name"
+                          <label
+                            htmlFor="firstName"
+                            for="first-name"
                             id="first-name"
-                            autocomplete="given-name"
-                            className="block  w-[80%] rounded-md border-0 p-[0.47rem] text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 outline-[#D4B78F] focus:ring-inset focus:ring-[#D4B78F]  sm:text-sm sm:leading-6"
-                          />
-                        </div>
-                      </m.div>
+                            className="block text-sm font-medium leading-6 text-gray-900"
+                          >
+                            First name
+                          </label>
+                          <div className="">
+                            <Field
+                              type="text"
+                              name="firstName"
+                              id="first-name"
+                              autocomplete="given-name"
+                              className="block  w-[80%] rounded-md border-0 p-[0.47rem] text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 outline-[#D4B78F] focus:ring-inset focus:ring-[#D4B78F]  sm:text-sm sm:leading-6"
+                            />
+                            <ErrorMessage
+                              name="firstName"
+                              component="div"
+                              className="text-red-500"
+                            />
+                          </div>
+                        </m.div>
 
-                      <m.div
-                        initial={{ opacity: 0, x: -40 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{
-                          duration: 0.8,
-                          type: "spring",
-                          stiffness: 200,
-                          delay: 0.9,
-                        }}
-                        className="sm:col-span-3"
-                      >
-                        <label
-                          id="last-name"
-                          for="last-name"
-                          className="block text-sm font-medium leading-6 text-gray-900"
+                        <m.div
+                          initial={{ opacity: 0, x: -40 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          transition={{
+                            duration: 0.8,
+                            type: "spring",
+                            stiffness: 200,
+                            delay: 0.9,
+                          }}
+                          className="sm:col-span-3"
                         >
-                          Last name
-                        </label>
-                        <div className="">
-                          <input
-                            onChange={(e) => setLastName(e.target.value)}
-                            value={lastName}
-                            type="text"
-                            name="last-name"
+                          <label
+                            htmlFor="lastName"
                             id="last-name"
-                            autocomplete="family-name"
-                            className="block  w-[80%] rounded-md border-0 p-[0.47rem] text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 outline-[#D4B78F] focus:ring-inset focus:ring-[#D4B78F] sm:text-sm sm:leading-6"
-                          />
-                        </div>
-                      </m.div>
+                            for="last-name"
+                            className="block text-sm font-medium leading-6 text-gray-900"
+                          >
+                            Last name
+                          </label>
+                          <div className="">
+                            <Field
+                              type="text"
+                              name="lastName"
+                              id="last-name"
+                              autocomplete="family-name"
+                              className="block  w-[80%] rounded-md border-0 p-[0.47rem] text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 outline-[#D4B78F] focus:ring-inset focus:ring-[#D4B78F] sm:text-sm sm:leading-6"
+                            />
+                            <ErrorMessage
+                              name="lastName"
+                              component="div"
+                              className="text-red-500"
+                            />
+                          </div>
+                        </m.div>
 
-                      <m.div
-                        initial={{ opacity: 0, y: -30 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{
-                          duration: 0.8,
-                          type: "spring",
-                          stiffness: 200,
-                          delay: 1.1,
-                        }}
-                        className="sm:col-span-4"
-                      >
-                        <label
-                          for="email"
-                          id="email"
-                          className="block text-sm font-medium leading-6 text-gray-900"
+                        <m.div
+                          initial={{ opacity: 0, y: -30 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{
+                            duration: 0.8,
+                            type: "spring",
+                            stiffness: 200,
+                            delay: 1.1,
+                          }}
+                          className="sm:col-span-4"
                         >
-                          Email address
-                        </label>
-                        <div className="">
-                          <input
-                            onChange={(e) => setEmail(e.target.value)}
-                            value={email}
+                          <label
+                            htmlFor="email"
+                            for="email"
                             id="email"
-                            name="email"
-                            type="email"
-                            autocomplete="email"
-                            className="block  w-[80%] rounded-md border-0 p-[0.47rem] text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 outline-[#D4B78F] focus:ring-inset focus:ring-[#D4B78F] sm:text-sm sm:leading-6"
-                          />
-                        </div>
-                      </m.div>
+                            className="block text-sm font-medium leading-6 text-gray-900"
+                          >
+                            Email address
+                          </label>
+                          <div className="">
+                            <Field
+                              id="email"
+                              name="email"
+                              type="email"
+                              autocomplete="email"
+                              className="block  w-[80%] rounded-md border-0 p-[0.47rem] text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 outline-[#D4B78F] focus:ring-inset focus:ring-[#D4B78F] sm:text-sm sm:leading-6"
+                            />
+                            <ErrorMessage
+                              name="email"
+                              component="div"
+                              className="text-red-500"
+                            />
+                          </div>
+                        </m.div>
 
-                      <m.div
-                        initial={{ opacity: 0, y: 30 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{
-                          duration: 0.8,
-                          type: "spring",
-                          stiffness: 200,
-                          delay: 1.3,
-                        }}
-                        className="col-span-full"
-                      >
-                        <label
-                          id="street-address"
-                          for="street-address"
-                          className="block text-sm font-medium leading-6 text-gray-900"
+                        <m.div
+                          initial={{ opacity: 0, y: 30 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{
+                            duration: 0.8,
+                            type: "spring",
+                            stiffness: 200,
+                            delay: 1.3,
+                          }}
+                          className="col-span-full"
                         >
-                          Street address
-                        </label>
-                        <div className="">
-                          <input
-                            onChange={(e) => setStreetAddress(e.target.value)}
-                            value={streetAddress}
-                            type="text"
-                            name="street-address"
+                          <label
+                            htmlFor=" streetAddress"
                             id="street-address"
-                            autocomplete="street-address"
-                            className="block  w-[80%] rounded-md border-0 p-[0.47rem] text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 outline-[#D4B78F] focus:ring-inset focus:ring-[#D4B78F] sm:text-sm sm:leading-6"
-                          />
-                        </div>
-                      </m.div>
+                            for="street-address"
+                            className="block text-sm font-medium leading-6 text-gray-900"
+                          >
+                            Street address
+                          </label>
+                          <div className="">
+                            <Field
+                              type="text"
+                              name="streetAddress"
+                              id="street-address"
+                              autocomplete="street-address"
+                              className="block  w-[80%] rounded-md border-0 p-[0.47rem] text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 outline-[#D4B78F] focus:ring-inset focus:ring-[#D4B78F] sm:text-sm sm:leading-6"
+                            />
+                            <ErrorMessage
+                              name="streetAddress"
+                              component="div"
+                              className="text-red-500"
+                            />
+                          </div>
+                        </m.div>
 
-                      <m.div
-                        initial={{ opacity: 0, x: -40 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{
-                          duration: 0.5,
-                          type: "spring",
-                          stiffness: 200,
-                          delay: 1.5,
-                        }}
-                        className="sm:col-span-2 sm:col-start-1"
-                      >
-                        <label
-                          id="city"
-                          for="city"
-                          className="block text-sm font-medium leading-6 text-gray-900"
+                        <m.div
+                          initial={{ opacity: 0, x: -40 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          transition={{
+                            duration: 0.5,
+                            type: "spring",
+                            stiffness: 200,
+                            delay: 1.5,
+                          }}
+                          className="sm:col-span-2 sm:col-start-1"
                         >
-                          City
-                        </label>
-                        <div className="">
-                          <input
-                            onChange={(e) => setCity(e.target.value)}
-                            value={city}
-                            type="text"
-                            name="city"
+                          <label
+                            htmlFor="city"
                             id="city"
-                            autocomplete="address-level2"
-                            className="block  w-[80%] rounded-md border-0 p-[0.47rem] text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 outline-[#D4B78F] focus:ring-inset focus:ring-[#D4B78F] sm:text-sm sm:leading-6"
-                          />
-                        </div>
-                      </m.div>
+                            for="city"
+                            className="block text-sm font-medium leading-6 text-gray-900"
+                          >
+                            City
+                          </label>
+                          <div className="">
+                            <Field
+                              type="text"
+                              name="city"
+                              id="city"
+                              autocomplete="address-level2"
+                              className="block  w-[80%] rounded-md border-0 p-[0.47rem] text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 outline-[#D4B78F] focus:ring-inset focus:ring-[#D4B78F] sm:text-sm sm:leading-6"
+                            />
+                            <ErrorMessage
+                              name="city"
+                              component="div"
+                              className="text-red-500"
+                            />
+                          </div>
+                        </m.div>
 
-                      <m.div
-                        initial={{ opacity: 0, y: 30 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{
-                          duration: 0.8,
-                          type: "spring",
-                          stiffness: 200,
-                          delay: 1.7,
-                        }}
-                        className="sm:col-span-2"
-                      >
-                        <label
-                          id="region"
-                          for="region"
-                          className="block text-sm font-medium leading-6 text-gray-900"
+                        <m.div
+                          initial={{ opacity: 0, y: 30 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{
+                            duration: 0.8,
+                            type: "spring",
+                            stiffness: 200,
+                            delay: 1.7,
+                          }}
+                          className="sm:col-span-2"
                         >
-                          State / Province
-                        </label>
-                        <div className="">
-                          <input
-                            onChange={(e) => setRegion(e.target.value)}
-                            value={region}
-                            type="text"
-                            name="region"
+                          <label
+                            htmlFor="region"
                             id="region"
-                            autocomplete="address-level1"
-                            className="block  w-[80%] rounded-md border-0 p-[0.47rem] text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 outline-[#D4B78F] focus:ring-inset focus:ring-[#D4B78F] sm:text-sm sm:leading-6"
-                          />
-                        </div>
-                      </m.div>
+                            for="region"
+                            className="block text-sm font-medium leading-6 text-gray-900"
+                          >
+                            State / Province
+                          </label>
+                          <div className="">
+                            <Field
+                              type="text"
+                              name="region"
+                              id="region"
+                              autocomplete="address-level1"
+                              className="block  w-[80%] rounded-md border-0 p-[0.47rem] text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 outline-[#D4B78F] focus:ring-inset focus:ring-[#D4B78F] sm:text-sm sm:leading-6"
+                            />
+                            <ErrorMessage
+                              name="region"
+                              component="div"
+                              className="text-red-500"
+                            />
+                          </div>
+                        </m.div>
 
-                      <m.div
-                        initial={{ opacity: 0, x: 40 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{
-                          duration: 0.5,
-                          type: "spring",
-                          stiffness: 200,
-                          delay: 1.9,
-                        }}
-                        className="sm:col-span-2"
-                      >
-                        <label
-                          id="postal-code"
-                          for="postal-code"
-                          className="block text-sm font-medium leading-6 text-gray-900"
+                        <m.div
+                          initial={{ opacity: 0, x: 40 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          transition={{
+                            duration: 0.5,
+                            type: "spring",
+                            stiffness: 200,
+                            delay: 1.9,
+                          }}
+                          className="sm:col-span-2"
                         >
-                          ZIP / Postal code
-                        </label>
-                        <div className="">
-                          <input
-                            onChange={(e) => setPostalCode(e.target.value)}
-                            value={postalCode}
-                            type="text"
-                            name="postal-code"
+                          <label
+                            htmlFor="postalCode"
                             id="postal-code"
-                            autocomplete="postal-code"
-                            className="block  w-[80%] rounded-md border-0 p-[0.47rem] text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 outline-[#D4B78F] focus:ring-inset focus:ring-[#D4B78F] sm:text-sm sm:leading-6"
-                          />
+                            for="postal-code"
+                            className="block text-sm font-medium leading-6 text-gray-900"
+                          >
+                            ZIP / Postal code
+                          </label>
+                          <div className="">
+                            <Field
+                              type="text"
+                              name="postalCode"
+                              id="postal-code"
+                              autocomplete="postal-code"
+                              className="block  w-[80%] rounded-md border-0 p-[0.47rem] text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 outline-[#D4B78F] focus:ring-inset focus:ring-[#D4B78F] sm:text-sm sm:leading-6"
+                            />
+                            <ErrorMessage
+                              name="postalCode"
+                              component="div"
+                              className="text-red-500"
+                            />
+                          </div>
+                        </m.div>
+
+                        <div className="flex justify-center md:w-[215px] w-[156px]">
+                          <button
+                            type="submit"
+                            className="w-[37rem] h-[3rem] mt-4 bg-[#D4B78F] hover:bg-[#A37B44] shadow-md rounded-lg text-white text-center "
+                          >
+                            Payment to Proceed
+                          </button>
                         </div>
-                      </m.div>
-                    </div>
-                    <div className="flex justify-center">
-                      <button
-                        onClick={handleProceed}
-                        className="w-[37rem] h-[3rem] mt-4 bg-[#D4B78F] hover:bg-[#A37B44] shadow-md rounded-lg text-white text-center "
-                      >
-                        Payment to Proceed
-                      </button>
-                    </div>
+                      </Form>
+                    </Formik>
                   </div>
                 ) : (
                   <ul className="max-w-[70%] flex flex-col gap-6 m-auto pt-12">
