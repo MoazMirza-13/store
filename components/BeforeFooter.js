@@ -2,28 +2,26 @@
 import Image from "next/image";
 import before_footerImg from "../public/before-footer/Group 31.png";
 import btn from "../app/modules/btn.module.css";
-import { Formik, Field, Form } from "formik";
+import { Formik, Form, Field, ErrorMessage } from "formik";
+import * as Yup from "yup";
 import { useState, useEffect } from "react";
 import { motion as m } from "framer-motion";
 export default function BeforeFooter() {
   const [showAlert, setShowAlert] = useState(false);
   const [showMessage, setShowMessage] = useState(false);
 
-  const testEmail = (values) => {
-    if (values.email) {
-      const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
-      const isValidEmail = emailRegex.test(values.email);
-
-      if (isValidEmail) {
-        setShowAlert(true);
-        values.email = "";
-      } else {
-        setShowAlert(false);
-      }
-    } else {
-      setShowAlert(false);
+  const validationSchema = Yup.object({
+    email: Yup.string()
+      .email("Invalid email address")
+      .required("Email is required"),
+  });
+  const handleEmail = (values) => {
+    if (validationSchema.isValidSync(values)) {
+      setShowAlert(true);
+      setShowMessage(true);
+      values.email = "";
+      // console.log(values);
     }
-    setShowMessage(true);
   };
 
   useEffect(() => {
@@ -64,25 +62,34 @@ export default function BeforeFooter() {
             offers. <br /> Subscribe now for special discounts and stay in the
             loop!
           </p>
-          <Formik initialValues={{ name: "", email: "" }} onSubmit={testEmail}>
-            <div
-              className=" relative 
-                    border border-[#e4cb901a]  border-gray-900 border-opacity-80 flex rounded-[3.346rem]"
-            >
-              <Form>
-                <Field
-                  name="email"
-                  type="email"
-                  placeholder="Enter your Email Adress"
-                  className="font-mont font-medium text-sm bg-[#e4cb901a] text-[#C8C8C8] placeholder-[#C8C8C8] outline-none   px-[265.558px] py-[1.338rem] lg:pr-[13.597rem]  md:pr-[7.597rem] pr-[4.597rem]  flex-grow lg:pl-[2.409rem] pl-[0.5rem]"
-                />
-                <button
-                  className={`${btn["btn-5"]} md:w-[132.29px] w-[85.29px] font-mont font-medium text-sm text-white absolute top-[5px] right-[6px] `}
-                >
-                  Subscribe
-                </button>
-              </Form>
-            </div>
+          <Formik
+            initialValues={{
+              email: "",
+            }}
+            validationSchema={validationSchema}
+            onSubmit={handleEmail}
+          >
+            <Form className=" relative flex flex-col">
+              <Field
+                id="email"
+                name="email"
+                type="email"
+                autocomplete="email"
+                placeholder="Enter your Email Adress"
+                className="font-mont font-medium text-sm bg-[#e4cb901a] text-[#C8C8C8] placeholder-[#C8C8C8] outline-none   px-[265.558px] py-[1.338rem] lg:pr-[13.597rem]  md:pr-[7.597rem] pr-[4.597rem]  flex-grow lg:pl-[2.409rem] pl-[0.5rem] border border-[#e4cb901a]  border-gray-900 border-opacity-80  rounded-[3.346rem]"
+              />
+              <ErrorMessage
+                name="email"
+                component="span"
+                className="text-red-500"
+              />
+              <button
+                type="submit"
+                className={`${btn["btn-5"]} md:w-[132.29px] w-[85.29px] font-mont font-medium text-sm text-white absolute top-[5px] right-[6px]`}
+              >
+                Subscribe
+              </button>
+            </Form>
           </Formik>
         </m.div>
         <m.div
