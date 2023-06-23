@@ -1,7 +1,14 @@
 import { ActionTypes } from "../constans/action-types";
 
+const initialCartItems = [];
+const initialCartCount = initialCartItems.reduce(
+  (count, item) => count + item.quantity,
+  0
+);
+
 const initialState = {
-  cartItems: [],
+  cartItems: initialCartItems,
+  cartCount: initialCartCount,
 };
 
 export const productReducer = (state = initialState, { type, payload }) => {
@@ -16,11 +23,13 @@ export const productReducer = (state = initialState, { type, payload }) => {
           cartItems: state.cartItems.map((item) =>
             item.id === id ? { ...item, quantity: item.quantity + 1 } : item
           ),
+          cartCount: state.cartCount,
         };
       } else {
         return {
           ...state,
           cartItems: [...state.cartItems, { ...payload, quantity: 1 }],
+          cartCount: state.cartCount + 1,
         };
       }
     case ActionTypes.INCREASE_QUANTITY:
@@ -31,7 +40,9 @@ export const productReducer = (state = initialState, { type, payload }) => {
             ? { ...item, quantity: item.quantity + 1 }
             : item
         ),
+        cartCount: state.cartCount,
       };
+
     case ActionTypes.DECREASE_QUANTITY:
       return {
         ...state,
@@ -40,16 +51,30 @@ export const productReducer = (state = initialState, { type, payload }) => {
             ? { ...item, quantity: item.quantity - 1 }
             : item
         ),
+        cartCount: state.cartCount,
       };
+
     case ActionTypes.REMOVE_ITEM:
+      const removedItem = state.cartItems.find(
+        (item) => item.id === payload.id
+      );
+      const removedItemQuantity = removedItem ? removedItem.quantity : 0;
+      const remainingItemsCount = state.cartItems.length - 1;
+      const newCartCount = Math.max(
+        state.cartCount - removedItemQuantity,
+        remainingItemsCount
+      );
       return {
         ...state,
         cartItems: state.cartItems.filter((item) => item.id !== payload.id),
+        cartCount: newCartCount,
       };
+
     case ActionTypes.TO_EMPTY_CART:
       return {
         ...state,
         cartItems: [],
+        cartCount: 0,
       };
     default:
       return state;

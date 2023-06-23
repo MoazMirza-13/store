@@ -31,3 +31,8 @@ export const emptyCart = (product) => {
     payload: product,
   };
 };
+export const countCartItems = () => {
+  return {
+    type: ActionTypes.GET_CART_COUNT,
+  };
+};

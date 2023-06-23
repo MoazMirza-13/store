@@ -74,7 +74,7 @@ export default function BeforeFooter() {
                 id="email"
                 name="email"
                 type="email"
-                autocomplete="email"
+                autoComplete="email"
                 placeholder="Enter your Email Adress"
                 className="font-mont font-medium text-sm bg-[#e4cb901a] text-[#C8C8C8] placeholder-[#C8C8C8] outline-none   px-[265.558px] py-[1.338rem] lg:pr-[13.597rem]  md:pr-[7.597rem] pr-[4.597rem]  flex-grow lg:pl-[2.409rem] pl-[0.5rem] border border-[#e4cb901a]  border-gray-900 border-opacity-80  rounded-[3.346rem]"
               />

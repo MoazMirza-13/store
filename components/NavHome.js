@@ -6,8 +6,11 @@ import { IoMdCart } from "react-icons/io";
 import { HiMenuAlt3, HiX } from "react-icons/hi";
 import { Link as ScrollLink } from "react-scroll";
 import { motion as m } from "framer-motion";
+import { useSelector } from "react-redux";
 
 const Navbar = () => {
+  const cartCount = useSelector((state) => state.allProducts.cartCount);
+
   const [isOpen, setIsOpen] = useState(false);
   const [showCart, setShowCart] = useState(false);
   const [navBg, setNavBg] = useState(0);
@@ -124,14 +127,19 @@ const Navbar = () => {
                 transition={{ duration: 0.5, delay: 0 }}
                 whileHover={{ scale: 1.4 }}
                 whileTap={{ scale: 1 }}
-                className="flex md:gap-8 gap-6"
+                className="flex md:gap-8 gap-6  relative"
               >
                 <button
                   onClick={handleCart}
-                  className="text-3xl hidden sm:block"
+                  className="text-4xl hidden sm:block"
                 >
                   <IoMdCart />
                 </button>
+                {cartCount > 0 && (
+                  <div className="absolute top-0 right-0  rounded-full bg-red-500 text-white text-xs w-4 h-4  sm:flex  hidden justify-center items-center">
+                    {cartCount}
+                  </div>
+                )}
               </m.div>
             </div>
 
@@ -141,11 +149,16 @@ const Navbar = () => {
               transition={{ duration: 0.5, delay: 0 }}
               whileHover={{ scale: 1.4 }}
               whileTap={{ scale: 1 }}
-              className="flex md:gap-8 gap-6 sm:hidden"
+              className="flex md:gap-8 gap-6 sm:hidden relative"
             >
-              <button onClick={handleCart} className="text-2xl">
+              <button onClick={handleCart} className="text-3xl">
                 <IoMdCart />
               </button>
+              {cartCount > 0 && (
+                <div className="absolute top-0 right-0 sm:hidden flex rounded-full bg-red-500 text-white text-xs w-4 h-4   justify-center items-center">
+                  {cartCount}
+                </div>
+              )}
             </m.div>
           </div>
         </div>

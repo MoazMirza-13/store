@@ -4,13 +4,6 @@ import ReactModal from "react-modal";
 import { BsPlusCircle } from "react-icons/bs";
 import { MdCancel } from "react-icons/md";
 import { AiOutlineMinusCircle } from "react-icons/ai";
-import { useSelector, useDispatch } from "react-redux";
-import {
-  increaseQuantity,
-  decreaseQuantity,
-  removeItem,
-  emptyCart,
-} from "../app/redux/actions/productActions";
 import Image from "next/image";
 import { motion as m } from "framer-motion";
 import { Formik, Form, Field, ErrorMessage } from "formik";
@@ -18,6 +11,13 @@ import * as Yup from "yup";
 import { useMemo, useState, useEffect } from "react";
 import Link from "next/link";
 
+import { useSelector, useDispatch } from "react-redux";
+import {
+  increaseQuantity,
+  decreaseQuantity,
+  removeItem,
+  emptyCart,
+} from "../app/redux/actions/productActions";
 export default function AddToCart({ isopen, onclose }) {
   const cartItems = useSelector((state) => state.allProducts.cartItems);
   const dispatch = useDispatch();
@@ -118,7 +118,7 @@ export default function AddToCart({ isopen, onclose }) {
           <div className="min-w-[70%] ">
             <div>
               {isFormFilled && showMessage && (
-                <div className="bg-green-100 border border-green-400 text-green-700  px-4  py-3 rounded text-center absolute md:top-[2.25rem] top-[1.25rem] sm:left-[8rem] left-0  md:left-[12.938rem] xl:left-[20.938rem]">
+                <div className="bg-green-100 border border-green-400 text-green-700  px-4  py-3 rounded text-center absolute md:top-[2.25rem] top-[1.25rem] sm:left-[8rem] left-0  md:left-[12.938rem] xl:left-[22.938rem]">
                   <span className="block sm:inline">
                     Your Order Has Been Placed!
                   </span>
@@ -217,7 +217,6 @@ export default function AddToCart({ isopen, onclose }) {
                         >
                           <label
                             htmlFor="firstName"
-                            for="first-name"
                             id="first-name"
                             className="block text-sm font-medium leading-6 text-gray-900"
                           >
@@ -228,7 +227,7 @@ export default function AddToCart({ isopen, onclose }) {
                               type="text"
                               name="firstName"
                               id="first-name"
-                              autocomplete="given-name"
+                              autoComplete="given-name"
                               className="block  w-[80%] rounded-md border-0 p-[0.47rem] text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 outline-[#D4B78F] focus:ring-inset focus:ring-[#D4B78F]  sm:text-sm sm:leading-6"
                             />
                             <ErrorMessage
@@ -253,7 +252,6 @@ export default function AddToCart({ isopen, onclose }) {
                           <label
                             htmlFor="lastName"
                             id="last-name"
-                            for="last-name"
                             className="block text-sm font-medium leading-6 text-gray-900"
                           >
                             Last name
@@ -263,7 +261,7 @@ export default function AddToCart({ isopen, onclose }) {
                               type="text"
                               name="lastName"
                               id="last-name"
-                              autocomplete="family-name"
+                              autoComplete="family-name"
                               className="block  w-[80%] rounded-md border-0 p-[0.47rem] text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 outline-[#D4B78F] focus:ring-inset focus:ring-[#D4B78F] sm:text-sm sm:leading-6"
                             />
                             <ErrorMessage
@@ -287,7 +285,6 @@ export default function AddToCart({ isopen, onclose }) {
                         >
                           <label
                             htmlFor="email"
-                            for="email"
                             id="email"
                             className="block text-sm font-medium leading-6 text-gray-900"
                           >
@@ -298,7 +295,7 @@ export default function AddToCart({ isopen, onclose }) {
                               id="email"
                               name="email"
                               type="email"
-                              autocomplete="email"
+                              autoComplete="email"
                               className="block  w-[80%] rounded-md border-0 p-[0.47rem] text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 outline-[#D4B78F] focus:ring-inset focus:ring-[#D4B78F] sm:text-sm sm:leading-6"
                             />
                             <ErrorMessage
@@ -323,7 +320,6 @@ export default function AddToCart({ isopen, onclose }) {
                           <label
                             htmlFor=" streetAddress"
                             id="street-address"
-                            for="street-address"
                             className="block text-sm font-medium leading-6 text-gray-900"
                           >
                             Street address
@@ -333,7 +329,7 @@ export default function AddToCart({ isopen, onclose }) {
                               type="text"
                               name="streetAddress"
                               id="street-address"
-                              autocomplete="street-address"
+                              autoComplete="street-address"
                               className="block  w-[80%] rounded-md border-0 p-[0.47rem] text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 outline-[#D4B78F] focus:ring-inset focus:ring-[#D4B78F] sm:text-sm sm:leading-6"
                             />
                             <ErrorMessage
@@ -358,7 +354,6 @@ export default function AddToCart({ isopen, onclose }) {
                           <label
                             htmlFor="city"
                             id="city"
-                            for="city"
                             className="block text-sm font-medium leading-6 text-gray-900"
                           >
                             City
@@ -368,7 +363,7 @@ export default function AddToCart({ isopen, onclose }) {
                               type="text"
                               name="city"
                               id="city"
-                              autocomplete="address-level2"
+                              autoComplete="address-level2"
                               className="block  w-[80%] rounded-md border-0 p-[0.47rem] text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 outline-[#D4B78F] focus:ring-inset focus:ring-[#D4B78F] sm:text-sm sm:leading-6"
                             />
                             <ErrorMessage
@@ -393,7 +388,6 @@ export default function AddToCart({ isopen, onclose }) {
                           <label
                             htmlFor="region"
                             id="region"
-                            for="region"
                             className="block text-sm font-medium leading-6 text-gray-900"
                           >
                             State / Province
@@ -403,7 +397,7 @@ export default function AddToCart({ isopen, onclose }) {
                               type="text"
                               name="region"
                               id="region"
-                              autocomplete="address-level1"
+                              autoComplete="address-level1"
                               className="block  w-[80%] rounded-md border-0 p-[0.47rem] text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 outline-[#D4B78F] focus:ring-inset focus:ring-[#D4B78F] sm:text-sm sm:leading-6"
                             />
                             <ErrorMessage
@@ -428,7 +422,6 @@ export default function AddToCart({ isopen, onclose }) {
                           <label
                             htmlFor="postalCode"
                             id="postal-code"
-                            for="postal-code"
                             className="block text-sm font-medium leading-6 text-gray-900"
                           >
                             ZIP / Postal code
@@ -438,7 +431,7 @@ export default function AddToCart({ isopen, onclose }) {
                               type="text"
                               name="postalCode"
                               id="postal-code"
-                              autocomplete="postal-code"
+                              autoComplete="postal-code"
                               className="block  w-[80%] rounded-md border-0 p-[0.47rem] text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 outline-[#D4B78F] focus:ring-inset focus:ring-[#D4B78F] sm:text-sm sm:leading-6"
                             />
                             <ErrorMessage
