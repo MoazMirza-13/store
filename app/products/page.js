@@ -38,7 +38,7 @@ export default function page() {
       >
         Categories/<span className="text-black">{activeCategory}</span>
       </m.h2>
-      <div className="flex xl:max-w-[85%] max-w-[93%] m-auto mt-12 xl:gap-8 lg:gap-2 sm:gap-4 gap-2">
+      <div className="flex xl:max-w-[85%] md:max-w-[93%] max-w-[83%] m-auto mt-12 xl:gap-8 lg:gap-2 sm:gap-4 gap-2">
         <Category setActiveCategoryProp={setActiveCategory} />
         <Products activeCategory={activeCategory} />
       </div>
