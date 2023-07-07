@@ -23,7 +23,7 @@ export const productReducer = (state = initialState, { type, payload }) => {
           cartItems: state.cartItems.map((item) =>
             item.id === id ? { ...item, quantity: item.quantity + 1 } : item
           ),
-          cartCount: state.cartCount,
+          cartCount: state.cartCount + 1,
         };
       } else {
         return {
@@ -40,7 +40,7 @@ export const productReducer = (state = initialState, { type, payload }) => {
             ? { ...item, quantity: item.quantity + 1 }
             : item
         ),
-        cartCount: state.cartCount,
+        cartCount: state.cartCount + 1,
       };
 
     case ActionTypes.DECREASE_QUANTITY:
@@ -51,7 +51,7 @@ export const productReducer = (state = initialState, { type, payload }) => {
             ? { ...item, quantity: item.quantity - 1 }
             : item
         ),
-        cartCount: state.cartCount,
+        cartCount: state.cartCount - 1,
       };
 
     case ActionTypes.REMOVE_ITEM:
